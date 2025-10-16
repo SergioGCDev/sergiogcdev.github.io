@@ -1,1 +1,1 @@
-sergiogcdev.github.io
+*sergiogcdev.github.io
