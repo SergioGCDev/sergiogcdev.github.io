@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio García - iOS Developer</title>
     <style>
-        /* 1. FUENTES APPLE */
+        <style>
+        /* 1. IMPORTACIÓN DE FUENTES (Pesos: 200-ExtraLight, 300-Light, 400-Regular, 600-SemiBold) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
 
         * {
@@ -14,37 +16,44 @@
             box-sizing: border-box;
         }
 
+        /* 2. CONFIGURACIÓN GLOBAL ESTILO APPLE */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             background-color: #fbfbfd;
             color: #1d1d1f;
             -webkit-font-smoothing: antialiased;
+            /* Suavizado de fuente pro */
             line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        /* 2. HEADER CON ALINEACIÓN MATEMÁTICA */
+        /* 3. HEADER / BANNER */
         header {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%), 
-                        url('./assets/images/background.png');
+            /* Degradado oscuro sutil para que el texto blanco destaque sobre el fondo */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%),
+                url('./assets/images/background.png');
             background-size: cover;
             background-position: center;
             color: white;
             min-height: 380px;
             display: flex;
             align-items: center;
-            width: 100%;
+            padding: 0;
+            /* Dejamos el margen al contenido interno */
         }
 
-        /* Este contenedor es la clave: alinea banner, nav y cuerpo */
-        .content-width {
+        /* Contenedor interno del Header para alineación perfecta */
+        .header-content {
             max-width: 1000px;
             margin: 0 auto;
             width: 100%;
             padding: 0 2rem;
+            text-align: left;
         }
 
         header h1 {
             font-weight: 200;
+            /* Extra Fina */
             font-size: clamp(2.5rem, 8vw, 3.8rem);
             letter-spacing: -0.03em;
             margin-bottom: 0.2rem;
@@ -56,9 +65,11 @@
             opacity: 0.9;
         }
 
+        /* Botones del Header (LinkedIn, GitHub, etc.) */
         .header-links {
             margin-top: 2rem;
             display: flex;
+            justify-content: flex-start;
             gap: 1rem;
             flex-wrap: wrap;
         }
@@ -71,8 +82,9 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
+            /* Efecto cristal de iOS */
             -webkit-backdrop-filter: blur(10px);
-            transition: 0.3s;
+            transition: all 0.3s ease;
             font-size: 0.85rem;
             font-weight: 300;
         }
@@ -80,9 +92,11 @@
         .header-links a:hover {
             background: white;
             color: #0071e3;
+            /* Azul Apple */
+            border-color: white;
         }
 
-        /* 3. NAVEGACIÓN INTEGRADA */
+        /* 4. NAVEGACIÓN (Sticky Blur) */
         nav {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(20px);
@@ -91,98 +105,20 @@
             top: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            width: 100%;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 2.5rem;
-            padding: 1.2rem 0; /* Quitamos padding lateral aquí para usar content-width */
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #1d1d1f;
-            font-size: 0.85rem;
-            font-weight: 500;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-
-        nav a:hover { opacity: 1; color: #0071e3; }
-
-        /* 4. CUERPO DE LA WEB */
-        .container {
-            padding: 4rem 0; /* Padding vertical, el lateral lo da content-width */
-        }
-
-        section { margin-bottom: 5rem; }
-
-        section h2 {
-            font-weight: 600;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .cv-item { margin-bottom: 2.5rem; }
-        .cv-item h3 { font-size: 1.25rem; font-weight: 600; }
-        .cv-item .subtitle { color: #0071e3; font-weight: 400; margin: 0.2rem 0; }
-        .cv-item .date { font-size: 0.85rem; color: #86868b; margin-bottom: 1rem; }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-tag {
-            background: #f5f5f7;
-            padding: 0.9rem;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 0.9rem;
-            border: 1px solid #d2d2d7;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid #d2d2d7;
-            transition: 0.4s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #0071e3;
-        }
-
-        footer {
-            background: #f5f5f7;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-top: 1px solid #d2d2d7;
-        }
-
-        /* 5. MÓVIL (iPhone) */
-        @media (max-width: 768px) {
-            header { min-height: 300px; }
-            .content-width { padding: 0 1.5rem; }
-            nav ul { gap: 1.5rem; padding: 1rem 0; overflow-x: auto; }
-            .projects-grid { grid-template-columns: 1fr; }
-        }
+            justify-content: flex-start
     </style>
 </head>
-<body>
 
+<body>
     <header>
-        <div class="content-width">
+        <div class="header-content">
             <h1>Sergio García</h1>
             <p>iOS Developer</p>
             <div class="header-links">
@@ -194,18 +130,17 @@
         </div>
     </header>
 
+
     <nav>
-        <div class="content-width">
-            <ul>
-                <li><a href="#cv">Sobre mí</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#cv">Sobre mí</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
     </nav>
 
-    <div class="content-width container">
+    <div class="container">
         <!-- SOBRE MÍ -->
         <section id="cv">
             <h2>👋 Sobre mí</h2>
@@ -258,6 +193,7 @@
 
         </section>
 
+        <!-- SKILLS -->
         <section id="skills">
             <h2>🛠️ Habilidades Técnicas</h2>
             <div class="skills">
@@ -315,8 +251,14 @@
 
     <footer>
         <p><strong>Sergio García</strong> | iOS Developer</p>
-        <p>© 2026. Hecho con ❤️ y código limpio.</p>
+        <p>Disponible para oportunidades freelance y trabajo a tiempo completo</p>
+        <div class="social-links">
+            <a href="https://github.com/SergioGCDev" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank">LinkedIn</a>
+            <a href="mailto:sergiogarciacalero23@gmail.com">Email</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">© 2026. Hecho con ❤️ y código limpio.</p>
     </footer>
-
 </body>
+
 </html>
