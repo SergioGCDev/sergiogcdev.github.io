@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Sergio García - iOS Developer</title>
     <style>
         /* 1. FUENTES APPLE */
@@ -24,8 +27,8 @@
 
         /* 2. HEADER CON ALINEACIÓN MATEMÁTICA */
         header {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%), 
-                        url('./assets/images/background.png');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%),
+                url('./assets/images/background.png');
             background-size: cover;
             background-position: center;
             color: white;
@@ -66,20 +69,37 @@
         .header-links a {
             color: white;
             text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: 0.3s;
-            font-size: 0.85rem;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            /* Borde fino "cristal" */
+            border-radius: 12px;
+
+            /* Efecto Liquid Glass */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            /* Obligatorio para Safari/iPhone */
+
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 0.9rem;
             font-weight: 300;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Alineación de iconos en botones */
+        .header-links a i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+            vertical-align: middle;
         }
 
         .header-links a:hover {
-            background: white;
-            color: #0071e3;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* 3. NAVEGACIÓN INTEGRADA */
@@ -97,7 +117,8 @@
             list-style: none;
             display: flex;
             gap: 2.5rem;
-            padding: 1.2rem 0; /* Quitamos padding lateral aquí para usar content-width */
+            padding: 1.2rem 0;
+            /* Quitamos padding lateral aquí para usar content-width */
         }
 
         nav a {
@@ -109,14 +130,20 @@
             transition: 0.3s;
         }
 
-        nav a:hover { opacity: 1; color: #0071e3; }
+        nav a:hover {
+            opacity: 1;
+            color: #0071e3;
+        }
 
         /* 4. CUERPO DE LA WEB */
         .container {
-            padding: 4rem 0; /* Padding vertical, el lateral lo da content-width */
+            padding: 4rem 0;
+            /* Padding vertical, el lateral lo da content-width */
         }
 
-        section { margin-bottom: 5rem; }
+        section {
+            margin-bottom: 5rem;
+        }
 
         section h2 {
             font-weight: 600;
@@ -124,10 +151,26 @@
             margin-bottom: 2rem;
         }
 
-        .cv-item { margin-bottom: 2.5rem; }
-        .cv-item h3 { font-size: 1.25rem; font-weight: 600; }
-        .cv-item .subtitle { color: #0071e3; font-weight: 400; margin: 0.2rem 0; }
-        .cv-item .date { font-size: 0.85rem; color: #86868b; margin-bottom: 1rem; }
+        .cv-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .cv-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .cv-item .subtitle {
+            color: #0071e3;
+            font-weight: 400;
+            margin: 0.2rem 0;
+        }
+
+        .cv-item .date {
+            font-size: 0.85rem;
+            color: #86868b;
+            margin-bottom: 1rem;
+        }
 
         .skills {
             display: grid;
@@ -140,8 +183,27 @@
             padding: 0.9rem;
             border-radius: 12px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 500;
             border: 1px solid #d2d2d7;
+            display: flex;
+            /* Para alinear icono y texto */
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .skill-tag i {
+            font-size: 1.4rem;
+            margin-right: 1.1rem;
+            /* Tamaño del icono */
+        }
+
+        .skill-tag:hover {
+            background: white;
+            border-color: #0071e3;
+            transform: translateY(-2px);
         }
 
         .projects-grid {
@@ -155,12 +217,45 @@
             border-radius: 20px;
             padding: 2rem;
             border: 1px solid #d2d2d7;
-            transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Alinea los botones siempre abajo */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .project-card:hover {
             transform: translateY(-5px);
             border-color: #0071e3;
+        }
+
+        .project-links a {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+
+            /* Estilo Liquid Glass para fondo claro */
+            background: rgba(0, 113, 227, 0.08);
+            /* Un toque del azul de Apple */
+            color: #0071e3;
+            border: 1px solid rgba(0, 113, 227, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-links a:hover {
+            background: #0071e3;
+            color: white;
+            border-color: #0071e3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
         }
 
         footer {
@@ -172,13 +267,27 @@
 
         /* 5. MÓVIL (iPhone) */
         @media (max-width: 768px) {
-            header { min-height: 300px; }
-            .content-width { padding: 0 1.5rem; }
-            nav ul { gap: 1.5rem; padding: 1rem 0; overflow-x: auto; }
-            .projects-grid { grid-template-columns: 1fr; }
+            header {
+                min-height: 300px;
+            }
+
+            .content-width {
+                padding: 0 1.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                padding: 1rem 0;
+                overflow-x: auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -186,10 +295,13 @@
             <h1>Sergio García</h1>
             <p>iOS Developer</p>
             <div class="header-links">
-                <a href="mailto:sergiogarciacalero23@gmail.com">📧 Email</a>
-                <a href="https://github.com/SergioGCDev" target="_blank">🐙 GitHub</a>
-                <a href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank">💼 LinkedIn</a>
-                <a href="https://sergiogcdev.gumroad.com/suscribe/" target="_blank">💼 Gumroad</a>
+                <a href="mailto:hola@sergiogc.dev"><i class="fa-regular fa-envelope"></i> Email</a>
+                <a href="https://github.com/SergioGCDev" target="_blank"><i class="devicon-github-original"></i>
+                    GitHub</a>
+                <a href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank"><i
+                        class="devicon-linkedin-plain"></i> LinkedIn</a>
+                <a href="https://sergiogcdev.gumroad.com/suscribe/" target="_blank"><i class="fa-solid fa-store"></i>
+                    Gumroad</a>
             </div>
         </div>
     </header>
@@ -258,19 +370,21 @@
 
         </section>
 
+        <!-- HABILIDADES  -->
+        <!-- Para añadir más: https://devicon.dev/ -->
         <section id="skills">
             <h2>🛠️ Habilidades Técnicas</h2>
             <div class="skills">
-                <div class="skill-tag">Swift</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">LUA</div>
-                <div class="skill-tag">SQL</div>
+                <div class="skill-tag"><i class="devicon-swift-plain colored"></i> Swift</div>
+                <div class="skill-tag"><i class="devicon-python-plain colored"></i> Python</div>
+                <div class="skill-tag"><i class="devicon-lua-plain"></i> LUA</div>
+                <div class="skill-tag"><i class="devicon-azuresqldatabase-plain colored"></i> SQL</div>
             </div>
         </section>
 
         <!-- PORTFOLIO -->
         <section id="portfolio">
-            <h2>🚀 Proyectos Destacados</h2>
+            <h2>🚀 Mis proyectos</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>FinMate (En proceso)</h3>
@@ -279,8 +393,12 @@
                         <span class="project-tag">Swift</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/SergioGCDev/FinMate" target="_blank">Ver código →</a>
-                        <a href="#" target="_blank">Demo en vivo →</a>
+                        <a href="https://github.com/SergioGCDev/FinMate" target="_blank">
+                            <i class="devicon-github-original"></i> Código
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-solid fa-rocket"></i> Demo
+                        </a>
                     </div>
                 </div>
 
@@ -292,20 +410,28 @@
                         <span class="project-tag">Swift</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com" target="_blank">Ver código →</a>
-                        <a href="#" target="_blank">Demo en vivo →</a>
+                        <a href="https://github.com/SergioGCDev/FinMate" target="_blank">
+                            <i class="devicon-github-original"></i> Código
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-solid fa-rocket"></i> Demo
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>TankõDex (Beta version)</h3>
+                    <h3>TankõDex (SDP Project)</h3>
                     <p>Aplicación para gestionar tus mangas preferidos. Conectado a API.</p>
                     <div class="project-tags">
                         <span class="project-tag">Swift</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/SergioGCDev/FinMate" target="_blank">Ver código →</a>
-                        <a href="#" target="_blank">Demo en vivo →</a>
+                        <a href="https://github.com/SergioGCDev/PRACTICA-FINAL-SDP-26" target="_blank">
+                            <i class="devicon-github-original"></i> Código
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-solid fa-rocket"></i> Demo
+                        </a>
                     </div>
                 </div>
 
@@ -319,4 +445,5 @@
     </footer>
 
 </body>
+
 </html>
