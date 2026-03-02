@@ -305,6 +305,30 @@
                 font-size: 2.2rem;
             }
         }
+
+        /* 4.5. TABLETS (iPad y pantallas medianas) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            header {
+                /* Forzamos que la altura sea un poco mayor para que la imagen respire */
+                min-height: 400px;
+                
+                /* Ajustamos el tamaño: 'cover' a veces hace demasiado zoom, 
+                   '120%' nos da un control manual del zoom en iPad */
+                background-size: 130% auto;
+                
+                /* Centramos a Swiftey desplazando un poco más a la izquierda 
+                   que en Desktop pero menos que en iPhone */
+                background-position: 75% center;
+            }
+
+            .content-width {
+                padding: 0 3rem; /* Más margen lateral para que el texto no agobie */
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
 
