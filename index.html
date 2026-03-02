@@ -23,10 +23,16 @@
         }
         
         header {
-            background: linear-gradient(135deg, #0e81df 0%, #06b1f4 100%);
+            /* Mantenemos el degradado como "fallback" por si la imagen no carga */
+            background: linear-gradient(135deg, rgba(14, 129, 223, 0.8) 0%, rgba(6, 177, 244, 0.8) 100%), 
+                        url('./assets/images/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 3rem 2rem;
+            padding: 5rem 2rem; /* Aumentamos un poco el padding para que se vea más el fondo */
             text-align: center;
+            border-bottom: 4px solid #0e81df;
         }
         
         header h1 {
