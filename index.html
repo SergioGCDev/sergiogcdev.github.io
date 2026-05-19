@@ -1,554 +1,777 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <title>Sergio García - iOS Developer</title>
-    <style>
-        /* 1. FUENTES APPLE */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+    <title>Sergio García — iOS Developer</title>
+    <meta name="description" content="Desarrollo de aplicaciones iOS nativas con Swift. Apps a medida, 100% nativas, diseñadas para el ecosistema Apple.">
+    <meta property="og:title" content="Sergio García — iOS Developer">
+    <meta property="og:description" content="Desarrollo de aplicaciones iOS 100% nativas con Swift y SwiftUI.">
+    <meta property="og:url" content="https://sergiogc.dev">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:            #F7F5F1;
+            --surface:       #FFFFFF;
+            --surface-alt:   #F0EDE8;
+            --text-primary:  #111110;
+            --text-secondary:#6B6965;
+            --text-muted:    #A09D99;
+            --accent:        #007AFF;
+            --border:        rgba(17,17,16,0.09);
+            --border-strong: rgba(17,17,16,0.17);
+            --radius-sm:     8px;
+            --radius-md:     14px;
+            --radius-lg:     22px;
+            --nav-h:         64px;
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-            background-color: #fbfbfd;
-            color: #1d1d1f;
+            font-family: 'Finlandica Text', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            line-height: 1.5;
         }
 
-        /* 2. HEADER CON ALINEACIÓN MATEMÁTICA */
-        header {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%),
-                url('./assets/images/background.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            min-height: 380px;
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
+        a { color: inherit; text-decoration: none; }
+        p { color: var(--text-secondary); line-height: 1.75; }
 
-        /* Este contenedor es la clave: alinea banner, nav y cuerpo */
-        .content-width {
-            max-width: 1000px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 2rem;
-        }
-
-        header h1 {
-            font-weight: 200;
-            font-size: clamp(2.5rem, 8vw, 3.8rem);
-            letter-spacing: -0.03em;
-            margin-bottom: 0.2rem;
-        }
-
-        header p {
-            font-weight: 300;
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
-
-        .header-links {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .header-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.6rem 1.4rem;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            /* Borde fino "cristal" */
-            border-radius: 12px;
-
-            /* Efecto Liquid Glass */
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            /* Obligatorio para Safari/iPhone */
-
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-size: 0.9rem;
-            font-weight: 300;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        /* Alineación de iconos en botones */
-        .header-links a i {
-            margin-right: 8px;
-            font-size: 1.1rem;
-            vertical-align: middle;
-        }
-
-        .header-links a:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.8);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 3. NAVEGACIÓN INTEGRADA */
+        /* ── Nav ─────────────────────────────────────────── */
         nav {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--nav-h); z-index: 100;
+            background: rgba(247,245,241,0.82);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-            padding: 1.2rem 0;
-            /* Quitamos padding lateral aquí para usar content-width */
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto;
+            padding: 0 2rem; height: 100%;
+            display: flex; align-items: center; justify-content: space-between;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #1d1d1f;
-            font-size: 0.85rem;
-            font-weight: 500;
-            opacity: 0.6;
-            transition: 0.3s;
+        .nav-logo {
+            font-size: 1rem; font-weight: 700;
+            letter-spacing: -0.03em; color: var(--text-primary);
+        }
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+        .nav-links a {
+            font-size: 0.875rem; font-weight: 450;
+            color: var(--text-secondary); transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .nav-cta {
+            font-size: 0.85rem; font-weight: 580;
+            color: var(--accent); border: 1.5px solid var(--accent);
+            padding: 0.42rem 1.1rem; border-radius: 100px; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--accent); color: #fff; }
+
+        .nav-mobile-btn {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer; padding: 4px;
+        }
+        .nav-mobile-btn span {
+            display: block; width: 22px; height: 1.5px;
+            background: var(--text-primary); transition: all 0.3s;
         }
 
-        nav a:hover {
-            opacity: 1;
-            color: #0071e3;
+        .mobile-drawer {
+            display: none; position: fixed;
+            top: var(--nav-h); left: 0; right: 0; bottom: 0;
+            background: rgba(247,245,241,0.97);
+            backdrop-filter: blur(24px); z-index: 99;
+            flex-direction: column; align-items: center;
+            justify-content: center; gap: 2.75rem;
+        }
+        .mobile-drawer.open { display: flex; }
+        .mobile-drawer a {
+            font-size: 2rem; font-weight: 650;
+            letter-spacing: -0.04em; color: var(--text-primary);
         }
 
-        /* 4. CUERPO DE LA WEB */
-        .container {
-            padding: 4rem 0;
-            /* Padding vertical, el lateral lo da content-width */
+        /* ── Helpers ─────────────────────────────────────── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 6rem 0; }
+
+        .section-label {
+            font-size: 0.72rem; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--text-muted); margin-bottom: 0.85rem;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .section-label::after {
+            content: ''; display: block; height: 1px;
+            width: 28px; background: var(--text-muted);
         }
 
-        section {
-            margin-bottom: 5rem;
+        .fade-in {
+            opacity: 0; transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Hero ────────────────────────────────────────── */
+        #hero {
+            padding-top: calc(var(--nav-h) + 5.5rem);
+            padding-bottom: 6rem;
+            min-height: 100svh; display: flex; align-items: center;
         }
 
-        section h2 {
-            font-weight: 600;
-            font-size: 1.8rem;
+        .hero-label {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            font-size: 0.78rem; font-weight: 580; letter-spacing: 0.09em;
+            text-transform: uppercase; color: var(--text-muted);
             margin-bottom: 2rem;
         }
-
-        .cv-item {
-            margin-bottom: 2.5rem;
+        .hero-label::before {
+            content: ''; display: inline-block;
+            width: 22px; height: 1.5px; background: var(--text-muted);
         }
 
-        .cv-item h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
+        .hero-title {
+            font-size: clamp(3.5rem, 7.5vw, 7rem);
+            font-weight: 720; letter-spacing: -0.05em;
+            line-height: 1.0; color: var(--text-primary);
+            max-width: 900px; margin-bottom: 1.75rem;
+        }
+        .hero-title em {
+            font-style: italic; font-weight: 300;
+            color: var(--text-muted);
         }
 
-        .cv-item .subtitle {
-            color: #0071e3;
-            font-weight: 400;
-            margin: 0.2rem 0;
+        .hero-sub {
+            font-size: 1.1rem; color: var(--text-secondary);
+            max-width: 500px; line-height: 1.75; margin-bottom: 2.75rem;
         }
 
-        .cv-item .date {
-            font-size: 0.85rem;
-            color: #86868b;
-            margin-bottom: 1rem;
+        .hero-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+
+        .btn-dark {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--text-primary); color: var(--bg);
+            font-family: 'Finlandica Text', sans-serif;
+            font-size: 0.9rem; font-weight: 580;
+            padding: 0.82rem 1.8rem; border-radius: 100px;
+            border: none; cursor: pointer; transition: all 0.22s;
+        }
+        .btn-dark:hover { opacity: 0.78; transform: translateY(-1px); }
+
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.9rem; font-weight: 500;
+            color: var(--text-secondary);
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid var(--border-strong);
+            transition: all 0.2s;
+        }
+        .btn-ghost:hover { color: var(--text-primary); border-color: var(--text-primary); }
+
+        .hero-scroll {
+            margin-top: 5.5rem;
+            display: flex; align-items: center; gap: 1.25rem;
+        }
+        .hero-scroll-line { width: 48px; height: 1px; background: var(--border-strong); }
+        .hero-scroll-text {
+            font-size: 0.7rem; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--text-muted);
         }
 
-        .skills {
+        /* ── Services ────────────────────────────────────── */
+        #servicios {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .services-head { max-width: 560px; margin-bottom: 3.75rem; }
+        .services-head .section-title {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 680; letter-spacing: -0.04em;
+            margin-bottom: 0.75rem;
+        }
+        .services-head p { font-size: 1rem; }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 1.5px; background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md); overflow: hidden;
         }
 
-        .skill-tag {
-            background: #f5f5f7;
-            padding: 0.9rem;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border: 1px solid #d2d2d7;
-            display: flex;
-            /* Para alinear icono y texto */
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            transition: 0.3s;
+        .service-card {
+            background: var(--surface); padding: 2.25rem 1.9rem;
+            transition: background 0.2s;
+        }
+        .service-card:hover { background: var(--bg); }
+
+        .svc-icon {
+            font-size: 1.6rem; margin-bottom: 1.2rem; display: block;
+        }
+        .service-card h3 {
+            font-size: 1.0rem; font-weight: 660;
+            letter-spacing: -0.025em; margin-bottom: 0.55rem;
+            color: var(--text-primary);
+        }
+        .service-card p { font-size: 0.875rem; line-height: 1.65; }
+
+        /* ── Portfolio ───────────────────────────────────── */
+        #portfolio { background: var(--bg); }
+
+        .portfolio-header { margin-bottom: 3.5rem; }
+        .portfolio-header .section-title {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 680; letter-spacing: -0.04em;
         }
 
-        .skill-tag i {
-            font-size: 1.4rem;
-            margin-right: 1.1rem;
-            /* Tamaño del icono */
-        }
-
-        .skill-tag:hover {
-            background: white;
-            border-color: #0071e3;
-            transform: translateY(-2px);
-        }
-
-        .projects-grid {
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.25rem;
         }
 
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid #d2d2d7;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* Alinea los botones siempre abajo */
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .app-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 1.75rem;
+            display: flex; flex-direction: column;
+            transition: all 0.25s;
+        }
+        .app-card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.06);
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #0071e3;
+        .app-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+
+        .app-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; flex-shrink: 0;
+        }
+        .app-icon.fm  { background: #E8F5E9; }
+        .app-icon.sm  { background: #E3F2FD; }
+        .app-icon.pk  { background: #FFF8E1; }
+        .app-icon.td  { background: #FCE4EC; }
+
+        .app-meta h3 {
+            font-size: 1.0rem; font-weight: 660;
+            letter-spacing: -0.02em; color: var(--text-primary);
+        }
+        .app-status { font-size: 0.73rem; color: var(--text-muted); font-weight: 500; margin-top: 2px; }
+
+        .app-card > p { font-size: 0.875rem; line-height: 1.65; flex: 1; }
+
+        .app-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+        .tag {
+            font-size: 0.7rem; font-weight: 580; letter-spacing: 0.01em;
+            padding: 0.22rem 0.6rem; border-radius: 100px;
+            background: var(--bg); color: var(--text-secondary);
+            border: 1px solid var(--border);
         }
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1rem;
+        .app-links {
+            display: flex; gap: 1rem; margin-top: 1.25rem;
+            padding-top: 1.25rem; border-top: 1px solid var(--border);
+        }
+        .app-link {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            font-size: 0.8rem; font-weight: 560;
+            color: var(--text-secondary); transition: color 0.2s;
+        }
+        .app-link:hover { color: var(--accent); }
+        .app-link svg {
+            width: 13px; height: 13px; stroke: currentColor;
+            fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .app-link.dim { opacity: 0.38; cursor: default; pointer-events: none; }
+
+        /* ── About ───────────────────────────────────────── */
+        #sobre-mi {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
         }
 
-        .project-tag {
-            display: inline-block;
-            padding: 0.2rem 0.65rem;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background: rgba(240, 88, 36, 0.08);
-            color: #f05824;
-            border: 1px solid rgba(240, 88, 36, 0.2);
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 5.5rem; align-items: start;
         }
 
-        .project-native {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.2rem 0.65rem;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background: rgba(52, 199, 89, 0.1);
-            color: #248a3d;
-            border: 1px solid rgba(52, 199, 89, 0.25);
+        .about-name {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 680; letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+        .about-bio p { font-size: 1.0rem; line-height: 1.8; margin-bottom: 1.1rem; }
+
+        .skills-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+        .skill-pill {
+            font-size: 0.78rem; font-weight: 560;
+            padding: 0.3rem 0.85rem; border-radius: 100px;
+            border: 1.5px solid var(--border-strong);
+            color: var(--text-primary); letter-spacing: -0.01em;
         }
 
-        .project-native i {
-            font-size: 0.85rem;
+        .edu-block { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .edu-label {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem;
+        }
+        .edu-item { display: flex; gap: 0.85rem; margin-bottom: 1.1rem; align-items: flex-start; }
+        .edu-badge {
+            width: 36px; height: 36px; border-radius: var(--radius-sm);
+            background: var(--bg); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0;
+        }
+        .edu-item h4 {
+            font-size: 0.88rem; font-weight: 640; letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+        .edu-item p { font-size: 0.78rem; color: var(--text-muted); margin-top: 1px; }
+
+        /* Timeline */
+        .timeline-label {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;
+        }
+        .timeline { display: flex; flex-direction: column; }
+
+        .t-item {
+            position: relative; padding: 0 0 2.25rem 1.5rem;
+            border-left: 1.5px solid var(--border-strong);
+        }
+        .t-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+        .t-item::before {
+            content: ''; position: absolute; left: -4.5px; top: 5px;
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--text-primary); border: 2px solid var(--bg);
+        }
+        .t-item.current::before { background: var(--accent); }
+
+        .t-date {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;
+        }
+        .t-role {
+            font-size: 0.95rem; font-weight: 660; letter-spacing: -0.02em;
+            color: var(--text-primary); margin-bottom: 0.15rem;
+        }
+        .t-company { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* ── Contact ─────────────────────────────────────── */
+        #contacto { background: var(--text-primary); color: #fff; }
+        #contacto .section-label { color: rgba(255,255,255,0.38); }
+        #contacto .section-label::after { background: rgba(255,255,255,0.28); }
+
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr auto;
+            gap: 4rem; align-items: flex-end;
         }
 
-        .project-links a {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-
-            /* Estilo Liquid Glass para fondo claro */
-            background: rgba(0, 113, 227, 0.08);
-            /* Un toque del azul de Apple */
-            color: #0071e3;
-            border: 1px solid rgba(0, 113, 227, 0.2);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .contact-title {
+            font-size: clamp(2.25rem, 4.5vw, 4rem);
+            font-weight: 700; letter-spacing: -0.045em;
+            line-height: 1.08; color: #fff; max-width: 600px;
+        }
+        .contact-title em {
+            font-style: italic; font-weight: 300;
+            color: rgba(255,255,255,0.42);
         }
 
-        .project-links a:hover {
-            background: #0071e3;
-            color: white;
-            border-color: #0071e3;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+        .btn-white {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: #fff; color: var(--text-primary);
+            font-family: 'Finlandica Text', sans-serif;
+            font-size: 0.9rem; font-weight: 620;
+            padding: 0.82rem 1.8rem; border-radius: 100px;
+            border: none; cursor: pointer; transition: all 0.22s;
+            margin-top: 2.5rem; white-space: nowrap;
+        }
+        .btn-white:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        .contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
+
+        .c-link {
+            display: flex; align-items: center; gap: 0.85rem;
+            font-size: 0.875rem; font-weight: 500;
+            color: rgba(255,255,255,0.6); transition: color 0.2s;
+        }
+        .c-link:hover { color: #fff; }
+        .c-link-icon {
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .c-link-icon svg {
+            width: 14px; height: 14px; stroke: currentColor;
+            fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
         }
 
+        /* ── Footer ──────────────────────────────────────── */
         footer {
-            background: #f5f5f7;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-top: 1px solid #d2d2d7;
+            background: var(--text-primary);
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 1.5rem 0;
         }
-
-        /* 5. MÓVIL (iPhone) */
-        /* 5. MÓVIL (iPhone) - Ajuste del fondo original */
-        @media (max-width: 768px) {
-            header {
-                /* Usamos la misma imagen de Desktop */
-                background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%),
-                    url('./assets/images/background.png');
-
-                /* EL TRUCO: 
-                   1. background-size: auto 100% -> Hace que la imagen tenga la altura del header, 
-                      evitando que se haga gigantesca.
-                   2. background-position: 80% center -> Desplaza la imagen a la izquierda 
-                      para que Swiftey (que está a la derecha) aparezca en pantalla.
-                */
-                background-size: auto 100%;
-                background-position: 80% center;
-                background-repeat: no-repeat;
-
-                min-height: 320px;
-            }
-
-            .content-width {
-                padding: 0 1.5rem;
-            }
-
-            nav ul {
-                gap: 1.2rem;
-                padding: 1rem 0;
-                justify-content: space-around;
-                /* Distribuye mejor los links en pantallas estrechas */
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            header h1 {
-                font-size: 2.2rem;
-            }
+        .footer-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 0.5rem;
         }
+        footer p { font-size: 0.78rem; color: rgba(255,255,255,0.32); }
 
-        /* 4.5. TABLETS (iPad y pantallas medianas) */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            header {
-                /* Forzamos que la altura sea un poco mayor para que la imagen respire */
-                min-height: 350px;
-                
-                /* Ajustamos el tamaño: 'cover' a veces hace demasiado zoom, 
-                   '120%' nos da un control manual del zoom en iPad */
-                background-size: 125% auto;
-                
-                /* Centramos a Swiftey desplazando un poco más a la izquierda 
-                   que en Desktop pero menos que en iPhone */
-                background-position: 95% center;
-                background: no-repeat;
-            }
-
-            .content-width {
-                padding: 0 3rem; /* Más margen lateral para que el texto no agobie */
-            }
-
-            header h1 {
-                font-size: 3rem;
-            }
+        /* ── Responsive ──────────────────────────────────── */
+        @media (max-width: 860px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        @media (max-width: 720px) {
+            .nav-links, .nav-cta { display: none; }
+            .nav-mobile-btn { display: flex; }
+            section { padding: 4rem 0; }
+            .services-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="content-width">
-            <h1>Sergio García</h1>
-            <p>iOS Developer</p>
-            <div class="header-links">
-                <a href="mailto:hola@sergiogc.dev"><i class="fa-regular fa-envelope"></i> Email</a>
-                <a href="https://github.com/SergioGCDev" target="_blank"><i class="devicon-github-original"></i>
-                    GitHub</a>
-                <a href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank"><i
-                        class="devicon-linkedin-plain"></i> LinkedIn</a>
-                <a href="https://sergiogcdev.gumroad.com/suscribe/" target="_blank"><i class="fa-solid fa-store"></i>
-                    Gumroad</a>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="content-width">
-            <ul>
-                <li><a href="#cv">Sobre mí</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="content-width container">
-        <!-- SOBRE MÍ -->
-        <section id="cv">
-            <h2>👋 Sobre mí</h2>
-            <p>Profesional con 8 años de experiencia en soporte técnico y liderazgo de equipos, especializado en gestión
-                de infraestructuras y satisfacción del cliente. Actualmente en transición hacia desarrollo iOS con
-                Swift, combinando mi visión técnica con pasión por crear soluciones. Mi background me permite entender
-                tanto el lado operativo como el de desarrollo, lo que me permite escribir código pensado en la realidad
-                del negocio.</p>
-
-        </section>
-
-        <!-- EXPERIENCIA -->
-        <section id="experiencia">
-            <h2>💼 Experiencia</h2>
-
-            <div class="cv-item">
-                <h3>Team Leader Soporte y Atención al Cliente</h3>
-                <div class="subtitle">Codeoscopic (anteriormente TE-SIS Soluciones)</div>
-                <div class="date">mar. 2023 - may. 2025 (2 años 3 meses)</div>
-                <p>Tras la fusión/compra, alcancé la posición de Team Leader liderando equipos de soporte técnico en
-                    modalidad remota. Gestioné la satisfacción del cliente, rendimiento del equipo, resolución de
-                    conflictos y formación. Stack técnico: SAP ERP, Zoho CRM, JIRA, computación en la nube.</p>
-            </div>
-
-            <div class="cv-item">
-                <h3>Técnico Backoffice - Manos Remotas</h3>
-                <div class="subtitle">TE-SIS Soluciones</div>
-                <div class="date">mar. 2021 - mar. 2023 (2 años)</div>
-                <p>Especialización en soporte técnico remoto y administración de sistemas. Implementé soluciones en
-                    Windows Server, SAP ERP y computación en la nube asegurando la calidad del servicio y satisfacción
-                    del cliente.</p>
-            </div>
-
-            <div class="cv-item">
-                <h3>Técnico Helpdesk</h3>
-                <div class="subtitle">TE-SIS Soluciones</div>
-                <div class="date">jul. 2017 - mar. 2021 (3 años 8 meses)</div>
-                <p>Soporte técnico de primer nivel, administración de sistemas Windows Server, gestión de bases de datos
-                    SQL y asistencia técnica. Experiencia con SAP ERP, directorio activo y aplicaciones SaaS.</p>
-            </div>
-
-            <div class="cv-item">
-                <h3>Diseñador de Páginas Web</h3>
-                <div class="subtitle">Vunkers IT Experts</div>
-                <div class="date">ago. 2016 - jun. 2017 (11 meses)</div>
-                <p>Durante formación dual en DAW, desarrollé webs con CodeIgniter, bots de Telegram con Python para
-                    mejorar gestión empresarial, y reparación/montaje de equipos informáticos. Stack: PHP, WordPress,
-                    Python, SQL.</p>
-            </div>
-
-        </section>
-
-        <!-- HABILIDADES  -->
-        <!-- Para añadir más: https://devicon.dev/ -->
-        <section id="skills">
-            <h2>🛠️ Habilidades Técnicas</h2>
-            <div class="skills">
-                <div class="skill-tag"><i class="devicon-swift-plain colored"></i> Swift</div>
-                <div class="skill-tag"><i class="devicon-python-plain colored"></i> Python</div>
-                <div class="skill-tag"><i class="devicon-lua-plain"></i> LUA</div>
-                <div class="skill-tag"><i class="devicon-azuresqldatabase-plain colored"></i> SQL</div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO -->
-        <section id="portfolio">
-            <h2>🚀 Mis proyectos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>FinMate (En proceso)</h3>
-                    <p>Aplicación de gestión económica diaria, control de suscripciones y contratos extras.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Swift</span>
-                        <span class="project-tag">SwiftUI</span>
-                        <span class="project-native"><i class="fa-solid fa-circle-check"></i> 100% Nativo</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/SergioGCDev/FinMate" target="_blank">
-                            <i class="devicon-github-original"></i> Código
-                        </a>
-                        <a href="#" target="_blank">
-                            <i class="fa-solid fa-rocket"></i> Demo
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>SuppleMate (En proceso)</h3>
-                    <p>Aplicación de gestión diaria de suplementación y medicación.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Swift</span>
-                        <span class="project-tag">SwiftUI</span>
-                        <span class="project-native"><i class="fa-solid fa-circle-check"></i> 100% Nativo</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/SergioGCDev/SuppleMate" target="_blank">
-                            <i class="devicon-github-original"></i> Código
-                        </a>
-                        <a href="#" target="_blank">
-                            <i class="fa-solid fa-rocket"></i> Demo
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Piedra, papel y tijera ed. Pokemon (Gen1 to Gen9)</h3>
-                    <p>Juego interactivo dónde encontrarás todos los Pokemon desde las primeras generaciones hasta la
-                        última.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Swift</span>
-                        <span class="project-tag">SwiftUI</span>
-                        <span class="project-native"><i class="fa-solid fa-circle-check"></i> 100% Nativo</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/SergioGCDev/FinMate" target="_blank">
-                            <i class="devicon-github-original"></i> Código
-                        </a>
-                        <a href="#" target="_blank">
-                            <i class="fa-solid fa-rocket"></i> Demo
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>TankõDex (SDP Project)</h3>
-                    <p>Aplicación para gestionar tus mangas preferidos. Conectado a API.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Swift</span>
-                        <span class="project-tag">SwiftUI</span>
-                        <span class="project-native"><i class="fa-solid fa-circle-check"></i> 100% Nativo</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/SergioGCDev/PRACTICA-FINAL-SDP-26" target="_blank">
-                            <i class="devicon-github-original"></i> Código
-                        </a>
-                        <a href="#" target="_blank">
-                            <i class="fa-solid fa-rocket"></i> Demo
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+<!-- ── Navigation ───────────────────────────────────────── -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">sergio<span>.</span>gc</a>
+        <ul class="nav-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+        </ul>
+        <a href="#contacto" class="nav-cta">Hablamos</a>
+        <button class="nav-mobile-btn" id="menuBtn" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
     </div>
+</nav>
 
-    <footer>
-        <p><strong>Sergio García</strong> | iOS Native Developer</p>
-        <p>© 2026. Hecho con ❤️ y código limpio.</p>
-    </footer>
+<div class="mobile-drawer" id="drawer">
+    <a href="#servicios" onclick="closeDrawer()">Servicios</a>
+    <a href="#portfolio" onclick="closeDrawer()">Portfolio</a>
+    <a href="#sobre-mi" onclick="closeDrawer()">Sobre mí</a>
+    <a href="#contacto" onclick="closeDrawer()">Contacto</a>
+</div>
 
+<!-- ── Hero ─────────────────────────────────────────────── -->
+<section id="hero">
+    <div class="container">
+        <div class="hero-label">iOS Native Developer · Madrid</div>
+        <h1 class="hero-title fade-in">
+            Apps nativas.<br><em>Sin compromisos.</em>
+        </h1>
+        <p class="hero-sub fade-in" style="transition-delay:.1s">
+            Desarrollo aplicaciones iOS 100% nativas con Swift y SwiftUI. Sin plantillas, sin capas de abstracción innecesarias. Código pensado para el ecosistema Apple, para rendir como merece.
+        </p>
+        <div class="hero-actions fade-in" style="transition-delay:.2s">
+            <a href="#portfolio" class="btn-dark">Ver proyectos →</a>
+            <a href="#contacto" class="btn-ghost">Hablemos</a>
+        </div>
+        <div class="hero-scroll fade-in" style="transition-delay:.35s">
+            <div class="hero-scroll-line"></div>
+            <span class="hero-scroll-text">Scroll</span>
+        </div>
+    </div>
+</section>
+
+<!-- ── Servicios ─────────────────────────────────────────── -->
+<section id="servicios">
+    <div class="container">
+        <div class="services-head">
+            <div class="section-label">Servicios</div>
+            <h2 class="section-title fade-in">Lo que hago</h2>
+            <p class="fade-in" style="transition-delay:.08s; margin-top:.6rem;">
+                Todo lo que ofrezco está desarrollado de forma nativa para iOS. Swift puro, arquitecturas modernas y rendimiento real en dispositivos Apple.
+            </p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <span class="svc-icon">📱</span>
+                <h3>Apps iPhone &amp; iPad</h3>
+                <p>Diseño y desarrollo nativo para iOS e iPadOS. Interfaz con SwiftUI, adaptadas a cada dispositivo y a las convenciones del ecosistema Apple.</p>
+            </div>
+            <div class="service-card fade-in" style="transition-delay:.07s">
+                <span class="svc-icon">🏗️</span>
+                <h3>Arquitectura Swift</h3>
+                <p>Proyectos con Swift 6, concurrencia estricta, patrones modernos y código limpio y mantenible. Sin deuda técnica desde el día uno.</p>
+            </div>
+            <div class="service-card fade-in" style="transition-delay:.14s">
+                <span class="svc-icon">🔗</span>
+                <h3>Integración de APIs</h3>
+                <p>Conexión con servicios REST o GraphQL usando async/await, con gestión robusta de errores y modelos de datos bien tipados en Swift.</p>
+            </div>
+            <div class="service-card fade-in" style="transition-delay:.21s">
+                <span class="svc-icon">🚀</span>
+                <h3>Publicación App Store</h3>
+                <p>Gestión completa del proceso de lanzamiento: certificados, provisioning, revisión y publicación. De cero a App Store, sin sorpresas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Portfolio ─────────────────────────────────────────── -->
+<section id="portfolio">
+    <div class="container">
+        <div class="portfolio-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title fade-in" style="font-size:clamp(2rem,3.5vw,3rem); font-weight:680; letter-spacing:-0.04em;">Proyectos</h2>
+        </div>
+        <div class="portfolio-grid">
+
+            <!-- FinMate -->
+            <div class="app-card fade-in" style="transition-delay:.05s">
+                <div class="app-header">
+                    <div class="app-icon fm">💰</div>
+                    <div>
+                        <h3>FinMate</h3>
+                        <div class="app-status">En desarrollo</div>
+                    </div>
+                </div>
+                <p>Gestor de finanzas personales: control de gastos diarios, suscripciones y contratos. Diseñado para que tu economía sea siempre visible.</p>
+                <div class="app-tags">
+                    <span class="tag">Swift</span>
+                    <span class="tag">SwiftUI</span>
+                    <span class="tag">100% Nativo</span>
+                </div>
+                <div class="app-links">
+                    <a href="https://github.com/SergioGCDev/FinMate" target="_blank" class="app-link">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                    <span class="app-link dim">App Store — próximamente</span>
+                </div>
+            </div>
+
+            <!-- SuppleMate -->
+            <div class="app-card fade-in" style="transition-delay:.1s">
+                <div class="app-header">
+                    <div class="app-icon sm">💊</div>
+                    <div>
+                        <h3>SuppleMate</h3>
+                        <div class="app-status">En desarrollo</div>
+                    </div>
+                </div>
+                <p>Gestión diaria de suplementación y medicación. Seguimiento de tomas, recordatorios inteligentes y registro histórico personal.</p>
+                <div class="app-tags">
+                    <span class="tag">Swift</span>
+                    <span class="tag">SwiftUI</span>
+                    <span class="tag">100% Nativo</span>
+                </div>
+                <div class="app-links">
+                    <a href="https://github.com/SergioGCDev/SuppleMate" target="_blank" class="app-link">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                    <span class="app-link dim">App Store — próximamente</span>
+                </div>
+            </div>
+
+            <!-- Pokémon RPS -->
+            <div class="app-card fade-in" style="transition-delay:.15s">
+                <div class="app-header">
+                    <div class="app-icon pk">⚡</div>
+                    <div>
+                        <h3>Pokémon RPS</h3>
+                        <div class="app-status">Gen I — Gen IX</div>
+                    </div>
+                </div>
+                <p>Piedra, papel y tijera edición Pokémon con los 1000+ Pokémon de todas las generaciones. Proyecto de aprendizaje en SwiftUI.</p>
+                <div class="app-tags">
+                    <span class="tag">Swift</span>
+                    <span class="tag">SwiftUI</span>
+                    <span class="tag">100% Nativo</span>
+                </div>
+                <div class="app-links">
+                    <a href="https://github.com/SergioGCDev" target="_blank" class="app-link">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- TankōDex -->
+            <div class="app-card fade-in" style="transition-delay:.2s">
+                <div class="app-header">
+                    <div class="app-icon td">📚</div>
+                    <div>
+                        <h3>TankōDex</h3>
+                        <div class="app-status">Proyecto Final SDP</div>
+                    </div>
+                </div>
+                <p>Gestiona tu colección de mangas favoritos conectado a API externa. Búsqueda avanzada y biblioteca personal con sincronización en tiempo real.</p>
+                <div class="app-tags">
+                    <span class="tag">Swift</span>
+                    <span class="tag">SwiftUI</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">100% Nativo</span>
+                </div>
+                <div class="app-links">
+                    <a href="https://github.com/SergioGCDev/PRACTICA-FINAL-SDP-26" target="_blank" class="app-link">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── Sobre mí ───────────────────────────────────────────── -->
+<section id="sobre-mi">
+    <div class="container">
+        <div class="section-label">Sobre mí</div>
+        <div class="about-grid">
+            <div class="about-bio">
+                <h2 class="about-name fade-in">Sergio García</h2>
+                <p class="fade-in" style="transition-delay:.07s">
+                    Llevo 8 años resolviendo problemas técnicos reales para empresas y usuarios. Esa experiencia me enseñó algo que los tutoriales no enseñan: el software existe para personas, y esas personas necesitan que funcione bien.
+                </p>
+                <p class="fade-in" style="transition-delay:.12s">
+                    Ahora aplico esa visión al desarrollo iOS. Escribo en Swift porque creo en hacerlo bien, nativamente, con las herramientas que Apple ofrece. Sin atajos. Sin frameworks que añaden capas entre el código y el sistema.
+                </p>
+                <div class="skills-row fade-in" style="transition-delay:.18s">
+                    <span class="skill-pill">Swift 6</span>
+                    <span class="skill-pill">SwiftUI</span>
+                    <span class="skill-pill">Async/Await</span>
+                    <span class="skill-pill">REST APIs</span>
+                    <span class="skill-pill">Xcode 26</span>
+                    <span class="skill-pill">SQL</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">Git</span>
+                </div>
+                <div class="edu-block fade-in" style="transition-delay:.24s">
+                    <div class="edu-label">Formación</div>
+                    <div class="edu-item">
+                        <div class="edu-badge">🍎</div>
+                        <div>
+                            <h4>Swift Developer Program</h4>
+                            <p>Apple Developer Academy · 2024 – 2025</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-badge">🎓</div>
+                        <div>
+                            <h4>Desarrollo de Aplicaciones Web (DAW)</h4>
+                            <p>Formación Profesional · 2016 – 2017</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fade-in" style="transition-delay:.1s">
+                <div class="timeline-label">Experiencia</div>
+                <div class="timeline">
+                    <div class="t-item current">
+                        <div class="t-date">Mar. 2023 – May. 2025</div>
+                        <div class="t-role">Team Leader · Soporte Técnico</div>
+                        <div class="t-company">Codeoscopic (ex TE-SIS Soluciones)</div>
+                    </div>
+                    <div class="t-item">
+                        <div class="t-date">Mar. 2021 – Mar. 2023</div>
+                        <div class="t-role">Técnico Backoffice — Manos Remotas</div>
+                        <div class="t-company">TE-SIS Soluciones</div>
+                    </div>
+                    <div class="t-item">
+                        <div class="t-date">Jul. 2017 – Mar. 2021</div>
+                        <div class="t-role">Técnico Helpdesk</div>
+                        <div class="t-company">TE-SIS Soluciones</div>
+                    </div>
+                    <div class="t-item">
+                        <div class="t-date">Ago. 2016 – Jun. 2017</div>
+                        <div class="t-role">Diseñador Web · Prácticas Duales</div>
+                        <div class="t-company">Vunkers IT Experts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Contacto ───────────────────────────────────────────── -->
+<section id="contacto">
+    <div class="container">
+        <div class="section-label">Contacto</div>
+        <div class="contact-grid">
+            <div>
+                <h2 class="contact-title fade-in">
+                    ¿Tienes una idea?<br><em>Hablemos.</em>
+                </h2>
+                <!-- ⚠️  Actualiza el email aquí -->
+                <a href="mailto:hola@sergiogc.dev" class="btn-white fade-in" style="transition-delay:.1s">
+                    Envíame un mensaje →
+                </a>
+            </div>
+            <div class="contact-links fade-in" style="transition-delay:.18s">
+                <a href="https://github.com/SergioGCDev" target="_blank" class="c-link">
+                    <div class="c-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </div>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank" class="c-link">
+                    <div class="c-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </div>
+                    LinkedIn
+                </a>
+                <a href="https://sergiogcdev.gumroad.com/suscribe/" target="_blank" class="c-link">
+                    <div class="c-link-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                    </div>
+                    Gumroad
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────── -->
+<footer>
+    <div class="footer-inner">
+        <p>© 2026 Sergio García · iOS Native Developer</p>
+        <p>Madrid, España</p>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const drawer  = document.getElementById('drawer');
+    menuBtn.addEventListener('click', () => drawer.classList.toggle('open'));
+    function closeDrawer() { drawer.classList.remove('open'); }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
-
 </html>
