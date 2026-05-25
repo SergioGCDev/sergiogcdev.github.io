@@ -70,6 +70,11 @@
         }
         .nav-logo span { color: var(--accent); }
 
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
         .nav-links { display: flex; gap: 2.25rem; list-style: none; }
         .nav-links a {
             font-size: 0.875rem; font-weight: 450;
@@ -502,7 +507,10 @@
 <!-- ── Navigation ───────────────────────────────────────── -->
 <nav>
     <div class="nav-inner">
-        <a href="#" class="nav-logo">sergiogc<span>.</span>dev</a>
+        <!-- <a href="#" class="nav-logo">sergiogc<span>.</span>dev</a> -->
+         <a href="#" class="nav-logo">
+            <img src="/assets/images/logobanner.svg" alt="sergiogc.dev">
+        </a>
         <ul class="nav-links">
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
