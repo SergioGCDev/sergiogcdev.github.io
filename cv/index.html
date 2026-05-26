@@ -64,9 +64,12 @@
   }
   nav.scrolled{border-bottom:1px solid var(--line);box-shadow:0 4px 24px rgba(20,30,60,.05)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--ink)}
+  .brand{font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--ink);text-decoration:none;transition:opacity .2s}
+  .brand:hover{opacity:.7}
   .brand span{color:var(--accent)}
-  .navlinks{display:flex;gap:30px}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a.back{color:var(--accent-deep);font-weight:600}
+  .navlinks a.back::after{display:none}
   .navlinks a{color:var(--ink-soft);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .2s;position:relative}
   .navlinks a:hover{color:var(--ink)}
   .navlinks a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
@@ -241,7 +244,7 @@
 
 <nav id="nav">
   <div class="wrap">
-    <div class="brand">Sergio<span>.</span>García</div>
+    <a class="brand" href="/">Sergio<span>.</span>García</a>
     <div class="navlinks">
       <a href="#about">Sobre mí</a>
       <a href="#stack">Stack</a>
@@ -249,6 +252,7 @@
       <a href="#edu">Formación</a>
       <a href="#proj">Proyectos</a>
       <a href="#contact">Contacto</a>
+      <a class="back" href="/">← Inicio</a>
     </div>
   </div>
 </nav>
