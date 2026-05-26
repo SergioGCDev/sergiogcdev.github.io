@@ -1,0 +1,80 @@
+@media print {
+    @page {
+        margin: 14mm;
+    }
+
+    body {
+        background: #fff;
+        color: #111;
+    }
+
+    nav {
+        position: static;
+        background: #fff;
+        border: 0;
+    }
+
+    .navlinks {
+        display: none;
+    }
+
+    header {
+        min-height: auto;
+        padding: 8px 0 12px;
+    }
+
+    section {
+        padding: 16px 0;
+        break-inside: avoid;
+    }
+
+    .sec-head {
+        margin-bottom: 20px;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    a {
+        color: var(--accent) !important;
+    }
+
+    .btn {
+        border: 1px solid #ccc !important;
+        color: #111 !important;
+        background: #fff !important;
+    }
+
+    .avatar-card,
+    .facts,
+    .edu,
+    .proj,
+    .lang,
+    .contact {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .contact {
+        background: #fff !important;
+    }
+
+    .job,
+    .edu,
+    .proj,
+    .lang {
+        break-inside: avoid;
+    }
+
+    .monogram {
+        border: 2px solid var(--accent);
+    }
+
+    .hero {
+        grid-template-columns: 1.4fr .8fr;
+        gap: 24px;
+    }
+}

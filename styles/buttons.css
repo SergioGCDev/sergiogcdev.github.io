@@ -1,0 +1,62 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 22px;
+    border-radius: var(--radius-md);
+    transition: transform .2s, box-shadow .2s, border-color .2s, background .2s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 122, 255, .22);
+}
+
+.btn-ghost {
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    background: var(--surface);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-2px);
+    border-color: var(--ink);
+}
+
+.btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.gh-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 13px 22px;
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    color: #fff;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.gh-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 122, 255, .22);
+}
+
+.gh-cta svg {
+    width: 17px;
+    height: 17px;
+}
