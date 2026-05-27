@@ -328,3 +328,7 @@ section {
 .contact .cta {
     justify-content: center;
 }
+
+@media (max-width: 760px) {
+    section { padding: 4rem 0; }
+}

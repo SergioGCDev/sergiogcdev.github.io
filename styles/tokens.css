@@ -14,4 +14,13 @@
     --radius-md: 14px;
     --radius-sm: 8px;
     --font: 'Finlandica Text', 'Finlandica', sans-serif;
+
+    /* Aliases compartidos con la página principal */
+    --text-primary: var(--ink);
+    --text-secondary: var(--ink-soft);
+    --text-muted: var(--ink-faint);
+    --border: var(--line);
+    --border-strong: var(--line-strong);
+    --radius-lg: var(--radius);
+    --nav-h: 64px;
 }
