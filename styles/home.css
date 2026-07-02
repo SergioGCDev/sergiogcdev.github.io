@@ -425,6 +425,13 @@ footer {
     align-items: center; flex-wrap: wrap; gap: 0.5rem;
 }
 footer p { font-size: 0.78rem; color: rgba(255,255,255,0.32); }
+.footer-link {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.32);
+    text-decoration: none;
+    transition: color .2s;
+}
+.footer-link:hover { color: rgba(255,255,255,0.7); }
 
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 860px) {
