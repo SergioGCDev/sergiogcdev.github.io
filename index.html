@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio García — iOS Developer</title>
     <meta name="description" content="Desarrollo de aplicaciones iOS nativas con Swift. Apps a medida, 100% nativas, diseñadas para el ecosistema Apple.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sergiogc.dev">
     <meta property="og:title" content="Sergio García — iOS Developer">
     <meta property="og:description" content="Desarrollo de aplicaciones iOS 100% nativas con Swift y SwiftUI.">
-    <meta property="og:url" content="https://sergiogc.dev">
+    <meta property="og:url" content="https://sergiogc.dev/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sergio García — iOS Developer">
+    <meta name="twitter:description" content="Desarrollo de aplicaciones iOS 100% nativas con Swift y SwiftUI.">
+    <meta name="theme-color" content="#F7F5F1">
 
     <!-- SVG favicon generado con https://favicon.io/ -->
     <!--
@@ -37,18 +43,37 @@
 <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sergio García",
-    "jobTitle": "iOS Developer freelance",
-    "url": "https://sergiogc.dev",
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Málaga",
-        "addressCountry": "ES"
-    },
-    "sameAs": [
-        "https://github.com/SergioGCDev",
-        "https://www.linkedin.com/in/sergiogarciacalero/"
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://sergiogc.dev/#website",
+            "name": "sergiogc.dev",
+            "url": "https://sergiogc.dev/",
+            "inLanguage": "es",
+            "publisher": { "@id": "https://sergiogc.dev/#person" }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://sergiogc.dev/#person",
+            "name": "Sergio García",
+            "jobTitle": "iOS Developer freelance",
+            "url": "https://sergiogc.dev/",
+            "knowsAbout": ["Swift", "SwiftUI", "iOS", "Xcode", "Desarrollo de apps nativas"],
+            "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Apple Coding Academy",
+                "url": "https://acoding.academy"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Málaga",
+                "addressCountry": "ES"
+            },
+            "sameAs": [
+                "https://github.com/SergioGCDev",
+                "https://www.linkedin.com/in/sergiogarciacalero/"
+            ]
+        }
     ]
     }
 </script>
