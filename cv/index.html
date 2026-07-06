@@ -9,13 +9,18 @@
         content="Currículum de Sergio García, desarrollador iOS nativo (Swift / SwiftUI). 8 años en soporte técnico, formado en el Swift Developer Program de Apple Coding Academy.">
     <meta name="author" content="Sergio García">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://sergiogc.dev/cv">
+    <link rel="canonical" href="https://sergiogc.dev/cv/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sergiogc.dev">
     <meta property="og:title" content="CV · Sergio García — iOS Developer">
     <meta property="og:description"
         content="Desarrollador iOS nativo con Swift y SwiftUI. 8 años de experiencia en soporte técnico reconvertidos al desarrollo de apps para el ecosistema Apple.">
-    <meta property="og:url" content="https://sergiogc.dev/cv">
+    <meta property="og:url" content="https://sergiogc.dev/cv/">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CV · Sergio García — iOS Developer">
+    <meta name="twitter:description"
+        content="Desarrollador iOS nativo con Swift y SwiftUI. 8 años de experiencia en soporte técnico reconvertidos al desarrollo de apps para el ecosistema Apple.">
+    <meta name="theme-color" content="#F7F5F1">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,13 +29,56 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://sergiogc.dev/cv/#profilepage",
+        "url": "https://sergiogc.dev/cv/",
+        "inLanguage": "es",
+        "isPartOf": { "@id": "https://sergiogc.dev/#website" },
+        "mainEntity": {
+            "@type": "Person",
+            "@id": "https://sergiogc.dev/#person",
+            "name": "Sergio García",
+            "jobTitle": "iOS Developer freelance",
+            "url": "https://sergiogc.dev/",
+            "knowsAbout": ["Swift", "SwiftUI", "iOS", "Xcode", "Desarrollo de apps nativas"],
+            "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Apple Coding Academy",
+                "url": "https://acoding.academy"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Málaga",
+                "addressCountry": "ES"
+            },
+            "sameAs": [
+                "https://github.com/SergioGCDev",
+                "https://www.linkedin.com/in/sergiogarciacalero/"
+            ]
+        }
+        }
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xgmnd7hpeo");
+    </script>
 </head>
 
 <body>
 
     <nav id="nav">
         <div class="wrap">
-            <a class="brand" href="/"><img src="/assets/images/logobanner.svg" alt="sergiogc.dev"></a>
+            <a class="brand" href="/"><img src="/assets/images/logobanner.svg" alt="sergiogc.dev" width="133" height="32" fetchpriority="high"></a>
             <div class="navlinks">
                 <a class="back" href="/">← Inicio</a>
                 <a href="#about">Sobre mí</a>
@@ -97,7 +145,7 @@
 
     <section id="about">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">Sobre mí</span><span
+            <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">Sobre mí</h2><span
                     class="sec-line"></span></div>
             <div class="about-grid">
                 <div class="reveal">
@@ -127,11 +175,11 @@
 
     <section id="stack">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Stack
-                    técnico</span><span class="sec-line"></span></div>
+            <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Stack
+                    técnico</h2><span class="sec-line"></span></div>
             <div class="reveal">
                 <div class="skill-block">
-                    <h4>Desarrollo iOS</h4>
+                    <h3>Desarrollo iOS</h3>
                     <div class="chips">
                         <span class="chip core">Swift 6</span>
                         <span class="chip core">SwiftUI</span>
@@ -142,7 +190,7 @@
                     </div>
                 </div>
                 <div class="skill-block">
-                    <h4>Otras tecnologías</h4>
+                    <h3>Otras tecnologías</h3>
                     <div class="chips">
                         <span class="chip">HTML5 / CSS3</span>
                         <span class="chip">JavaScript</span>
@@ -153,7 +201,7 @@
                     </div>
                 </div>
                 <div class="skill-block">
-                    <h4>Soporte, sistemas y producto</h4>
+                    <h3>Soporte, sistemas y producto</h3>
                     <div class="chips">
                         <span class="chip">Windows Server · Active Directory</span>
                         <span class="chip">Office 365</span>
@@ -168,7 +216,7 @@
 
     <section id="exp">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Experiencia</span><span
+            <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Experiencia</h2><span
                     class="sec-line"></span></div>
             <div class="timeline">
                 <div class="job reveal">
@@ -224,7 +272,7 @@
 
     <section id="edu">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Formación</span><span
+            <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Formación</h2><span
                     class="sec-line"></span></div>
             <div class="grid2">
                 <div class="edu feat reveal">
@@ -256,7 +304,7 @@
 
     <section id="proj">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Proyectos</span><span
+            <div class="sec-head reveal"><span class="sec-num">05</span><h2 class="sec-title">Proyectos</h2><span
                     class="sec-line"></span></div>
             <div class="gh reveal">
                 <div class="gh-icon">
@@ -287,7 +335,7 @@
 
     <section id="langs">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Idiomas</span><span
+            <div class="sec-head reveal"><span class="sec-num">06</span><h2 class="sec-title">Idiomas</h2><span
                     class="sec-line"></span></div>
             <div class="langs">
                 <div class="lang reveal">
