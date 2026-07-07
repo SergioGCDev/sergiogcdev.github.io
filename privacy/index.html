@@ -34,34 +34,32 @@
 
 <body>
 
-    <nav id="nav">
-        <div class="wrap">
-            <a class="brand" href="/"><img src="/assets/images/logobanner.svg" alt="sergiogc.dev" width="133" height="32" fetchpriority="high"></a>
-            <div class="navlinks">
-                <a class="back" href="/">← Inicio</a>
-                <a href="#principios" data-i18n="nav-principios">Principios</a>
-                <a href="#apps" data-i18n="nav-apps">Apps</a>
-                <a href="#contact" data-i18n="nav-contacto">Contacto</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">sergiogc.dev</a>
+            <ul class="nav-links">
+                <li><a href="#principios" data-i18n="nav-principios">Principios</a></li>
+                <li><a href="#apps" data-i18n="nav-apps">Apps</a></li>
+                <li><a href="#contact" data-i18n="nav-contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="toggle-group" role="group" aria-label="Selector de idioma">
+                    <button type="button" class="toggle-btn active" data-lang-btn="es">ES</button>
+                    <button type="button" class="toggle-btn" data-lang-btn="en">EN</button>
+                </div>
+                <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">☀</button>
+                <a href="/" class="nav-cta" data-i18n="nav-back">← Inicio</a>
             </div>
-            <span class="nav-cta ghost" aria-hidden="true">Hablamos</span>
         </div>
     </nav>
 
-    <header style="min-height:auto; padding:150px 0 60px;">
+    <header>
         <div class="wrap">
-            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
-                <div>
-                    <span class="eyebrow reveal"><span class="dot"></span><span data-i18n="eyebrow">Legal</span></span>
-                    <h1 class="reveal" style="font-size:clamp(34px,5.5vw,54px); margin:18px 0 6px;">
-                        <span data-i18n="title">Política de Privacidad</span>
-                    </h1>
-                    <p class="updated reveal" data-i18n="updated">Última actualización: julio de 2026</p>
-                </div>
-                <div class="lang-toggle reveal" role="group" aria-label="Selector de idioma">
-                    <button type="button" data-lang-btn="es" class="active">ES</button>
-                    <button type="button" data-lang-btn="en">EN</button>
-                </div>
-            </div>
+            <span class="eyebrow reveal"><span class="dot"></span><span data-i18n="eyebrow">Legal</span></span>
+            <h1 class="reveal" style="font-size:clamp(34px,5.5vw,54px); margin:18px 0 6px;">
+                <span data-i18n="title">Política de Privacidad</span>
+            </h1>
+            <p class="updated reveal" data-i18n="updated">Última actualización: julio de 2026</p>
         </div>
     </header>
 
@@ -279,7 +277,7 @@
 
     <script>
         const io = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
         }, { threshold: .1 });
         document.querySelectorAll('.reveal').forEach((el, i) => {
             el.style.transitionDelay = (Math.min(i, 6) * 55) + 'ms';
@@ -290,6 +288,7 @@
         const i18n = {
             es: {
                 'nav-principios': 'Principios', 'nav-apps': 'Apps', 'nav-contacto': 'Contacto',
+                'nav-back': '← Inicio',
                 'eyebrow': 'Legal', 'title': 'Política de Privacidad',
                 'updated': 'Última actualización: julio de 2026',
                 'contact-title': '¿Tienes dudas? <em>Escríbenos.</em>',
@@ -298,6 +297,7 @@
             },
             en: {
                 'nav-principios': 'Principles', 'nav-apps': 'Apps', 'nav-contacto': 'Contact',
+                'nav-back': '← Home',
                 'eyebrow': 'Legal', 'title': 'Privacy Policy',
                 'updated': 'Last updated: July 2026',
                 'contact-title': 'Questions? <em>Get in touch.</em>',
@@ -318,12 +318,23 @@
             });
             document.documentElement.lang = lang;
             localStorage.setItem('sergiogc-lang', lang);
+            // El bloque del idioma oculto nunca dispara el IntersectionObserver;
+            // al cambiar de idioma se revela de golpe para que no quede invisible.
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
         }
 
         btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.langBtn)));
 
         const saved = localStorage.getItem('sergiogc-lang');
         if (saved === 'en') setLang('en');
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.textContent = isDark ? '☀' : '☾';
+        });
     </script>
 </body>
 
