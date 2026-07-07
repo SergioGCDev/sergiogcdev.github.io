@@ -1,27 +1,70 @@
-:root {
-    color-scheme: light;
-    --bg: #FAFAFA;
-    --surface: #FFFFFF;
-    --surface-alt: #F4F4F5;
-    --ink: #111110;
-    --ink-soft: #6B6965;
-    --ink-faint: #A09D99;
-    --accent: #007AFF;
-    --line: rgba(17, 17, 16, .09);
-    --line-strong: rgba(17, 17, 16, .17);
-    --shadow: 0 16px 48px rgba(0, 0, 0, .06);
-    --shadow-hi: 0 20px 56px rgba(0, 0, 0, .09);
-    --radius: 22px;
-    --radius-md: 14px;
-    --radius-sm: 8px;
-    --font: 'Finlandica Text', 'Finlandica', sans-serif;
+/* ── tokens.css — sistema de diseño compartido (sergiogc.dev) ──
+   Paleta teal + glassmorphism, con modo claro/oscuro.
+   Fuente única de verdad para color, tipografía, radios y sombras. */
 
-    /* Aliases compartidos con la página principal */
-    --text-primary: var(--ink);
-    --text-secondary: var(--ink-soft);
-    --text-muted: var(--ink-faint);
-    --border: var(--line);
-    --border-strong: var(--line-strong);
-    --radius-lg: var(--radius);
-    --nav-h: 64px;
+:root {
+    /* ═══════════════════════════════════════════════════════════════
+       FUENTES DE TODA LA WEB — cambia estas dos líneas y nada más.
+       --font       → fuente principal (títulos, texto, botones…)
+       --font-mono  → fuente monoespaciada (fechas, etiquetas, código)
+       ═══════════════════════════════════════════════════════════════ */
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+    --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+    color-scheme: light;
+
+    /* Paleta — claro */
+    --bg: #F4FAF8;
+    --bg-elevated: #FFFFFF;
+    --ink: #0B2521;
+    --ink-dim: #4C6B65;
+    --ink-faint: #8AA39D;
+    --accent: #0A9B7F;
+    --accent-deep: #077A63;
+
+    /* Superficies glass */
+    --glass-fill: rgba(10, 155, 127, 0.06);
+    --glass-fill-hover: rgba(10, 155, 127, 0.10);
+    --glass-border: rgba(10, 60, 50, 0.12);
+    --glass-light: rgba(255, 255, 255, 0.80);
+    --card-bg: #FFFFFF;
+
+    /* Tipografía — alias que apuntan a las fuentes definidas arriba */
+    --sans: var(--font);
+    --mono: var(--font-mono);
+
+    /* Radios */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+
+    /* Sombras */
+    --shadow: 0 12px 32px rgba(10, 60, 50, 0.10);
+    --shadow-hi: 0 16px 40px rgba(10, 60, 50, 0.14);
+
+    /* Layout */
+    --nav-h: 56px;
+    --maxw: 1120px;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #071A1D;
+    --bg-elevated: #0C2529;
+    --ink: #EAF6F3;
+    --ink-dim: #8FB3AC;
+    --ink-faint: #4E716B;
+    --accent: #2DD4AB;
+    --accent-deep: #1AB894;
+
+    --glass-fill: rgba(45, 212, 171, 0.07);
+    --glass-fill-hover: rgba(45, 212, 171, 0.12);
+    --glass-border: rgba(45, 212, 171, 0.16);
+    --glass-light: rgba(255, 255, 255, 0.15);
+    --card-bg: #0C2529;
+
+    --shadow: 0 12px 32px rgba(0, 0, 0, 0.40);
+    --shadow-hi: 0 16px 40px rgba(0, 0, 0, 0.50);
 }

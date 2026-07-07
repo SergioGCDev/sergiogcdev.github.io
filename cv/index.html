@@ -20,13 +20,9 @@
     <meta name="twitter:title" content="CV · Sergio García — iOS Developer">
     <meta name="twitter:description"
         content="Desarrollador iOS nativo con Swift y SwiftUI. 8 años de experiencia en soporte técnico reconvertidos al desarrollo de apps para el ecosistema Apple.">
-    <meta name="theme-color" content="#F7F5F1">
+    <meta name="theme-color" content="#F4FAF8">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=2">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Finlandica+Text:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
 
     <link rel="stylesheet" href="/styles/main.css">
 
@@ -76,19 +72,28 @@
 
 <body>
 
-    <nav id="nav">
-        <div class="wrap">
-            <a class="brand" href="/"><img src="/assets/images/logobanner.svg" alt="sergiogc.dev" width="133" height="32" fetchpriority="high"></a>
-            <div class="navlinks">
-                <a class="back" href="/">← Inicio</a>
-                <a href="#about">Sobre mí</a>
-                <a href="#stack">Stack</a>
-                <a href="#exp">Experiencia</a>
-                <a href="#edu">Formación</a>
-                <a href="#proj">Proyectos</a>
-                <a href="#contact">Contacto</a>
+    <div class="ambient"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="nav-logo" href="/">sergiogc.dev</a>
+            <ul class="nav-links">
+                <li><a href="#about" data-lang="es">Sobre mí</a><a href="#about" data-lang="en">About</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#exp" data-lang="es">Experiencia</a><a href="#exp" data-lang="en">Experience</a></li>
+                <li><a href="#edu" data-lang="es">Formación</a><a href="#edu" data-lang="en">Education</a></li>
+                <li><a href="#proj" data-lang="es">Proyectos</a><a href="#proj" data-lang="en">Projects</a></li>
+                <li><a href="#contact" data-lang="es">Contacto</a><a href="#contact" data-lang="en">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="toggle-group" id="langToggle">
+                    <button class="toggle-btn active" data-value="es">ES</button>
+                    <button class="toggle-btn" data-value="en">EN</button>
+                </div>
+                <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">☀</button>
+                <a href="/" class="nav-cta" data-lang="es">← Inicio</a>
+                <a href="/" class="nav-cta" data-lang="en">← Home</a>
             </div>
-            <span class="nav-cta ghost" aria-hidden="true">Hablamos</span>
         </div>
     </nav>
 
@@ -96,26 +101,26 @@
         <div class="wrap">
             <div class="hero">
                 <div>
-                    <span class="eyebrow reveal"><span class="dot"></span>Disponible para nuevas oportunidades</span>
+                    <span class="eyebrow reveal">
+                        <span class="dot"></span>
+                        <span data-lang="es">Disponible para nuevas oportunidades</span>
+                        <span data-lang="en">Available for new opportunities</span>
+                    </span>
                     <h1 class="reveal">Sergio García<br><span class="ln2">iOS Developer</span></h1>
-                    <p class="role reveal">Desarrollador iOS nativo · <b>ex-soporte técnico reconvertido al código</b>
-                    </p>
-                    <p class="lede reveal">8 años resolviendo problemas reales de usuarios, ahora construyendo apps 100%
-                        nativas con Swift y SwiftUI. Sin plantillas, sin atajos: código pensado para el ecosistema
-                        Apple.</p>
+                    <p class="role reveal" data-lang="es">Desarrollador iOS nativo · <b>ex-soporte técnico reconvertido al código</b></p>
+                    <p class="role reveal" data-lang="en">Native iOS developer · <b>ex-support technician turned to code</b></p>
+                    <p class="lede reveal" data-lang="es">8 años resolviendo problemas reales de usuarios, ahora construyendo apps 100% nativas con Swift y SwiftUI. Sin plantillas, sin atajos: código pensado para el ecosistema Apple.</p>
+                    <p class="lede reveal" data-lang="en">8 years solving real user problems, now building 100% native apps with Swift and SwiftUI. No templates, no shortcuts: code crafted for the Apple ecosystem.</p>
                     <div class="cta reveal">
                         <a class="btn btn-primary" href="https://github.com/SergioGCDev" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
                             </svg>
-                            Ver mi GitHub
+                            <span data-lang="es">Ver mi GitHub</span><span data-lang="en">View my GitHub</span>
                         </a>
-                        <a class="btn btn-ghost" href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank"
-                            rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z" />
+                        <a class="btn btn-secondary" href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z" />
                             </svg>
                             LinkedIn
                         </a>
@@ -126,12 +131,14 @@
                     <div class="monogram">SG</div>
                     <div class="ac-meta">
                         <div class="nm">Sergio García</div>
-                        <div class="loc">Málaga, España</div>
+                        <div class="loc" data-lang="es">Málaga, España</div>
+                        <div class="loc" data-lang="en">Málaga, Spain</div>
                     </div>
                     <div class="ac-stats">
                         <div>
                             <div class="n">8</div>
-                            <div class="l">años en soporte</div>
+                            <div class="l" data-lang="es">años en soporte</div>
+                            <div class="l" data-lang="en">years in support</div>
                         </div>
                         <div>
                             <div class="n">SDP</div>
@@ -145,29 +152,23 @@
 
     <section id="about">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">Sobre mí</h2><span
-                    class="sec-line"></span></div>
+            <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title" data-lang="es">Sobre mí</h2><h2 class="sec-title" data-lang="en">About me</h2><span class="sec-line"></span></div>
             <div class="about-grid">
-                <div class="reveal">
-                    <p>Llevo <b>8 años resolviendo problemas técnicos reales</b> para empresas y usuarios, los últimos
-                        como Team Leader coordinando un equipo de soporte. Esa experiencia me enseñó algo que los
-                        tutoriales no enseñan: <b>el software existe para personas, y esas personas necesitan que
-                            funcione bien.</b></p>
-                    <p>Ahora aplico esa visión al desarrollo iOS. Escribo en <b>Swift porque creo en hacerlo bien,
-                            nativamente</b>, con las herramientas que Apple ofrece. Completé el <b>Swift Developer
-                            Program</b> con un proyecto final funcional como cierre.</p>
-                    <p>Busco mi primera oportunidad como desarrollador iOS, donde aportar tanto mi código como mi
-                        experiencia tratando con personas y resolviendo incidencias bajo presión.</p>
+                <div class="about-text reveal">
+                    <p data-lang="es">Llevo <b>8 años resolviendo problemas técnicos reales</b> para empresas y usuarios, los últimos como Team Leader coordinando un equipo de soporte. Esa experiencia me enseñó algo que los tutoriales no enseñan: <b>el software existe para personas, y esas personas necesitan que funcione bien.</b></p>
+                    <p data-lang="en">I've spent <b>8 years solving real technical problems</b> for companies and users, the last ones as Team Leader coordinating a support team. That experience taught me something tutorials don't: <b>software exists for people, and those people need it to work well.</b></p>
+                    <p data-lang="es">Ahora aplico esa visión al desarrollo iOS. Escribo en <b>Swift porque creo en hacerlo bien, nativamente</b>, con las herramientas que Apple ofrece. Completé el <b>Swift Developer Program</b> con un proyecto final funcional como cierre.</p>
+                    <p data-lang="en">Now I bring that vision to iOS development. I write in <b>Swift because I believe in doing it right, natively</b>, with the tools Apple provides. I completed the <b>Swift Developer Program</b> with a functional final project as its capstone.</p>
+                    <p data-lang="es">Busco mi primera oportunidad como desarrollador iOS, donde aportar tanto mi código como mi experiencia tratando con personas y resolviendo incidencias bajo presión.</p>
+                    <p data-lang="en">I'm looking for my first opportunity as an iOS developer, where I can bring both my code and my experience dealing with people and resolving incidents under pressure.</p>
                 </div>
                 <div class="facts reveal">
-                    <div class="row"><span class="k">Ubicación</span><span class="v">Málaga (movilidad total)</span>
-                    </div>
+                    <div class="row"><span class="k" data-lang="es">Ubicación</span><span class="k" data-lang="en">Location</span><span class="v" data-lang="es">Málaga (movilidad total)</span><span class="v" data-lang="en">Málaga (fully mobile)</span></div>
                     <div class="row"><span class="k">Email</span><span class="v">hola@sergiogc.dev</span></div>
-                    <div class="row"><span class="k">Teléfono</span><span class="v">627 033 127</span></div>
+                    <div class="row"><span class="k" data-lang="es">Teléfono</span><span class="k" data-lang="en">Phone</span><span class="v">627 033 127</span></div>
                     <div class="row"><span class="k">Web</span><span class="v">sergiogc.dev</span></div>
-                    <div class="row"><span class="k">Carnet + coche</span><span class="v">Sí</span></div>
-                    <div class="row"><span class="k">Disponibilidad</span><span class="v">Inmediata · viajar</span>
-                    </div>
+                    <div class="row"><span class="k" data-lang="es">Carnet + coche</span><span class="k" data-lang="en">License + car</span><span class="v" data-lang="es">Sí</span><span class="v" data-lang="en">Yes</span></div>
+                    <div class="row"><span class="k" data-lang="es">Disponibilidad</span><span class="k" data-lang="en">Availability</span><span class="v" data-lang="es">Inmediata · viajar</span><span class="v" data-lang="en">Immediate · can travel</span></div>
                 </div>
             </div>
         </div>
@@ -175,22 +176,24 @@
 
     <section id="stack">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Stack
-                    técnico</h2><span class="sec-line"></span></div>
+            <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title" data-lang="es">Stack técnico</h2><h2 class="sec-title" data-lang="en">Tech stack</h2><span class="sec-line"></span></div>
             <div class="reveal">
                 <div class="skill-block">
-                    <h3>Desarrollo iOS</h3>
+                    <h3 data-lang="es">Desarrollo iOS</h3>
+                    <h3 data-lang="en">iOS Development</h3>
                     <div class="chips">
                         <span class="chip core">Swift 6</span>
                         <span class="chip core">SwiftUI</span>
                         <span class="chip core">Xcode 26</span>
-                        <span class="chip core">Async / Await · Concurrencia estricta</span>
+                        <span class="chip core" data-lang="es">Async / Await · Concurrencia estricta</span>
+                        <span class="chip core" data-lang="en">Async / Await · Strict concurrency</span>
                         <span class="chip core">REST APIs</span>
                         <span class="chip core">Git / GitHub</span>
                     </div>
                 </div>
                 <div class="skill-block">
-                    <h3>Otras tecnologías</h3>
+                    <h3 data-lang="es">Otras tecnologías</h3>
+                    <h3 data-lang="en">Other technologies</h3>
                     <div class="chips">
                         <span class="chip">HTML5 / CSS3</span>
                         <span class="chip">JavaScript</span>
@@ -201,13 +204,16 @@
                     </div>
                 </div>
                 <div class="skill-block">
-                    <h3>Soporte, sistemas y producto</h3>
+                    <h3 data-lang="es">Soporte, sistemas y producto</h3>
+                    <h3 data-lang="en">Support, systems &amp; product</h3>
                     <div class="chips">
                         <span class="chip">Windows Server · Active Directory</span>
                         <span class="chip">Office 365</span>
                         <span class="chip">Zoho (CRM, Reports, Assist)</span>
-                        <span class="chip">Análisis de KPIs · FCR / TMO / CSAT</span>
-                        <span class="chip">Liderazgo de equipos</span>
+                        <span class="chip" data-lang="es">Análisis de KPIs · FCR / TMO / CSAT</span>
+                        <span class="chip" data-lang="en">KPI analysis · FCR / TMO / CSAT</span>
+                        <span class="chip" data-lang="es">Liderazgo de equipos</span>
+                        <span class="chip" data-lang="en">Team leadership</span>
                     </div>
                 </div>
             </div>
@@ -216,54 +222,70 @@
 
     <section id="exp">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Experiencia</h2><span
-                    class="sec-line"></span></div>
-            <div class="timeline">
-                <div class="job reveal">
+            <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title" data-lang="es">Experiencia</h2><h2 class="sec-title" data-lang="en">Experience</h2><span class="sec-line"></span></div>
+            <div class="timeline reveal-stagger">
+                <div class="job">
                     <div class="when">Mar. 2023 — May. 2025</div>
-                    <h3>Team Leader · Soporte Técnico</h3>
+                    <h3 data-lang="es">Team Leader · Soporte Técnico</h3>
+                    <h3 data-lang="en">Team Leader · Technical Support</h3>
                     <div class="co">Codeoscopic (ex TE-SIS Soluciones)</div>
-                    <ul>
+                    <ul data-lang="es">
                         <li>Coordinación diaria de un equipo de soporte técnico de 12 personas.</li>
-                        <li>Supervisión de rendimiento, planificación de turnos y resolución de incidencias complejas.
-                        </li>
-                        <li>Análisis de KPIs (FCR, TMO, CSAT) con Zoho Reports y monitorización de calidad con RingOver.
-                        </li>
-                        <li>Implementación de mejoras operativas, automatización de procesos y formación de nuevos
-                            agentes.</li>
+                        <li>Supervisión de rendimiento, planificación de turnos y resolución de incidencias complejas.</li>
+                        <li>Análisis de KPIs (FCR, TMO, CSAT) con Zoho Reports y monitorización de calidad con RingOver.</li>
+                        <li>Implementación de mejoras operativas, automatización de procesos y formación de nuevos agentes.</li>
+                    </ul>
+                    <ul data-lang="en">
+                        <li>Daily coordination of a 12-person technical support team.</li>
+                        <li>Performance supervision, shift planning and resolution of complex incidents.</li>
+                        <li>KPI analysis (FCR, TMO, CSAT) with Zoho Reports and quality monitoring with RingOver.</li>
+                        <li>Rollout of operational improvements, process automation and training of new agents.</li>
                     </ul>
                 </div>
-                <div class="job reveal">
+                <div class="job">
                     <div class="when">Mar. 2021 — Mar. 2023</div>
-                    <h3>Técnico Backoffice — Manos Remotas</h3>
+                    <h3 data-lang="es">Técnico Backoffice — Manos Remotas</h3>
+                    <h3 data-lang="en">Backoffice Technician — Remote Hands</h3>
                     <div class="co">TE-SIS Soluciones</div>
-                    <ul>
+                    <ul data-lang="es">
                         <li>Resolución técnica remota y tareas de backoffice sobre la infraestructura de clientes.</li>
-                        <li>Administración de Windows Server, Active Directory y SQL Server (usuarios, GPOs, consultas).
-                        </li>
-                        <li>Herramientas de asistencia remota: Remote Desktop, TeamViewer, Zoho Assist, ISL, TSPLUS.
-                        </li>
+                        <li>Administración de Windows Server, Active Directory y SQL Server (usuarios, GPOs, consultas).</li>
+                        <li>Herramientas de asistencia remota: Remote Desktop, TeamViewer, Zoho Assist, ISL, TSPLUS.</li>
+                    </ul>
+                    <ul data-lang="en">
+                        <li>Remote technical resolution and backoffice tasks on client infrastructure.</li>
+                        <li>Administration of Windows Server, Active Directory and SQL Server (users, GPOs, queries).</li>
+                        <li>Remote assistance tools: Remote Desktop, TeamViewer, Zoho Assist, ISL, TSPLUS.</li>
                     </ul>
                 </div>
-                <div class="job reveal">
+                <div class="job">
                     <div class="when">Jul. 2017 — Mar. 2021</div>
-                    <h3>Técnico Helpdesk</h3>
+                    <h3 data-lang="es">Técnico Helpdesk</h3>
+                    <h3 data-lang="en">Helpdesk Technician</h3>
                     <div class="co">TE-SIS Soluciones</div>
-                    <ul>
+                    <ul data-lang="es">
                         <li>Soporte presencial y remoto con enfoque en resolución eficiente de incidencias.</li>
-                        <li>Office 365, Excel avanzado y automatización con VBA. Mantenimiento de apps en Visual Studio.
-                        </li>
+                        <li>Office 365, Excel avanzado y automatización con VBA. Mantenimiento de apps en Visual Studio.</li>
                         <li>Análisis técnico de entornos y procesos, con propuestas de mejora y optimización.</li>
                     </ul>
+                    <ul data-lang="en">
+                        <li>On-site and remote support focused on efficient incident resolution.</li>
+                        <li>Office 365, advanced Excel and automation with VBA. Maintenance of apps in Visual Studio.</li>
+                        <li>Technical analysis of environments and processes, with improvement and optimization proposals.</li>
+                    </ul>
                 </div>
-                <div class="job reveal">
+                <div class="job">
                     <div class="when">Ago. 2016 — Jun. 2017</div>
-                    <h3>Diseñador Web · Prácticas Duales</h3>
+                    <h3 data-lang="es">Diseñador Web · Prácticas Duales</h3>
+                    <h3 data-lang="en">Web Designer · Dual Training</h3>
                     <div class="co">Vunkers IT Experts</div>
-                    <ul>
-                        <li>Desarrollo y mantenimiento web con HTML5, CSS3 y PHP sobre el framework CodeIgniter (MVC).
-                        </li>
+                    <ul data-lang="es">
+                        <li>Desarrollo y mantenimiento web con HTML5, CSS3 y PHP sobre el framework CodeIgniter (MVC).</li>
                         <li>Interfaces dinámicas con JavaScript e integración de bots de Telegram con Python.</li>
+                    </ul>
+                    <ul data-lang="en">
+                        <li>Web development and maintenance with HTML5, CSS3 and PHP on the CodeIgniter (MVC) framework.</li>
+                        <li>Dynamic interfaces with JavaScript and Telegram bot integration with Python.</li>
                     </ul>
                 </div>
             </div>
@@ -272,31 +294,36 @@
 
     <section id="edu">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Formación</h2><span
-                    class="sec-line"></span></div>
-            <div class="grid2">
-                <div class="edu feat reveal">
-                    <span class="badge">Más reciente</span>
+            <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title" data-lang="es">Formación</h2><h2 class="sec-title" data-lang="en">Education</h2><span class="sec-line"></span></div>
+            <div class="grid2 reveal-stagger">
+                <div class="edu feat">
+                    <span class="badge" data-lang="es">Más reciente</span>
+                    <span class="badge" data-lang="en">Most recent</span>
                     <div class="yr">2025 — 2026</div>
                     <h3>Swift Developer Program (SDP)</h3>
-                    <p>Apple Coding Academy. Formación intensiva en Swift y SwiftUI, cerrada con un proyecto final
-                        funcional desarrollado de forma autónoma (TankōDex).</p>
+                    <p data-lang="es">Apple Coding Academy. Formación intensiva en Swift y SwiftUI, cerrada con un proyecto final funcional desarrollado de forma autónoma (TankōDex).</p>
+                    <p data-lang="en">Apple Coding Academy. Intensive training in Swift and SwiftUI, closed with a functional final project built autonomously (TankōDex).</p>
                 </div>
-                <div class="edu reveal">
+                <div class="edu">
                     <div class="yr">2025 · 15 h</div>
-                    <h3>Aprendiendo Swift 5.5 — Udemy</h3>
-                    <p>Curso de Julio César Fernández. Fundamentos del lenguaje y concurrencia moderna. Finalizado en
-                        agosto.</p>
+                    <h3 data-lang="es">Aprendiendo Swift 5.5 — Udemy</h3>
+                    <h3 data-lang="en">Learning Swift 5.5 — Udemy</h3>
+                    <p data-lang="es">Curso de Julio César Fernández. Fundamentos del lenguaje y concurrencia moderna. Finalizado en agosto.</p>
+                    <p data-lang="en">Course by Julio César Fernández. Language fundamentals and modern concurrency. Completed in August.</p>
                 </div>
-                <div class="edu reveal">
+                <div class="edu">
                     <div class="yr">2016 — 2017</div>
-                    <h3>CFGM · Desarrollo de Aplicaciones Web</h3>
-                    <p>Ciclo Formativo de Grado Medio. Bases de desarrollo web front y back.</p>
+                    <h3 data-lang="es">CFGM · Desarrollo de Aplicaciones Web</h3>
+                    <h3 data-lang="en">Vocational Diploma · Web App Development</h3>
+                    <p data-lang="es">Ciclo Formativo de Grado Medio. Bases de desarrollo web front y back.</p>
+                    <p data-lang="en">Intermediate vocational training. Front-end and back-end web development foundations.</p>
                 </div>
-                <div class="edu reveal">
+                <div class="edu">
                     <div class="yr">2023</div>
-                    <h3>Certificado Google de Ciberseguridad</h3>
-                    <p>Ciberseguridad aplicada al teletrabajo.</p>
+                    <h3 data-lang="es">Certificado Google de Ciberseguridad</h3>
+                    <h3 data-lang="en">Google Cybersecurity Certificate</h3>
+                    <p data-lang="es">Ciberseguridad aplicada al teletrabajo.</p>
+                    <p data-lang="en">Cybersecurity applied to remote work.</p>
                 </div>
             </div>
         </div>
@@ -304,53 +331,53 @@
 
     <section id="proj">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">05</span><h2 class="sec-title">Proyectos</h2><span
-                    class="sec-line"></span></div>
+            <div class="sec-head reveal"><span class="sec-num">05</span><h2 class="sec-title" data-lang="es">Proyectos</h2><h2 class="sec-title" data-lang="en">Projects</h2><span class="sec-line"></span></div>
             <div class="gh reveal">
                 <div class="gh-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
                     </svg>
                 </div>
                 <div class="gh-body">
-                    <h3>Mi código está en GitHub</h3>
-                    <p>Mis proyectos son donde aprendo y afilo mis habilidades cada día: desde mi proyecto final del SDP
-                        (TankōDex) hasta apps personales como FinMate o SuppleMate, todas 100% nativas en Swift y
-                        SwiftUI. ¡Pásate a verlas!</p>
-                    <div class="gh-tags"><span>Swift 6</span><span>SwiftUI</span><span>Async / Await</span><span>REST
-                            APIs</span></div>
+                    <h3 data-lang="es">Mi código está en GitHub</h3>
+                    <h3 data-lang="en">My code lives on GitHub</h3>
+                    <p data-lang="es">Mis proyectos son donde aprendo y afilo mis habilidades cada día: desde mi proyecto final del SDP (TankōDex) hasta apps personales como FinMate o SuppleMate, todas 100% nativas en Swift y SwiftUI. ¡Pásate a verlas!</p>
+                    <p data-lang="en">My projects are where I learn and sharpen my skills every day: from my SDP final project (TankōDex) to personal apps like FinMate or SuppleMate, all 100% native in Swift and SwiftUI. Come take a look!</p>
+                    <div class="gh-tags"><span>Swift 6</span><span>SwiftUI</span><span>Async / Await</span><span>REST APIs</span></div>
                 </div>
                 <a class="gh-cta" href="https://github.com/SergioGCDev" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
                     </svg>
-                    Ver mi GitHub
+                    <span data-lang="es">Ver mi GitHub</span><span data-lang="en">View my GitHub</span>
                 </a>
             </div>
         </div>
     </section>
 
-
     <section id="langs">
         <div class="wrap">
-            <div class="sec-head reveal"><span class="sec-num">06</span><h2 class="sec-title">Idiomas</h2><span
-                    class="sec-line"></span></div>
-            <div class="langs">
-                <div class="lang reveal">
-                    <div class="name">Español</div>
-                    <div class="lvl">Nativo</div>
+            <div class="sec-head reveal"><span class="sec-num">06</span><h2 class="sec-title" data-lang="es">Idiomas</h2><h2 class="sec-title" data-lang="en">Languages</h2><span class="sec-line"></span></div>
+            <div class="langs reveal-stagger">
+                <div class="lang">
+                    <div class="name" data-lang="es">Español</div>
+                    <div class="name" data-lang="en">Spanish</div>
+                    <div class="lvl" data-lang="es">Nativo</div>
+                    <div class="lvl" data-lang="en">Native</div>
                     <div class="bar"><i data-w="100%"></i></div>
                 </div>
-                <div class="lang reveal">
-                    <div class="name">Catalán</div>
-                    <div class="lvl">Nativo</div>
+                <div class="lang">
+                    <div class="name" data-lang="es">Catalán</div>
+                    <div class="name" data-lang="en">Catalan</div>
+                    <div class="lvl" data-lang="es">Nativo</div>
+                    <div class="lvl" data-lang="en">Native</div>
                     <div class="bar"><i data-w="100%"></i></div>
                 </div>
-                <div class="lang reveal">
-                    <div class="name">Inglés</div>
-                    <div class="lvl">Lectura y escritura competente · oral en progreso</div>
+                <div class="lang">
+                    <div class="name" data-lang="es">Inglés</div>
+                    <div class="name" data-lang="en">English</div>
+                    <div class="lvl" data-lang="es">Lectura y escritura competente · oral en progreso</div>
+                    <div class="lvl" data-lang="en">Competent reading and writing · spoken in progress</div>
                     <div class="bar"><i data-w="45%"></i></div>
                 </div>
             </div>
@@ -360,29 +387,27 @@
     <section id="contact">
         <div class="wrap">
             <div class="contact reveal">
-                <h2>¿Tienes una idea? <em>Hablemos.</em></h2>
-                <p>Estoy buscando mi primera oportunidad como desarrollador iOS. Si crees que puedo encajar en tu
-                    equipo, escríbeme.</p>
+                <h2 data-lang="es">¿Tienes una idea? <em>Hablemos.</em></h2>
+                <h2 data-lang="en">Have an idea? <em>Let's talk.</em></h2>
+                <p data-lang="es">Estoy buscando mi primera oportunidad como desarrollador iOS. Si crees que puedo encajar en tu equipo, escríbeme.</p>
+                <p data-lang="en">I'm looking for my first opportunity as an iOS developer. If you think I could fit your team, drop me a line.</p>
                 <div class="cta">
                     <a class="btn btn-primary" href="mailto:hola@sergiogc.dev">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <rect x="2" y="4" width="20" height="16" rx="3" />
                             <path d="m3 6 9 7 9-7" />
                         </svg>
                         hola@sergiogc.dev
                     </a>
-                    <a class="btn btn-ghost" href="https://github.com/SergioGCDev" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                    <a class="btn btn-secondary" href="https://github.com/SergioGCDev" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
                         </svg>
                         GitHub
                     </a>
-                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank"
-                        rel="noopener">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z" />
+                    <a class="btn btn-secondary" href="https://www.linkedin.com/in/sergiogarciacalero/" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z" />
                         </svg>
                         LinkedIn
                     </a>
@@ -392,21 +417,51 @@
     </section>
 
     <footer>
-        <div class="wrap">© 2026 Sergio García · iOS Native Developer · <span>sergiogc.dev</span> · <a href="/privacy" style="color:var(--ink-faint); text-decoration:none;">Privacidad</a></div>
+        <div class="wrap">© 2026 Sergio García · iOS Native Developer · <span>sergiogc.dev</span> · <a href="/privacy" data-lang="es">Privacidad</a><a href="/privacy" data-lang="en">Privacy</a></div>
     </footer>
 
     <script>
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-        }, { threshold: .12 });
-        document.querySelectorAll('.reveal').forEach((el, i) => {
-            el.style.transitionDelay = (Math.min(i, 6) * 55) + 'ms';
-            io.observe(el);
+        const langToggle = document.getElementById('langToggle');
+        langToggle.addEventListener('click', (e) => {
+            const btn = e.target.closest('.toggle-btn');
+            if (!btn) return;
+            langToggle.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.body.classList.toggle('lang-en', btn.dataset.value === 'en');
+            document.documentElement.lang = btn.dataset.value;
+            // Los gemelos ocultos nunca disparan el IntersectionObserver;
+            // al cambiar de idioma se revelan de golpe para que no queden atenuados.
+            document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('revealed'));
         });
-        const bio = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { const i = e.target.querySelector('i'); i.style.width = i.dataset.w; bio.unobserve(e.target); } });
-        }, { threshold: .4 });
-        document.querySelectorAll('.lang').forEach(el => bio.observe(el));
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.textContent = isDark ? '☀' : '☾';
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.02, rootMargin: '0px 0px -10% 0px' });
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
+
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    const i = e.target.querySelector('i');
+                    if (i) i.style.width = i.dataset.w;
+                    barObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        document.querySelectorAll('.lang').forEach(el => barObserver.observe(el));
     </script>
 </body>
 

@@ -4,9 +4,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sergio García — iOS Developer</title>
+<meta name="description" content="Desarrollo de aplicaciones iOS nativas con Swift. Apps a medida, 100% nativas, diseñadas para el ecosistema Apple.">
+<meta name="author" content="Sergio García">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sergiogc.dev/">
+<meta name="geo.region" content="ES-MA">
+<meta name="geo.placename" content="Málaga">
+<meta name="theme-color" content="#F4FAF8">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sergiogc.dev">
+<meta property="og:title" content="Sergio García — iOS Developer">
+<meta property="og:description" content="Desarrollo de aplicaciones iOS 100% nativas con Swift y SwiftUI.">
+<meta property="og:url" content="https://sergiogc.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sergio García — iOS Developer">
+<meta name="twitter:description" content="Desarrollo de aplicaciones iOS 100% nativas con Swift y SwiftUI.">
+
+<!-- Verificación Google Search Console -->
+<meta name="google-site-verification" content="Ur2AM4l7aNoT8bmEYOXbY0q9bqLskX7hzOEljUstreo">
+
 <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=2">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles/home.css">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://sergiogc.dev/#website",
+            "name": "sergiogc.dev",
+            "url": "https://sergiogc.dev/",
+            "inLanguage": "es",
+            "publisher": { "@id": "https://sergiogc.dev/#person" }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://sergiogc.dev/#person",
+            "name": "Sergio García",
+            "jobTitle": "iOS Developer freelance",
+            "url": "https://sergiogc.dev/",
+            "knowsAbout": ["Swift", "SwiftUI", "iOS", "Xcode", "Desarrollo de apps nativas"],
+            "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Apple Coding Academy",
+                "url": "https://acoding.academy"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Málaga",
+                "addressCountry": "ES"
+            },
+            "sameAs": [
+                "https://github.com/SergioGCDev",
+                "https://www.linkedin.com/in/sergiogarciacalero/"
+            ]
+        }
+    ]
+}
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xgmnd7hpeo");
+</script>
 </head>
 <body>
 
@@ -179,8 +248,9 @@
 </section>
 
 <section id="sobre-mi">
-    <div class="container about-grid reveal-stagger">
-        <div class="about-text">
+    <div class="container">
+        <div class="about-grid reveal-stagger">
+            <div class="about-text">
             <div class="section-label" data-lang="es">Sobre mí</div>
             <div class="section-label" data-lang="en">About me</div>
             <h2 class="section-title" style="margin-bottom:28px" data-lang="es">Sergio García</h2>
@@ -200,7 +270,14 @@
                 <span class="skill-pill">Git</span>
             </div>
         </div>
-        <div class="timeline">
+            <figure class="about-photo">
+                <img src="/assets/images/sergio.jpg" alt="Sergio García, iOS Developer" width="480" height="480" loading="lazy">
+            </figure>
+        </div>
+        <div class="about-timeline reveal">
+            <div class="section-label" data-lang="es">Trayectoria</div>
+            <div class="section-label" data-lang="en">Career</div>
+            <div class="timeline reveal-stagger">
             <div class="t-item current">
                 <div class="t-date">2025—2026</div>
                 <div>
@@ -232,6 +309,7 @@
                     <div class="t-role" data-lang="en">Helpdesk Technician</div>
                     <div class="t-company">TE-SIS Soluciones</div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

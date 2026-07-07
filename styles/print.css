@@ -1,80 +1,33 @@
+/* ── print.css — CV en PDF, siempre en claro ───────────────── */
 @media print {
-    @page {
-        margin: 14mm;
+    @page { margin: 14mm; }
+
+    /* Forzar paleta clara en impresión, aunque se vea en dark */
+    :root, [data-theme="dark"] {
+        --bg: #fff; --bg-elevated: #fff; --card-bg: #fff;
+        --ink: #111; --ink-dim: #444; --ink-faint: #777;
+        --accent: #0A9B7F; --accent-deep: #077A63;
+        --glass-fill: #fff; --glass-fill-hover: #fff; --glass-border: #ddd;
+        --shadow: none; --shadow-hi: none;
     }
 
-    body {
-        background: #fff;
-        color: #111;
-    }
+    body { background: #fff; color: #111; }
+    nav { position: static; background: #fff; border: 0; }
+    .nav-links, .nav-right { display: none; }
+    .ambient { display: none; }
 
-    nav {
-        position: static;
-        background: #fff;
-        border: 0;
-    }
+    header { padding: 8px 0 12px; }
+    section { padding: 16px 0; break-inside: avoid; }
+    .sec-head { margin-bottom: 20px; }
 
-    .navlinks {
-        display: none;
-    }
+    .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
 
-    header {
-        min-height: auto;
-        padding: 8px 0 12px;
+    .btn, .gh-cta { box-shadow: none !important; }
+    .avatar-card, .facts, .edu, .gh, .lang, .contact {
+        box-shadow: none !important; border: 1px solid #ddd !important;
     }
+    .contact { background: #fff !important; }
 
-    section {
-        padding: 16px 0;
-        break-inside: avoid;
-    }
-
-    .sec-head {
-        margin-bottom: 20px;
-    }
-
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
-
-    a {
-        color: var(--accent) !important;
-    }
-
-    .btn {
-        border: 1px solid #ccc !important;
-        color: #111 !important;
-        background: #fff !important;
-    }
-
-    .avatar-card,
-    .facts,
-    .edu,
-    .proj,
-    .lang,
-    .contact {
-        box-shadow: none !important;
-        border: 1px solid #ddd !important;
-    }
-
-    .contact {
-        background: #fff !important;
-    }
-
-    .job,
-    .edu,
-    .proj,
-    .lang {
-        break-inside: avoid;
-    }
-
-    .monogram {
-        border: 2px solid var(--accent);
-    }
-
-    .hero {
-        grid-template-columns: 1.4fr .8fr;
-        gap: 24px;
-    }
+    .job, .edu, .lang { break-inside: avoid; }
+    .hero { grid-template-columns: 1.4fr .8fr; gap: 24px; }
 }

@@ -1,90 +1,75 @@
+/* ── nav.css — barra de navegación glass + toggles ─────────── */
+
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    height: 64px;
-    background: rgba(250, 250, 250, .82);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid var(--line);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: color-mix(in srgb, var(--bg) 75%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
+    transition: background .3s, border-color .3s;
 }
 
-nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+.nav-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 32px;
+    height: var(--nav-h); display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity .2s;
-    max-height: 32px;
+.nav-logo {
+    font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--ink); text-decoration: none;
+    display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+}
+.nav-logo::before {
+    content: ""; width: 8px; height: 8px; border-radius: 2px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
 }
 
-.brand:hover {
-    opacity: .65;
-}
-
-.brand img {
-    height: 32px;
-    width: auto;
-    display: block;
-}
-
-.navlinks {
-    display: flex;
-    gap: 2.25rem;
-    align-items: center;
-}
-
-.navlinks a {
-    color: var(--ink-soft);
-    text-decoration: none;
-    font-size: .875rem;
-    font-weight: 450;
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+    color: var(--ink-dim); text-decoration: none;
+    font-size: 13px; font-weight: 500; letter-spacing: -0.01em;
     transition: color .2s;
 }
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.back { color: var(--accent-deep); font-weight: 600; }
 
-.navlinks a:hover {
-    color: var(--ink);
+.nav-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+
+.toggle-group {
+    display: flex; align-items: center;
+    background: var(--glass-fill); border: 1px solid var(--glass-border);
+    border-radius: 980px; padding: 3px; gap: 2px;
+}
+.toggle-btn {
+    border: none; background: transparent; cursor: pointer;
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
+    color: var(--ink-faint); padding: 5px 11px; border-radius: 980px;
+    transition: background .2s, color .2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.toggle-btn.active {
+    background: var(--card-bg); color: var(--accent-deep);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.navlinks a.back {
-    color: var(--accent);
-    font-weight: 580;
+.icon-btn {
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--glass-border); background: var(--glass-fill);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--ink-dim); transition: background .2s;
+    font-size: 14px;
 }
+.icon-btn:hover { background: var(--glass-fill-hover); }
 
 .nav-cta {
-    font-size: .85rem;
-    font-weight: 580;
-    color: var(--accent);
-    border: 1.5px solid var(--accent);
-    padding: .42rem 1.1rem;
-    border-radius: 100px;
-    transition: background .2s, color .2s;
+    background: var(--glass-fill); border: 1px solid var(--glass-border);
+    color: var(--ink); padding: 7px 16px; border-radius: 980px;
+    font-size: 13px; font-weight: 500; text-decoration: none;
+    transition: background .2s, border-color .2s;
 }
+.nav-cta:hover { background: var(--glass-fill-hover); }
 
-.nav-cta:hover {
-    background: var(--accent);
-    color: #fff;
-}
-
-.nav-cta.ghost {
-    visibility: hidden;
-    pointer-events: none;
-}
-
-@media (max-width: 760px) {
-    .navlinks {
-        display: none;
-    }
-
-    .nav-cta {
-        display: none;
-    }
+@media (max-width: 860px) {
+    .nav-links { display: none; }
 }
