@@ -242,8 +242,8 @@
                     <span class="app-tag">TestFlight</span>
                 </div>
                 <div class="app-links">
-                    <a href="mailto:hola@sergiogc.dev" class="app-link-btn" data-lang="es">Solicitar acceso a TestFlight</a>
-                    <a href="mailto:hola@sergiogc.dev" class="app-link-btn" data-lang="en">Request TestFlight access</a>
+                    <button class="app-link-btn tf-trigger" data-lang="es">Solicitar acceso a TestFlight</button>
+                    <button class="app-link-btn tf-trigger" data-lang="en">Request TestFlight access</button>
                     <a href="https://fitness.sergiogc.dev" class="app-link-btn" data-lang="es">Solicitar acceso web</a>
                     <a href="https://fitness.sergiogc.dev" class="app-link-btn" data-lang="en">Request web access</a>
                 </div>
@@ -376,6 +376,165 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.02, rootMargin: '0px 0px -10% 0px' });
 
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
+</script>
+
+<!-- ── TestFlight modal ─────────────────────────────────── -->
+<div class="tf-overlay" id="tfOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="tfTitle">
+    <div class="tf-backdrop" id="tfBackdrop"></div>
+    <div class="tf-dialog">
+        <button class="tf-close" id="tfClose" aria-label="Cerrar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+
+        <div class="tf-hd">
+            <div class="app-icon">
+                <img src="/assets/appIcons/SuppleMate.png" alt="SuppleMate" width="44" height="44">
+            </div>
+            <div>
+                <div class="tf-title" id="tfTitle">
+                    <span data-lang="es">Solicitar acceso a TestFlight</span>
+                    <span data-lang="en">Request TestFlight access</span>
+                </div>
+                <div class="tf-sub">SuppleMate beta</div>
+            </div>
+        </div>
+
+        <div id="tfFormWrap">
+            <p class="tf-req-note">* <span data-lang="es">campo obligatorio</span><span data-lang="en">required field</span></p>
+            <form id="tfForm" novalidate>
+                <input type="hidden" name="access_key" value="09aecd28-c39c-4376-87f5-bb9e643828b6">
+                <input type="hidden" name="subject" value="Nueva solicitud beta — SuppleMate TestFlight">
+                <input type="hidden" name="from_name" value="sergiogc.dev">
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+
+                <div class="tf-row2">
+                    <div class="tf-field">
+                        <label for="tfName">
+                            <span data-lang="es">Nombre *</span>
+                            <span data-lang="en">Name *</span>
+                        </label>
+                        <input type="text" id="tfName" name="nombre" required autocomplete="given-name">
+                    </div>
+                    <div class="tf-field">
+                        <label for="tfAge">
+                            <span data-lang="es">Edad *</span>
+                            <span data-lang="en">Age *</span>
+                        </label>
+                        <input type="number" id="tfAge" name="edad" min="13" max="120" required>
+                    </div>
+                </div>
+
+                <div class="tf-field">
+                    <label for="tfEmail">
+                        <span data-lang="es">Correo electrónico *</span>
+                        <span data-lang="en">Email address *</span>
+                    </label>
+                    <input type="email" id="tfEmail" name="email" required autocomplete="email">
+                </div>
+
+                <hr class="tf-divider">
+                <p class="tf-contact-note">
+                    <span data-lang="es">Discord <em>o</em> LinkedIn es obligatorio para poder contactarte si surge algún problema.</span>
+                    <span data-lang="en">Discord <em>or</em> LinkedIn is required so I can reach you if something comes up.</span>
+                </p>
+
+                <div class="tf-field">
+                    <label for="tfDiscord">Discord *</label>
+                    <input type="text" id="tfDiscord" name="discord" placeholder="usuario#0000 o servidor">
+                </div>
+                <div class="tf-field">
+                    <label for="tfLinkedin">LinkedIn *</label>
+                    <input type="text" id="tfLinkedin" name="linkedin" placeholder="linkedin.com/in/…">
+                </div>
+
+                <p class="tf-form-error" id="tfError" hidden>
+                    <span data-lang="es">Rellena Discord o LinkedIn para continuar.</span>
+                    <span data-lang="en">Fill in Discord or LinkedIn to continue.</span>
+                </p>
+
+                <button type="submit" class="tf-submit">
+                    <span data-lang="es">Enviar solicitud</span>
+                    <span data-lang="en">Send request</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="tf-success-view" id="tfSuccess" hidden>
+            <div class="tf-success-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <p class="tf-success-title">
+                <span data-lang="es">¡Solicitud enviada!</span>
+                <span data-lang="en">Request sent!</span>
+            </p>
+            <p class="tf-success-body">
+                <span data-lang="es">Te contactaré cuando tenga un slot disponible en el TestFlight.</span>
+                <span data-lang="en">I'll reach out when a spot opens up in the TestFlight.</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const overlay   = document.getElementById('tfOverlay');
+    const formWrap  = document.getElementById('tfFormWrap');
+    const success   = document.getElementById('tfSuccess');
+    const form      = document.getElementById('tfForm');
+    const errorEl   = document.getElementById('tfError');
+    const submitBtn = form.querySelector('.tf-submit');
+
+    function openModal() {
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        document.getElementById('tfName').focus();
+    }
+    function closeModal() {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.tf-trigger').forEach(btn =>
+        btn.addEventListener('click', openModal)
+    );
+    document.getElementById('tfClose').addEventListener('click', closeModal);
+    document.getElementById('tfBackdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !overlay.hidden) closeModal();
+    });
+
+    [document.getElementById('tfDiscord'), document.getElementById('tfLinkedin')]
+        .forEach(el => el.addEventListener('input', () => { errorEl.hidden = true; }));
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const discord  = document.getElementById('tfDiscord').value.trim();
+        const linkedin = document.getElementById('tfLinkedin').value.trim();
+        if (!discord && !linkedin) {
+            errorEl.hidden = false;
+            document.getElementById('tfDiscord').focus();
+            return;
+        }
+        errorEl.hidden = true;
+        submitBtn.disabled = true;
+        try {
+            const resp = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: new FormData(form)
+            });
+            const data = await resp.json();
+            if (data.success) {
+                formWrap.hidden = true;
+                success.hidden = false;
+            } else {
+                submitBtn.disabled = false;
+            }
+        } catch {
+            submitBtn.disabled = false;
+        }
+    });
+})();
 </script>
 
 </body>
