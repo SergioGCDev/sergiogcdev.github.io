@@ -1,6 +1,4 @@
 /* ── home.css — sergiogc.dev ─────────────────────────────── */
-/* Variables (paleta + fuentes) centralizadas en tokens.css */
-@import url('tokens.css');
 
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 
