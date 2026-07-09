@@ -265,6 +265,7 @@ h1 .accent { color: var(--accent-deep); }
     border: 1px solid var(--glass-border); border-radius: 18px; background: var(--card-bg);
 }
 .about-timeline .t-item .t-date { padding-top: 0; margin-bottom: 8px; }
+.about-text .section-title { margin-bottom: 28px; }
 .about-text p { color: var(--ink-dim); margin-bottom: 20px; font-size: 1.02rem; line-height: 1.7; }
 .about-text strong { color: var(--ink); font-weight: 600; }
 .skill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
