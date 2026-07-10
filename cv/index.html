@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/styles/cards.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/print.css" media="print">
+    <link rel="stylesheet" href="/styles/transitions.css">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -499,6 +500,50 @@
         }, { threshold: 0.4 });
         document.querySelectorAll('.lang').forEach(el => barObserver.observe(el));
     </script>
+<div class="page-overlay" id="pageOverlay">
+    <span class="page-overlay-name">Sergio García</span>
+    <div class="page-overlay-track">
+        <div class="page-overlay-fill" id="pageOverlayFill"></div>
+    </div>
+</div>
+<script>
+(function () {
+    const overlay = document.getElementById('pageOverlay');
+    const fill = document.getElementById('pageOverlayFill');
+    let navigating = false;
+    function showOverlay(href) {
+        if (navigating) return;
+        navigating = true;
+        fill.style.transition = 'none';
+        fill.style.width = '0%';
+        overlay.classList.add('active');
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            fill.style.transition = 'width 0.7s cubic-bezier(.4,0,.2,1)';
+            fill.style.width = '100%';
+        }));
+        setTimeout(() => { window.location.href = href; }, 750);
+    }
+    document.addEventListener('click', function (e) {
+        const a = e.target.closest('a');
+        if (!a) return;
+        const href = a.getAttribute('href');
+        if (!href ||
+            href.startsWith('mailto:') ||
+            href.startsWith('tel:') ||
+            href.startsWith('#') ||
+            href.startsWith('javascript:') ||
+            a.target === '_blank') return;
+        e.preventDefault();
+        showOverlay(href);
+    });
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+            overlay.classList.remove('active');
+            navigating = false;
+        }
+    });
+})();
+</script>
 </body>
 
 </html>
