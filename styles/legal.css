@@ -5,34 +5,6 @@ header h1 {
     margin: 18px 0 6px;
 }
 
-.lang-toggle {
-    display: inline-flex;
-    border: 1px solid var(--line);
-    border-radius: 100px;
-    background: var(--surface);
-    padding: 4px;
-    gap: 4px;
-    box-shadow: var(--shadow);
-}
-
-.lang-toggle button {
-    font-family: var(--font);
-    border: 0;
-    background: transparent;
-    color: var(--ink-soft);
-    font-weight: 600;
-    font-size: 13.5px;
-    padding: 8px 18px;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: background .2s, color .2s;
-}
-
-.lang-toggle button.active {
-    background: var(--accent);
-    color: #fff;
-}
-
 .updated {
     color: var(--ink-faint);
     font-size: 13.5px;
@@ -40,7 +12,7 @@ header h1 {
 }
 
 .policy-lead {
-    color: var(--ink-soft);
+    color: var(--ink-dim);
     font-size: 17px;
     max-width: 68ch;
     line-height: 1.8;
@@ -52,26 +24,10 @@ header h1 {
     font-size: 14.5px;
 }
 
-.policy-block {
-    margin-bottom: 44px;
-}
-
-.policy-block:last-child {
-    margin-bottom: 0;
-}
-
-.policy-block h3 {
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: -.03em;
-    margin-bottom: 16px;
-    color: var(--ink);
-}
-
 .principles {
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
     box-shadow: var(--shadow);
     padding: 8px 30px;
     margin-top: 28px;
@@ -86,8 +42,8 @@ header h1 {
     list-style: none;
     position: relative;
     padding: 18px 0 18px 24px;
-    border-bottom: 1px solid var(--line);
-    color: var(--ink-soft);
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--ink-dim);
     font-size: 15.5px;
     line-height: 1.7;
 }
@@ -113,9 +69,9 @@ header h1 {
 }
 
 .app-policy {
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
     box-shadow: var(--shadow);
     padding: 32px 34px;
 }
@@ -131,8 +87,8 @@ header h1 {
     width: 46px;
     height: 46px;
     border-radius: var(--radius-md);
-    background: var(--surface-alt);
-    border: 1px solid var(--line);
+    background: var(--glass-fill);
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +113,7 @@ header h1 {
 
 .ap-row {
     padding: 16px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--glass-border);
 }
 
 .ap-row:first-of-type {
@@ -176,7 +132,7 @@ header h1 {
 }
 
 .ap-row p, .ap-row li {
-    color: var(--ink-soft);
+    color: var(--ink-dim);
     font-size: 15px;
     line-height: 1.7;
 }
@@ -194,22 +150,6 @@ header h1 {
 .ap-row ul li b {
     color: var(--ink);
     font-weight: 600;
-}
-
-.contact-line {
-    color: var(--ink-soft);
-    font-size: 15.5px;
-    margin-top: 6px;
-}
-
-.contact-line a {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.contact-line a:hover {
-    text-decoration: underline;
 }
 
 [data-lang-content] {

@@ -15,7 +15,6 @@
 
     /* Paleta — claro */
     --bg: #F4FAF8;
-    --bg-elevated: #FFFFFF;
     --ink: #0B2521;
     --ink-dim: #4C6B65;
     --ink-faint: #4D7470;
@@ -26,7 +25,6 @@
     --glass-fill: rgba(10, 155, 127, 0.06);
     --glass-fill-hover: rgba(10, 155, 127, 0.10);
     --glass-border: rgba(10, 60, 50, 0.12);
-    --glass-light: rgba(255, 255, 255, 0.80);
     --card-bg: #FFFFFF;
 
     /* Tipografía — alias que apuntan a las fuentes definidas arriba */
@@ -52,7 +50,6 @@
     color-scheme: dark;
 
     --bg: #071A1D;
-    --bg-elevated: #0C2529;
     --ink: #EAF6F3;
     --ink-dim: #8FB3AC;
     --ink-faint: #4E716B;
@@ -62,7 +59,6 @@
     --glass-fill: rgba(45, 212, 171, 0.07);
     --glass-fill-hover: rgba(45, 212, 171, 0.12);
     --glass-border: rgba(45, 212, 171, 0.16);
-    --glass-light: rgba(255, 255, 255, 0.15);
     --card-bg: #0C2529;
 
     --shadow: 0 12px 32px rgba(0, 0, 0, 0.40);

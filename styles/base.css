@@ -29,7 +29,7 @@ img { max-width: 100%; display: block; }
 
 h1, h2, h3 { text-wrap: balance; }
 
-.wrap, .container { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
 section { position: relative; z-index: 1; padding: 88px 0; }
 header, nav, footer { position: relative; z-index: 1; }
 
