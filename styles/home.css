@@ -136,6 +136,7 @@ h1 .accent { color: var(--accent-deep); }
     font-size: 14px; font-weight: 600; text-decoration: none;
     transition: transform .2s, box-shadow .2s, background .2s;
 }
+.btn svg { width: 17px; height: 17px; flex-shrink: 0; }
 .btn-primary {
     background: linear-gradient(135deg, var(--accent), var(--accent-deep));
     color: #fff; box-shadow: 0 4px 20px rgba(10,155,127,0.3);
@@ -217,6 +218,8 @@ h1 .accent { color: var(--accent-deep); }
 [data-theme="dark"] .app-link-btn { color: #8EB3AC; border-color: #8EB3AC; background: #113E3C; }
 .app-store-badge { display: inline-flex; align-items: center; }
 .app-store-badge img { height: 40px; width: auto; display: block; }
+.wallet-badge { display: inline-flex; align-items: center; }
+.wallet-badge img { height: 52px; width: auto; }
 .app-store-badge .badge-dark { display: none; }
 [data-theme="dark"] .app-store-badge .badge-light { display: none; }
 [data-theme="dark"] .app-store-badge .badge-dark { display: inline; }
@@ -313,6 +316,9 @@ footer { border-top: 1px solid var(--glass-border); padding: 32px 0; }
     font-size: 13px; color: var(--ink-faint);
 }
 .footer-inner a { color: var(--ink-faint); text-decoration: none; }
+.footer-inner a:hover { color: var(--ink); }
+.footer-links { display: flex; align-items: center; gap: 10px; }
+.footer-links span { color: var(--glass-border); }
 
 /* ── Scroll reveal ───────────────────────────────────────── */
 .reveal {
