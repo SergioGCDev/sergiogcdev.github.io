@@ -1,13 +1,13 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0A9B7F"/>
-      <stop offset="100%" stop-color="#077A63"/>
-    </linearGradient>
-  </defs>
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)"/>
-  <rect x="7" y="7" width="26" height="26" rx="7" fill="white" opacity="0.90"/>
-  <circle cx="46" cy="20" r="13" fill="white" opacity="0.90"/>
-  <path d="M 7 57 A 21 21 0 0 1 28 36 L 28 57 Z" fill="white" opacity="0.75"/>
-  <rect x="34" y="35" width="23" height="23" rx="5" fill="white" opacity="0.75"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .badge { fill: #0A9B7F; }
+    .glyph { stroke: #F4FAF8; }
+    @media (prefers-color-scheme: dark) {
+      .badge { fill: #1AB894; }
+      .glyph { stroke: #071A1D; }
+    }
+  </style>
+  <rect class="badge" x="2" y="2" width="60" height="60" rx="16"/>
+  <path class="glyph" d="M16 20 L32 32 L16 44" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <line class="glyph" x1="38" y1="46" x2="50" y2="46" stroke-width="7" stroke-linecap="round"/>
 </svg>

@@ -26,8 +26,8 @@
         content="Desarrollador iOS nativo con Swift y SwiftUI. 8 años de experiencia en soporte técnico reconvertidos al desarrollo de apps para el ecosistema Apple.">
     <meta name="twitter:image" content="https://sergiogc.dev/assets/images/ogbanner.jpg?v=2">
     <meta name="theme-color" content="#F4FAF8">
-    <link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=2">
+    <link rel="icon" href="/favicon.ico?v=3" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=3">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 
     <link rel="preload" as="image" href="/assets/images/sergio-208.webp" type="image/webp"
@@ -141,6 +141,12 @@
                             </svg>
                             LinkedIn
                         </a>
+                        <button type="button" class="btn btn-secondary print-cta" id="printCta">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" />
+                            </svg>
+                            <span data-lang="es">Descargar en PDF</span><span data-lang="en">Download as PDF</span>
+                        </button>
                     </div>
                 </div>
 
@@ -455,7 +461,7 @@
     </main>
 
     <footer>
-        <div class="wrap">© 2026 Sergio García · iOS Native Developer · <span>sergiogc.dev</span> · <a href="/privacy" data-lang="es">Privacidad</a><a href="/privacy" data-lang="en">Privacy</a></div>
+        <div class="wrap">© 2026 Sergio García · iOS Native Developer · <span>sergiogc.dev</span> · <a href="/privacy" data-lang="es">Privacidad</a><a href="/privacy" data-lang="en">Privacy</a> · <a href="/terms" data-lang="es">Términos</a><a href="/terms" data-lang="en">Terms</a></div>
     </footer>
 
     <script>
@@ -479,6 +485,8 @@
             html.setAttribute('data-theme', isDark ? 'light' : 'dark');
             themeToggle.textContent = isDark ? '☀' : '☾';
         });
+
+        document.getElementById('printCta').addEventListener('click', () => window.print());
 
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
