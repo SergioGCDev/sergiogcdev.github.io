@@ -41,6 +41,16 @@
 
 <body>
 
+    <!-- ── Sprite de iconos compartido: un único origen por icono, referenciado
+         con <use> en toda la página. ── -->
+    <svg style="display:none" aria-hidden="true">
+        <defs>
+            <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3" /><path d="m3 6 9 7 9-7" />
+            </symbol>
+        </defs>
+    </svg>
+
     <nav>
         <div class="nav-inner">
             <a href="/" class="nav-logo">sergiogc.dev</a>
@@ -309,10 +319,7 @@
                 <p data-i18n="contact-sub">Cualquier pregunta sobre estos términos, contáctanos cuando quieras.</p>
                 <div class="cta">
                     <a class="btn btn-primary" href="mailto:hola@sergiogc.dev">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="4" width="20" height="16" rx="3" />
-                            <path d="m3 6 9 7 9-7" />
-                        </svg>
+                        <svg aria-hidden="true"><use href="#icon-mail"/></svg>
                         hola@sergiogc.dev
                     </a>
                     <a class="btn btn-ghost" href="/">
