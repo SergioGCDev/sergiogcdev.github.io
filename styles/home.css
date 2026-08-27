@@ -133,28 +133,17 @@ h1 .accent { color: var(--accent-deep); }
 /* .btn / .btn-primary / .btn-secondary viven en buttons.css — fuente única
    para todos los botones del sitio, no se redefinen aquí. */
 
-/* ── Monogram ────────────────────────────────────────────── */
-.monogram-wrap {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 24px; min-height: 300px; justify-content: center;
+/* ── Hero stats ──────────────────────────────────────────── */
+.hero-stats {
+    display: flex; flex-direction: column; gap: 28px;
+    padding: 40px; border: 1px solid var(--glass-border); border-radius: 20px;
+    background: var(--card-bg);
 }
-.monogram { width: 100%; max-width: 320px; min-width: 220px; height: auto; overflow: visible; display: block; }
-.m-shape {
-    transition: transform .4s cubic-bezier(.22,1,.36,1);
-    transform-box: fill-box;
-    transform-origin: center;
+.hero-stat-n {
+    font-size: 2.6rem; font-weight: 600; letter-spacing: -0.03em;
+    color: var(--accent-deep); line-height: 1;
 }
-.m-1 { fill: var(--accent); }
-.m-2 { fill: var(--bg); stroke: var(--accent); stroke-width: 4; }
-.m-3 { fill: var(--accent-deep); }
-.m-4 { fill: var(--bg); stroke: var(--accent-deep); stroke-width: 3; }
-.m-5 { fill: var(--accent); }
-.monogram-wrap:hover .m-1 { transform: translate(-4px,-4px) rotate(-3deg); }
-.monogram-wrap:hover .m-2 { transform: translate(5px,-3px); }
-.monogram-wrap:hover .m-3 { transform: translate(-3px,5px); }
-.monogram-wrap:hover .m-4 { transform: translate(4px,4px) rotate(2deg); }
-.monogram-wrap:hover .m-5 { transform: scale(1.08); }
-.monogram-caption { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); letter-spacing: 0.01em; }
+.hero-stat-l { font-size: 0.85rem; color: var(--ink-dim); margin-top: 6px; line-height: 1.4; }
 
 /* ── Portfolio ───────────────────────────────────────────── */
 .apps-grid {
@@ -215,6 +204,10 @@ h1 .accent { color: var(--accent-deep); }
     color: var(--accent-deep); background: var(--glass-fill);
     border: 1px solid var(--glass-border); padding: 2px 8px; border-radius: 6px;
 }
+.app-platform-tag.ios {
+    color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    border-color: transparent;
+}
 
 /* ── Section headers ─────────────────────────────────────── */
 .section-label {
@@ -227,22 +220,35 @@ h1 .accent { color: var(--accent-deep); }
 }
 .section-desc { color: var(--ink-dim); max-width: 520px; font-size: 1.02rem; line-height: 1.6; }
 
-/* ── Services ────────────────────────────────────────────── */
-.services-grid {
-    display: grid; grid-template-columns: repeat(2,1fr); gap: 1px;
-    margin-top: 36px; background: var(--glass-border);
-    border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border);
+/* ── Services (lista de filas, sin tarjetas ni glifos) ──────── */
+.service-list { display: flex; flex-direction: column; margin-top: 36px; }
+.service-row {
+    display: grid; grid-template-columns: 56px 1fr; gap: 24px;
+    padding: 28px 0; border-top: 1px solid var(--glass-border);
 }
-.service-card { background: var(--card-bg); padding: 36px; transition: background .25s; }
-.service-card:hover { background: var(--glass-fill); }
-.service-glyph {
-    width: 36px; height: 36px; border-radius: 10px;
-    background: var(--glass-fill); border: 1px solid var(--glass-border);
-    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
-    font-family: var(--mono); font-size: 13px; color: var(--accent-deep); font-weight: 600;
+.service-list .service-row:last-child { border-bottom: 1px solid var(--glass-border); }
+.service-num {
+    font-family: var(--mono); font-size: 13px; font-weight: 600;
+    color: var(--accent-deep); padding-top: 3px;
 }
-.service-card h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--ink); }
-.service-card p { color: var(--ink-dim); font-size: 0.92rem; line-height: 1.6; }
+.service-body h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--ink); }
+.service-body p { color: var(--ink-dim); font-size: 0.95rem; line-height: 1.6; max-width: 56ch; }
+
+/* ── Process ("Cómo trabajo") ───────────────────────────────── */
+.process-grid {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
+    margin-top: 36px;
+}
+.process-step {
+    padding: 24px; border: 1px solid var(--glass-border); border-radius: 16px;
+    background: var(--card-bg);
+}
+.process-num {
+    display: block; font-family: var(--mono); font-size: 12px; font-weight: 600;
+    color: var(--accent-deep); margin-bottom: 14px;
+}
+.process-step h3 { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--ink); }
+.process-step p { color: var(--ink-dim); font-size: 0.88rem; line-height: 1.55; }
 
 /* ── About ───────────────────────────────────────────────── */
 .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: stretch; }
@@ -285,8 +291,8 @@ h1 .accent { color: var(--accent-deep); }
 /* ── Contact ─────────────────────────────────────────────── */
 #contacto { padding-bottom: 120px; }
 .contact-panel {
-    background: var(--glass-fill); border: 1px solid var(--glass-border);
-    border-radius: 28px; padding: 64px; text-align: center; backdrop-filter: blur(20px);
+    background: var(--card-bg); border: 1px solid var(--glass-border);
+    border-radius: 28px; padding: 64px; text-align: center;
 }
 .contact-panel h2 {
     font-size: clamp(2rem,3.6vw,2.8rem); font-weight: 600;
@@ -341,7 +347,7 @@ body.lang-en h1 > span[data-lang="en"] { display: block; }
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 860px) {
     .hero-inner { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     .about-photo, .about-photo img { height: auto; }
     .about-photo img { aspect-ratio: 1 / 1; }
@@ -358,15 +364,10 @@ body.lang-en .app-link-btn[data-lang="en"] { display: inline-flex; }
 /* ── prefers-reduced-motion ──────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
     .reveal, .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
-    .btn, .app-card, .service-card,
-    .m-shape, .nav-links a, .toggle-btn,
+    .btn, .app-card, .service-row, .process-step,
+    .nav-links a, .toggle-btn,
     .icon-btn, .nav-cta, .app-link-btn,
     body, .ambient { transition: none; }
     .btn-primary:hover, .btn-secondary:hover,
     .app-card:hover { transform: none; }
-    .monogram-wrap:hover .m-1,
-    .monogram-wrap:hover .m-2,
-    .monogram-wrap:hover .m-3,
-    .monogram-wrap:hover .m-4,
-    .monogram-wrap:hover .m-5 { transform: none; }
 }
