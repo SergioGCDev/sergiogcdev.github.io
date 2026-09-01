@@ -133,25 +133,6 @@ h1 .accent { color: var(--accent-deep); }
 /* .btn / .btn-primary / .btn-secondary viven en buttons.css — fuente única
    para todos los botones del sitio, no se redefinen aquí. */
 
-/* ── Hero visual (teclado + cifras) ─────────────────────────── */
-.hero-visual { display: flex; flex-direction: column; gap: 24px; }
-
-.keyboard-strip { display: flex; justify-content: center; gap: 10px; }
-.kbd-key {
-    width: 52px; height: 52px; border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--mono); font-size: 1.3rem; font-weight: 600;
-    background: var(--card-bg); color: var(--ink-faint);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 1px 0 var(--glass-border);
-    transition: background .3s, color .3s, box-shadow .3s, border-color .3s;
-}
-.keyboard-strip.revealed .kbd-key {
-    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-    color: #fff; border-color: transparent;
-    box-shadow: 0 6px 16px rgba(10,155,127,0.35), 0 -2px 0 rgba(255,255,255,0.25) inset;
-}
-
 /* ── Hero stats ──────────────────────────────────────────── */
 .hero-stats {
     display: flex; flex-direction: column; gap: 28px;
@@ -346,7 +327,6 @@ footer { border-top: 1px solid var(--glass-border); padding: 32px 0; }
 .reveal-stagger.revealed > *:nth-child(2) { transition-delay: .08s; }
 .reveal-stagger.revealed > *:nth-child(3) { transition-delay: .16s; }
 .reveal-stagger.revealed > *:nth-child(4) { transition-delay: .24s; }
-.reveal-stagger.revealed > *:nth-child(5) { transition-delay: .32s; }
 
 /* ── i18n ────────────────────────────────────────────────── */
 [data-lang="en"] { display: none; }
