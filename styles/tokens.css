@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap');
 /* ── tokens.css — sistema de diseño compartido (sergiogc.dev) ──
    Paleta teal + glassmorphism, con modo claro/oscuro.
    Fuente única de verdad para color, tipografía, radios y sombras. */
@@ -8,16 +9,19 @@
        --font       → fuente principal (títulos, texto, botones…)
        --font-mono  → fuente monoespaciada (fechas, etiquetas, código)
        ═══════════════════════════════════════════════════════════════ */
-    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+    --font: "Barlow Condensed", -apple-system,sans-serif;
+
+    --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+
     --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
 
     color-scheme: light;
 
     /* Paleta — claro */
-    --bg: #F4FAF8;
-    --ink: #0B2521;
-    --ink-dim: #4C6B65;
-    --ink-faint: #4D7470;
+    --bg: #FAFBFA;
+    --ink: #101312;
+    --ink-dim: #48534F;
+    --ink-faint: #68736F;
     --accent: #0A9B7F;
     --accent-deep: #077A63;
 
@@ -46,13 +50,22 @@
     --maxw: 1120px;
 }
 
+/* Jerarquía tipográfica compartida: lectura compacta, titulares firmes. */
+h1, h2, h3, h4, h5, h6,
+.nav-logo,
+.btn,
+.nav-cta,
+.toggle-btn {
+    font-family: var(--font-display);
+}
+
 [data-theme="dark"] {
     color-scheme: dark;
 
-    --bg: #071A1D;
-    --ink: #EAF6F3;
-    --ink-dim: #8FB3AC;
-    --ink-faint: #4E716B;
+    --bg: #0A0C0B;
+    --ink: #F7FAF8;
+    --ink-dim: #C3CCC8;
+    --ink-faint: #9BA6A1;
     --accent: #2DD4AB;
     --accent-deep: #1AB894;
 
