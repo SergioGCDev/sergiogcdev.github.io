@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap');
 /* ── tokens.css — sistema de diseño compartido (sergiogc.dev) ──
    Paleta teal + glassmorphism, con modo claro/oscuro.
    Fuente única de verdad para color, tipografía, radios y sombras. */
@@ -6,12 +5,15 @@
 :root {
     /* ═══════════════════════════════════════════════════════════════
        FUENTES DE TODA LA WEB — cambia estas dos líneas y nada más.
-       --font       → fuente principal (títulos, texto, botones…)
+       --font       → fuente principal (texto, etiquetas y botones)
+       --font-display → fuente de titulares y navegación
        --font-mono  → fuente monoespaciada (fechas, etiquetas, código)
        ═══════════════════════════════════════════════════════════════ */
-    --font: "Barlow Condensed", -apple-system,sans-serif;
+    --font: Optima, "Optima Nova", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
 
-    --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+    --font-display: Optima, "Optima Nova", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+
+    --font-brand: Geneva, "Helvetica Neue", Arial, sans-serif;
 
     --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
 
@@ -57,6 +59,10 @@ h1, h2, h3, h4, h5, h6,
 .nav-cta,
 .toggle-btn {
     font-family: var(--font-display);
+}
+
+.nav-logo {
+    font-family: var(--font-brand) !important;
 }
 
 [data-theme="dark"] {

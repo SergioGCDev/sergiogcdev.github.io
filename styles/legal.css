@@ -35,6 +35,33 @@ section { padding: 88px 0; }
     font-size: 14.5px;
 }
 
+/* Identificación del responsable: datos claros y fácilmente escaneables. */
+.legal-identity {
+    border-top: 1px solid var(--legal-rule);
+}
+
+.legal-identity p {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    margin: 0;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--legal-rule);
+    color: var(--ink-dim);
+    font-size: 15.5px;
+    line-height: 1.65;
+}
+
+.legal-identity strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.legal-identity a {
+    color: var(--accent-deep);
+    font-weight: 600;
+}
+
 .principles {
     border: 0;
     border-radius: 0;
@@ -128,8 +155,6 @@ section { padding: 88px 0; }
     border-top: 1px solid var(--legal-rule);
 }
 
-footer { border-top-color: var(--legal-rule); }
-
 .ap-row:first-of-type {
     border-top: 0;
     padding-top: 0;
@@ -177,5 +202,10 @@ footer { border-top-color: var(--legal-rule); }
 @media (max-width: 680px) {
     .app-policy {
         padding: 26px 22px;
+    }
+
+    .legal-identity p {
+        grid-template-columns: 1fr;
+        gap: 3px;
     }
 }

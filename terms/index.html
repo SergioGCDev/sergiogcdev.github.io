@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/legal.css">
     <link rel="stylesheet" href="/styles/transitions.css">
+    <link rel="stylesheet" href="/styles/footer.css">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -339,9 +340,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="wrap">© 2026 Sergio García · iOS Native Developer · <span>sergiogc.dev</span></div>
-    </footer>
+    <footer data-site-footer></footer>
+    <script src="/scripts/footer.js"></script>
 
     <script>
         const io = new IntersectionObserver((entries) => {
@@ -386,6 +386,7 @@
             });
             document.documentElement.lang = lang;
             localStorage.setItem('sergiogc-lang', lang);
+            window.dispatchEvent(new Event('site-language-change'));
             // El bloque del idioma oculto nunca dispara el IntersectionObserver;
             // al cambiar de idioma se revela de golpe para que no quede invisible.
             document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));

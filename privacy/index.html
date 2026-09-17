@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/legal.css">
     <link rel="stylesheet" href="/styles/transitions.css">
+    <link rel="stylesheet" href="/styles/footer.css">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -64,8 +65,8 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">sergiogc.dev</a>
             <ul class="nav-links">
-                <li><a href="#principios" data-i18n="nav-principios">Principios</a></li>
-                <li><a href="#apps" data-i18n="nav-apps">Apps</a></li>
+                <li><a href="#principios" data-nav-link="principles" data-i18n="nav-principios">Principios</a></li>
+                <li><a href="#apps" data-nav-link="apps" data-i18n="nav-apps">Apps</a></li>
                 <li><a href="#contact" data-i18n="nav-contacto">Contacto</a></li>
             </ul>
             <div class="nav-right">
@@ -85,16 +86,28 @@
             <h1 class="reveal">
                 <span data-i18n="title">Política de Privacidad</span>
             </h1>
-            <p class="updated reveal" data-i18n="updated">Última actualización: agosto de 2026</p>
+            <p class="updated reveal" data-i18n="updated">Última actualización: 17 de septiembre de 2026</p>
         </div>
     </header>
 
     <!-- ══════════════════════════ ESPAÑOL ══════════════════════════ -->
     <div data-lang-content="es" class="active">
 
+        <section id="responsable">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">Responsable del tratamiento</h2><span class="sec-line"></span></div>
+                <div class="legal-identity reveal">
+                    <p><strong>Titular</strong><span>Sergio García Calero, actuando bajo la denominación comercial <b>sergiogc.dev</b></span></p>
+                    <p><strong>NIF</strong><span>47690977V</span></p>
+                    <p><strong>Domicilio</strong><span>Calle Haendel 3, 2º K Málaga (España)</span></p>
+                    <p><strong>Contacto</strong><a href="mailto:hola@sergiogc.dev">hola@sergiogc.dev</a></p>
+                </div>
+            </div>
+        </section>
+
         <section id="principios">
             <div class="wrap">
-                <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">Principios
+                <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Principios
                         generales</h2><span class="sec-line"></span></div>
                 <p class="policy-lead reveal">
                     Esta política de privacidad se aplica a todas las aplicaciones desarrolladas y publicadas por
@@ -115,14 +128,96 @@
             </div>
         </section>
 
+        <section id="datos">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Datos y servicios que intervienen</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    Las apps están diseñadas para funcionar sin un servidor propio que reciba o centralice tus datos personales. Aun así, algunos servicios necesarios para distribuirlas o prestar sus funciones pueden intervenir en operaciones concretas.
+                </p>
+                <ul class="principles reveal">
+                    <li><b>App Store y StoreKit.</b> Apple gestiona la descarga de las apps, las compras y las suscripciones. No recibimos datos de tarjeta, facturación ni el detalle de tus pagos.</li>
+                    <li><b>iCloud y CloudKit.</b> Cuando una app ofrece sincronización y eliges activarla mediante tu cuenta de Apple, los datos se guardan en tu base de datos privada de iCloud. No disponemos de acceso a esa base de datos.</li>
+                    <li><b>Consultas de producto.</b> En SuppleMate, una búsqueda de suplemento o un código de barras puede enviarse a Open Food Facts o DSLD (NIH) para obtener información del producto. La consulta no incluye tu historial ni identificadores personales.</li>
+                    <li><b>Correo electrónico.</b> Si nos escribes, tratamos los datos que incluyas en el mensaje únicamente para responder y atender la consulta.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sitio-web">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Este sitio web</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    sergiogc.dev es un sitio informativo estático. No ofrece cuentas de usuario, formularios propios, publicidad ni analítica de navegación, y no instala cookies analíticas o publicitarias.
+                </p>
+                <ul class="principles reveal">
+                    <li><b>Alojamiento.</b> El sitio se publica mediante GitHub Pages. Como ocurre con cualquier servicio web, el proveedor puede tratar datos técnicos imprescindibles —como la dirección IP o registros de acceso— para seguridad, disponibilidad y diagnóstico.</li>
+                    <li><b>Enlaces externos.</b> Los enlaces a App Store, GitHub, LinkedIn, Apple Wallet u otros sitios abren servicios ajenos. Su uso queda sujeto a las políticas de privacidad de cada proveedor.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="base-juridica">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">05</span><h2 class="sec-title">Finalidad y base jurídica</h2><span class="sec-line"></span></div>
+                <ul class="principles reveal">
+                    <li><b>Responder a una consulta.</b> Cuando nos contactas, tratamos los datos del mensaje para atenderte; la base es el interés legítimo de responder una comunicación iniciada por ti.</li>
+                    <li><b>Distribución de las apps.</b> Las operaciones de descarga, compra o suscripción se realizan dentro de la relación entre el usuario y Apple. Su tratamiento se rige por las condiciones y la política de privacidad de Apple.</li>
+                    <li><b>Funcionamiento técnico.</b> Los datos técnicos mínimos que puedan tratar los proveedores de alojamiento o recursos externos se usan para prestar y proteger sus respectivos servicios.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="conservacion">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">06</span><h2 class="sec-title">Conservación de los datos</h2><span class="sec-line"></span></div>
+                <ul class="principles reveal">
+                    <li><b>Datos de las apps.</b> Permanecen en tu dispositivo y, si activas iCloud, en tu propia cuenta de iCloud, hasta que los borres o desinstales la app.</li>
+                    <li><b>Correos electrónicos.</b> Se conservan únicamente durante el tiempo necesario para atender la solicitud y, si fuera aplicable, cumplir obligaciones legales o gestionar una reclamación.</li>
+                    <li><b>Datos técnicos.</b> Los proveedores externos aplican sus propios plazos de conservación a los registros estrictamente necesarios para operar sus servicios.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="derechos">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">07</span><h2 class="sec-title">Tus derechos</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    Puedes solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad de los datos que tratemos sobre ti. Para ejercerlos, escribe a <a href="mailto:hola@sergiogc.dev">hola@sergiogc.dev</a> indicando tu solicitud.
+                </p>
+                <p class="policy-lead reveal">
+                    Si consideras que no hemos atendido correctamente tu petición, puedes presentar una reclamación ante la <a href="https://www.aepd.es/" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="menores">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">08</span><h2 class="sec-title">Menores</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    SuppleMate no está dirigida a menores de 13 años. No recopilamos deliberadamente datos personales de menores mediante el sitio web ni mediante nuestras apps.
+                </p>
+            </div>
+        </section>
+
+        <section id="cambios">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">09</span><h2 class="sec-title">Cambios en esta política</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    Podemos actualizar esta política para reflejar cambios normativos, técnicos o funcionales. La fecha de la última actualización aparecerá siempre al inicio de esta página. El uso continuado de las apps o del sitio después de publicar el cambio se regirá por la versión vigente.
+                </p>
+            </div>
+        </section>
+
         <section id="apps">
             <div class="wrap">
-                <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">SuppleMate</h2><span
+                <div class="sec-head reveal"><span class="sec-num">10</span><h2 class="sec-title">SuppleMate</h2><span
                         class="sec-line"></span></div>
 
                 <div class="app-policy reveal">
                     <div class="ap-head">
-                        <div class="ap-icon">💊</div>
+                        <div class="ap-icon">
+                            <img src="/assets/appIcons/SuppleMate.png" alt="SuppleMate" width="64">
+                        </div>
                         <div>
                             <h3>SuppleMate</h3>
                             <div class="ap-tag">Seguimiento de suplementos y peso corporal</div>
@@ -188,9 +283,21 @@
     <!-- ══════════════════════════ ENGLISH ══════════════════════════ -->
     <div data-lang-content="en">
 
+        <section id="controller-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">Data controller</h2><span class="sec-line"></span></div>
+                <div class="legal-identity reveal">
+                    <p><strong>Controller</strong><span>Sergio García Calero, trading as <b>sergiogc.dev</b></span></p>
+                    <p><strong>Tax ID</strong><span>47690977V</span></p>
+                    <p><strong>Address</strong><span>Calle Haendel 3, 2º K, Málaga, Spain</span></p>
+                    <p><strong>Contact</strong><a href="mailto:hola@sergiogc.dev">hola@sergiogc.dev</a></p>
+                </div>
+            </div>
+        </section>
+
         <section id="principios-en">
             <div class="wrap">
-                <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">General
+                <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">General
                         principles</h2><span class="sec-line"></span></div>
                 <p class="policy-lead reveal">
                     This privacy policy applies to all applications developed and published by Sergio García Calero
@@ -211,9 +318,89 @@
             </div>
         </section>
 
+        <section id="data-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Data and services involved</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    The apps are designed to work without an in-house server that receives or centralises your personal data. Some services required to distribute the apps or provide their features may still be involved in specific operations.
+                </p>
+                <ul class="principles reveal">
+                    <li><b>App Store and StoreKit.</b> Apple handles app downloads, purchases, and subscriptions. We do not receive card, billing, or payment-detail data.</li>
+                    <li><b>iCloud and CloudKit.</b> When an app offers sync and you choose to enable it with your Apple Account, data is stored in your private iCloud database. We do not have access to that database.</li>
+                    <li><b>Product lookups.</b> In SuppleMate, a supplement search or barcode can be sent to Open Food Facts or DSLD (NIH) to retrieve product information. The request does not include your history or personal identifiers.</li>
+                    <li><b>Email.</b> If you contact us, we process the information you include in your message solely to reply and handle your request.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="website-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">This website</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    sergiogc.dev is a static informational website. It has no user accounts, first-party forms, advertising, or browsing analytics, and it does not set analytics or advertising cookies.
+                </p>
+                <ul class="principles reveal">
+                    <li><b>Hosting.</b> The site is published through GitHub Pages. As with any web service, the provider may process essential technical data —such as IP addresses or access logs— for security, availability, and diagnostics.</li>
+                    <li><b>External links.</b> Links to the App Store, GitHub, LinkedIn, Apple Wallet, or other websites open services operated by third parties. Their use is governed by each provider's privacy policy.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="legal-basis-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">05</span><h2 class="sec-title">Purpose and legal basis</h2><span class="sec-line"></span></div>
+                <ul class="principles reveal">
+                    <li><b>Replying to a request.</b> When you contact us, we process the information in your message to reply; the legal basis is our legitimate interest in responding to a communication you started.</li>
+                    <li><b>App distribution.</b> Downloads, purchases, and subscriptions take place within the relationship between the user and Apple. Their processing is governed by Apple's terms and privacy policy.</li>
+                    <li><b>Technical operation.</b> The minimum technical data that hosting or external-resource providers may process is used to provide and secure their respective services.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="retention-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">06</span><h2 class="sec-title">Data retention</h2><span class="sec-line"></span></div>
+                <ul class="principles reveal">
+                    <li><b>App data.</b> It remains on your device and, if you enable iCloud, in your own iCloud account until you delete it or uninstall the app.</li>
+                    <li><b>Email messages.</b> They are retained only for as long as needed to handle the request and, where applicable, comply with legal obligations or manage a claim.</li>
+                    <li><b>Technical data.</b> External providers apply their own retention periods to logs strictly necessary to operate their services.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="rights-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">07</span><h2 class="sec-title">Your rights</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    You can request access, rectification, erasure, objection, restriction, or portability of the data we process about you. To exercise these rights, email <a href="mailto:hola@sergiogc.dev">hola@sergiogc.dev</a> with your request.
+                </p>
+                <p class="policy-lead reveal">
+                    If you believe your request has not been handled correctly, you can lodge a complaint with the <a href="https://www.aepd.es/" target="_blank" rel="noopener">Spanish Data Protection Agency</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="children-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">08</span><h2 class="sec-title">Children</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    SuppleMate is not directed at children under 13. We do not knowingly collect personal data from children through this website or our apps.
+                </p>
+            </div>
+        </section>
+
+        <section id="changes-en">
+            <div class="wrap">
+                <div class="sec-head reveal"><span class="sec-num">09</span><h2 class="sec-title">Changes to this policy</h2><span class="sec-line"></span></div>
+                <p class="policy-lead reveal">
+                    We may update this policy to reflect legal, technical, or functional changes. The last-updated date will always appear at the top of this page. Continued use of the apps or website after a change is published is governed by the current version.
+                </p>
+            </div>
+        </section>
+
         <section id="apps-en">
             <div class="wrap">
-                <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">SuppleMate</h2><span
+                <div class="sec-head reveal"><span class="sec-num">10</span><h2 class="sec-title">SuppleMate</h2><span
                         class="sec-line"></span></div>
 
                 <div class="app-policy reveal">
@@ -298,9 +485,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="wrap">© 2026 Sergio García · iOS Native Developer · <span>sergiogc.dev</span></div>
-    </footer>
+    <footer data-site-footer></footer>
+    <script src="/scripts/footer.js"></script>
 
     <script>
         const io = new IntersectionObserver((entries) => {
@@ -317,7 +503,7 @@
                 'nav-principios': 'Principios', 'nav-apps': 'Apps', 'nav-contacto': 'Contacto',
                 'nav-back': '← Inicio',
                 'eyebrow': 'Legal', 'title': 'Política de Privacidad',
-                'updated': 'Última actualización: agosto de 2026',
+                'updated': 'Última actualización: 17 de septiembre de 2026',
                 'contact-title': '¿Tienes dudas? <em>Escríbenos.</em>',
                 'contact-sub': 'Cualquier pregunta sobre privacidad o tratamiento de datos, contáctanos cuando quieras.',
                 'back-home': '← Volver al inicio'
@@ -326,7 +512,7 @@
                 'nav-principios': 'Principles', 'nav-apps': 'Apps', 'nav-contacto': 'Contact',
                 'nav-back': '← Home',
                 'eyebrow': 'Legal', 'title': 'Privacy Policy',
-                'updated': 'Last updated: August 2026',
+                'updated': 'Last updated: September 17, 2026',
                 'contact-title': 'Questions? <em>Get in touch.</em>',
                 'contact-sub': 'Any question about privacy or data handling, reach out anytime.',
                 'back-home': '← Back to home'
@@ -343,8 +529,11 @@
                 const key = el.dataset.i18n;
                 if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
             });
+            document.querySelector('[data-nav-link="principles"]').href = lang === 'en' ? '#principios-en' : '#principios';
+            document.querySelector('[data-nav-link="apps"]').href = lang === 'en' ? '#apps-en' : '#apps';
             document.documentElement.lang = lang;
             localStorage.setItem('sergiogc-lang', lang);
+            window.dispatchEvent(new Event('site-language-change'));
             // El bloque del idioma oculto nunca dispara el IntersectionObserver;
             // al cambiar de idioma se revela de golpe para que no quede invisible.
             document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
