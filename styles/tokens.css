@@ -4,18 +4,18 @@
 
 :root {
     /* ═══════════════════════════════════════════════════════════════
-       FUENTES DE TODA LA WEB — cambia estas dos líneas y nada más.
+       FUENTES DE TODA LA WEB — familia única en todos los elementos.
        --font       → fuente principal (texto, etiquetas y botones)
        --font-display → fuente de titulares y navegación
-       --font-mono  → fuente monoespaciada (fechas, etiquetas, código)
+       --font-mono  → alias para fechas y etiquetas, mantiene la misma familia
        ═══════════════════════════════════════════════════════════════ */
-    --font: Optima, "Optima Nova", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --font: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    --font-display: Optima, "Optima Nova", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --font-display: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    --font-brand: Geneva, "Helvetica Neue", Arial, sans-serif;
+    --font-brand: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --font-mono: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color-scheme: light;
 
