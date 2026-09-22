@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://sergiogc.dev/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-21</lastmod>
     </url>
     <url>
         <loc>https://sergiogc.dev/desarrollo-apps-ios/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-21</lastmod>
+    </url>
+    <url>
+        <loc>https://sergiogc.dev/diseno-web-malaga/</loc>
+        <lastmod>2026-09-21</lastmod>
     </url>
     <url>
         <loc>https://sergiogc.dev/cv/</loc>
@@ -14,10 +18,10 @@
     </url>
     <url>
         <loc>https://sergiogc.dev/privacy/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-21</lastmod>
     </url>
     <url>
         <loc>https://sergiogc.dev/terms/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-21</lastmod>
     </url>
 </urlset>

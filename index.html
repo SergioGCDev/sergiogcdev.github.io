@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>▷ sergiogc.dev</title>
-<meta name="description" content="Desarrollo y modernización de apps iOS nativas en Swift y SwiftUI. Aplicaciones con una entrega clara y soporte cuando lo necesitas.">
+<title>Apps para el ecosistema Apple · Sergio García | sergiogc.dev</title>
+<meta name="description" content="Desarrollo de apps nativas para el ecosistema Apple con Swift y SwiftUI. Desde Málaga, también creo páginas web para negocios, con alcance y entrega claros.">
 <meta name="author" content="Sergio García">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sergiogc.dev/">
@@ -13,16 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="sergiogc.dev">
-<meta property="og:title" content="Desarrollo de apps iOS nativas · Sergio García">
-<meta property="og:description" content="Apps iOS nativas en Swift y SwiftUI: una app nueva, una modernización o soporte para lo que ya funciona.">
+<meta property="og:title" content="Apps para el ecosistema Apple · Sergio García">
+<meta property="og:description" content="Aplicaciones nativas con Swift y SwiftUI. Apple como especialidad, desarrollo web como complemento. Desde Málaga.">
 <meta property="og:url" content="https://sergiogc.dev/">
 <meta property="og:image" content="https://sergiogc.dev/assets/images/ogbanner.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="sergiogc.dev — Apps iOS 100% nativas con Swift y SwiftUI">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Desarrollo de apps iOS nativas · Sergio García">
-<meta name="twitter:description" content="Apps iOS nativas en Swift y SwiftUI: una app nueva, una modernización o soporte para lo que ya funciona.">
+<meta name="twitter:title" content="Apps para el ecosistema Apple · Sergio García">
+<meta name="twitter:description" content="Aplicaciones nativas con Swift y SwiftUI. Apple como especialidad, desarrollo web como complemento. Desde Málaga.">
 <meta name="twitter:image" content="https://sergiogc.dev/assets/images/ogbanner.jpg?v=2">
 
 <!-- Verificación Google Search Console -->
@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="/styles/buttons.css">
 <link rel="stylesheet" href="/styles/home.css">
 <link rel="stylesheet" href="/styles/footer.css">
-<link rel="stylesheet" href="/styles/transitions.css">
+<script src="/scripts/site.js?v=3" defer></script>
 
 <!-- Schema.org -->
 <script type="application/ld+json">
@@ -54,7 +54,7 @@
             "@type": "Person",
             "@id": "https://sergiogc.dev/#person",
             "name": "Sergio García",
-            "jobTitle": "Desarrollador de apps iOS",
+            "jobTitle": "Desarrollador de aplicaciones para el ecosistema Apple",
             "url": "https://sergiogc.dev/",
             "knowsAbout": ["Swift", "SwiftUI", "iOS", "Xcode", "App Store", "Desarrollo de aplicaciones digitales"],
             "alumniOf": {
@@ -75,6 +75,7 @@
 
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- ── Sprite de iconos compartido: un único origen por icono, referenciado
      con <use> en toda la página. Ver /styles/icons.css para el tamaño. ── -->
@@ -100,28 +101,37 @@
 
 <div class="ambient"></div>
 
-<nav>
+<nav aria-label="Principal">
     <div class="nav-inner">
         <a href="#" class="nav-logo">sergiogc.dev</a>
         <ul class="nav-links">
-            <li><a href="/desarrollo-apps-ios/" data-lang="es">Servicios</a><a href="/desarrollo-apps-ios/" data-lang="en">Services</a></li>
-            <li><a href="#proceso" data-lang="es">Cómo trabajo</a><a href="#proceso" data-lang="en">Process</a></li>
+            <li><a href="/desarrollo-apps-ios/" data-lang="es">Apps Apple</a><a href="/desarrollo-apps-ios/?lang=en" data-lang="en">Apple apps</a></li>
+            <li><a href="/diseno-web-malaga/" data-lang="es">Webs para empresas</a><a href="/diseno-web-malaga/?lang=en" data-lang="en">Business websites</a></li>
             <li><a href="#portfolio" data-lang="es">Portfolio</a><a href="#portfolio" data-lang="en">Portfolio</a></li>
             <li><a href="#sobre-mi" data-lang="es">Sobre mí</a><a href="#sobre-mi" data-lang="en">About</a></li>
             <li><a href="#contacto" data-lang="es">Contacto</a><a href="#contacto" data-lang="en">Contact</a></li>
         </ul>
         <div class="nav-right">
             <div class="toggle-group" id="langToggle">
-                <button class="toggle-btn active" data-value="es">ES</button>
-                <button class="toggle-btn" data-value="en">EN</button>
+                <button class="toggle-btn active" data-value="es" aria-pressed="true">ES</button>
+                <button class="toggle-btn" data-value="en" aria-pressed="false">EN</button>
             </div>
             <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">☀</button>
-            <!-- <a href="#contacto" class="nav-cta"><span data-lang="es">Cuéntame tu idea</span><span data-lang="en">Tell me your idea</span></a>-->
+            <details class="mobile-menu">
+                <summary aria-label="Navegación / Navigation">☰</summary>
+                <ul>
+                    <li><a href="/desarrollo-apps-ios/" data-service-path="/desarrollo-apps-ios/"><span data-lang="es">Apps Apple</span><span data-lang="en">Apple apps</span></a></li>
+                    <li><a href="/diseno-web-malaga/" data-service-path="/diseno-web-malaga/"><span data-lang="es">Webs para empresas</span><span data-lang="en">Business websites</span></a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#sobre-mi"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a></li>
+                    <li><a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
+                </ul>
+            </details>
         </div>
     </div>
 </nav>
 
-<main>
+<main id="contenido">
 <section id="hero">
     <div class="container hero-inner">
         <div class="hero-content">
@@ -139,21 +149,21 @@
                     <span>FitMate</span>
                 </div>
             </div>
-            <p class="hero-chip" data-lang="es">8 años en tecnología <span>·</span> 3 apps publicadas <span>·</span> iOS nativo</p>
-            <p class="hero-chip" data-lang="en">8 years in tech <span>·</span> 3 published apps <span>·</span> native iOS</p>
+            <p class="hero-chip" data-lang="es">8 años en soporte técnico <span>·</span> Desarrollo nativo</p>
+            <p class="hero-chip" data-lang="en">8 years in technical support <span>·</span> Native development</p>
             <h1>
-                <span data-lang="es">Apps digitales,<br><span class="accent">en producción.</span></span>
-                <span data-lang="en">Native apps,<br><span class="accent">built to ship.</span></span>
+                <span data-lang="es">Tu idea, en el<br><span class="accent">ecosistema Apple.</span></span>
+                <span data-lang="en">Your idea, in the<br><span class="accent">Apple ecosystem.</span></span>
             </h1>
             <p class="hero-sub" data-lang="es">
-                Apps iOS nativas y experiencias web para lanzar una idea, modernizar una app existente o mantenerla evolucionando con claridad.
+                Desarrollo aplicaciones nativas con Swift y SwiftUI. Para iPhone, iPad o Mac, según lo que necesite tu proyecto. Desde Málaga, con comunicación directa y un alcance claro.
             </p>
             <p class="hero-sub" data-lang="en">
-                Native iOS apps and web experiences to launch an idea, modernize an existing app, or keep it evolving with clarity.
+                I build native apps with Swift and SwiftUI. For iPhone, iPad or Mac, depending on your project. Based in Málaga, with direct communication and a clear scope.
             </p>
             <div class="hero-actions">
                 <a href="#contacto" class="btn btn-primary"><span data-lang="es">Hablar conmigo</span><span data-lang="en">Talk to me</span></a>
-                <a href="/desarrollo-apps-ios/" class="btn btn-secondary"><span data-lang="es">Ver servicios</span><span data-lang="en">See services</span></a>
+                <a href="#portfolio" class="btn btn-secondary"><span data-lang="es">Ver mis proyectos</span><span data-lang="en">View my projects</span></a>
             </div>
         </div>
     </div>
@@ -211,6 +221,20 @@
     </div>
 </section>
 
+<section id="web-empresas" class="web-complement">
+    <div class="container complementary-offer">
+        <div>
+            <p class="section-label" data-lang="es">TAMBIÉN, PARA TU NEGOCIO</p>
+            <p class="section-label" data-lang="en">ALSO, FOR YOUR BUSINESS</p>
+            <h2 data-lang="es">¿Necesitas una web, no una app?</h2>
+            <h2 data-lang="en">Need a website, not an app?</h2>
+            <p data-lang="es">Mi especialidad es Apple. También creo páginas web para empresas y autónomos de Málaga: tus servicios bien explicados y una forma clara de pedirte presupuesto.</p>
+            <p data-lang="en">Apple is my specialty. I also build websites for businesses and independent professionals in Málaga: clear services and a straightforward way to request a quote.</p>
+        </div>
+        <a class="btn btn-secondary" href="/diseno-web-malaga/" data-service-path="/diseno-web-malaga/"><span data-lang="es">Webs para empresas</span><span data-lang="en">Business websites</span></a>
+    </div>
+</section>
+
 <section id="proceso">
     <div class="container">
         <div class="reveal">
@@ -259,8 +283,10 @@
             <p class="hero-chip" data-lang="es">Portfolio</p>
             <p class="hero-chip" data-lang="en">Portfolio</p>
 
-            <h2 class="section-title" data-lang="es">Productos reales, no demos.</h2>
-            <h2 class="section-title" data-lang="en">Real products, not demos.</h2>
+            <h2 class="section-title" data-lang="es">Mis productos, paso a paso.</h2>
+            <h2 class="section-title" data-lang="en">My products, step by step.</h2>
+            <p class="section-desc" data-lang="es">Proyectos propios: una app publicada y productos en desarrollo. Cada uno muestra su estado, sin confundir una versión prevista con una entrega disponible.</p>
+            <p class="section-desc" data-lang="en">My own projects: a published app and products in development. Each shows its current status, distinguishing planned versions from available releases.</p>
         </div>
         <div class="apps-grid reveal-stagger">
             <div class="app-card">
@@ -275,12 +301,13 @@
                         <div class="app-name">SuppleMate</div>
                         <div class="app-platforms">
                             <span class="app-platform-tag ios">iOS</span>
-                            <span class="app-platform-tag">WEB</span>
+                            <span class="app-platform-tag" data-lang="es">Publicada</span>
+                            <span class="app-platform-tag" data-lang="en">Published</span>
                         </div>
                     </div>
                 </div>
-                <p class="app-desc" data-lang="es">Gestión diaria de suplementación y medicación. Seguimiento de tomas, recordatorios inteligentes y registro histórico, en la app y en la web.</p>
-                <p class="app-desc" data-lang="en">Daily supplement and medication management. Dose tracking, smart reminders and history log, in the app and on the web.</p>
+                <p class="app-desc" data-lang="es">App nativa para el seguimiento personal de suplementos, dosis y peso corporal. Disponible en la App Store, con datos locales y sincronización privada mediante iCloud.</p>
+                <p class="app-desc" data-lang="en">A native app for tracking supplements, doses and body weight. Available on the App Store, with local data and private iCloud sync.</p>
                 <div class="app-tags">
                     <span class="app-tag"><span class="tag-icon tag-icon-swift" aria-hidden="true"></span>Swift</span>
                     <span class="app-tag"><span class="tag-icon tag-icon-swiftui" aria-hidden="true"></span>SwiftUI</span>
@@ -305,8 +332,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="app-desc" data-lang="es">Gestor de finanzas personales: control de gastos, suscripciones y contratos. La app nativa y la versión web comparten la misma cuenta, siempre en sincronía.</p>
-                <p class="app-desc" data-lang="en">Personal finance manager: expenses, subscriptions and contracts. The native app and the web version share the same account, always in sync.</p>
+                <p class="app-desc" data-lang="es">Gestor de finanzas personales con aplicación web para gastos, suscripciones y contratos. La versión para el ecosistema Apple está en desarrollo; todavía no está publicada en la App Store.</p>
+                <p class="app-desc" data-lang="en">A personal finance manager with a web app for expenses, subscriptions and contracts. The Apple version is in development and is not yet published on the App Store.</p>
                 <div class="app-tags">
                     <span class="app-tag"><span class="tag-icon tag-icon-swift" aria-hidden="true"></span>Swift</span>
                     <span class="app-tag"><span class="tag-icon tag-icon-swiftui" aria-hidden="true"></span>SwiftUI</span>
@@ -337,8 +364,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="app-desc" data-lang="es">Controla tu alimentación con IA — sube una foto y calcula macros y calorías al instante — y tus entrenamientos con series, repeticiones y PRs. Con modo coach para que un entrenador te parametrice dieta y rutina.</p>
-                <p class="app-desc" data-lang="en">Track your nutrition with AI — snap a photo and get macros and calories instantly — plus workouts with sets, reps and PRs. Includes coach mode so a trainer can set your diet and routine.</p>
+                <p class="app-desc" data-lang="es">Proyecto en desarrollo para registrar alimentación y entrenamientos, con estimaciones nutricionales asistidas por IA y funciones para entrenadores. No es una app publicada en la App Store.</p>
+                <p class="app-desc" data-lang="en">A project in development for nutrition and workout tracking, with AI-assisted nutrition estimates and tools for coaches. Not a published App Store app.</p>
                 <div class="app-tags">
                     <span class="app-tag"><span class="tag-icon tag-icon-swift" aria-hidden="true"></span>Swift</span>
                     <span class="app-tag"><span class="tag-icon tag-icon-swiftui" aria-hidden="true"></span>SwiftUI</span>
@@ -373,10 +400,10 @@
             <p data-lang="es">Hoy escribo Swift porque quiero hacerlo bien: nativo, moderno, sin capas de abstracción que solo existen para acortar el aprendizaje.</p>
             <p data-lang="en">Today I write Swift because I want to do it right: native, modern, without abstraction layers that only exist to shorten the learning curve.</p>
             <div class="skill-row">
-                <span class="skill-pill">Swift 6</span>
+                <span class="skill-pill">Swift</span>
                 <span class="skill-pill">SwiftUI</span>
                 <span class="skill-pill">Async/Await</span>
-                <span class="skill-pill">Xcode 26</span>
+                <span class="skill-pill">Xcode</span>
                 <span class="skill-pill">SwiftData</span>
                 <span class="skill-pill">Git</span>
             </div>
@@ -391,6 +418,7 @@
                 </picture>
             </figure>
         </div>
+    </div>
         <!-- Timeline -->
         <!-- 
         <div class="about-timeline reveal">
@@ -477,74 +505,18 @@ langToggle.addEventListener('click', (e) => {
     if (!btn) return;
     langToggle.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.body.classList.toggle('lang-en', btn.dataset.value === 'en');
+    const english = btn.dataset.value === 'en';
+    document.body.classList.toggle('lang-en', english);
+    document.documentElement.lang = english ? 'en' : 'es';
+    langToggle.querySelectorAll('.toggle-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    document.querySelector('.skip-link').textContent = english ? 'Skip to content' : 'Saltar al contenido';
+    document.getElementById('themeToggle').setAttribute('aria-label', english ? 'Change theme' : 'Cambiar tema');
+    document.querySelectorAll('[data-service-path]').forEach(link => {
+        link.href = english ? `${link.dataset.servicePath}?lang=en` : link.dataset.servicePath;
+    });
+    window.dispatchEvent(new Event('site-language-change'));
 });
 
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-    const html = document.documentElement;
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    themeToggle.textContent = isDark ? '☀' : '☾';
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.02, rootMargin: '0px 0px -10% 0px' });
-
-document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
-</script>
-
-<div class="page-overlay" id="pageOverlay">
-    <span class="page-overlay-name">Sergio García</span>
-    <div class="page-overlay-track">
-        <div class="page-overlay-fill" id="pageOverlayFill"></div>
-    </div>
-</div>
-<script>
-(function () {
-    const overlay = document.getElementById('pageOverlay');
-    const fill = document.getElementById('pageOverlayFill');
-    let navigating = false;
-    function showOverlay(href) {
-        if (navigating) return;
-        navigating = true;
-        fill.style.transition = 'none';
-        fill.style.width = '0%';
-        overlay.classList.add('active');
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-            fill.style.transition = 'width 0.7s cubic-bezier(.4,0,.2,1)';
-            fill.style.width = '100%';
-        }));
-        setTimeout(() => { window.location.href = href; }, 750);
-    }
-    document.addEventListener('click', function (e) {
-        const a = e.target.closest('a');
-        if (!a) return;
-        const href = a.getAttribute('href');
-        if (!href ||
-            href.startsWith('mailto:') ||
-            href.startsWith('tel:') ||
-            href.startsWith('#') ||
-            href.startsWith('javascript:') ||
-            href.endsWith('.pkpass') ||
-            a.hasAttribute('download') ||
-            a.target === '_blank') return;
-        e.preventDefault();
-        showOverlay(href);
-    });
-    window.addEventListener('pageshow', function (e) {
-        if (e.persisted) {
-            overlay.classList.remove('active');
-            navigating = false;
-        }
-    });
-})();
 </script>
 </body>
 </html>

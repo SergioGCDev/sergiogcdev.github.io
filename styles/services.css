@@ -6,6 +6,8 @@
 /* Hero ------------------------------------------------------------------- */
 .service-page .service-hero { padding: 150px 0 120px; background: var(--bg); }
 .service-page .service-hero h1 { max-width: 900px; }
+.service-page .service-hero .hero-sub { margin-left: 0; }
+.service-page .service-hero .hero-actions { justify-content: flex-start; }
 
 /* Oferta ----------------------------------------------------------------- */
 .offer-list { margin-top: 56px; border-top: 1px solid var(--page-rule); }
@@ -30,4 +32,46 @@
 @media (max-width: 620px) {
     .service-page .service-hero { padding: 100px 0 80px; }
     .offer-list article, .tech-layout { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* Business-web landing, using the existing brand tokens. */
+.web-page .web-hero { padding-block: 100px 96px; }
+.web-hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.web-hero h1 { font-size: clamp(2.7rem, 5vw, 4.8rem); }
+.web-hero .hero-sub { font-size: 1.15rem; }
+.web-byline { max-width: 55ch; margin: 28px 0 0; font-size: .94rem; color: var(--ink-dim); }
+.web-page a:not(.btn):not(.nav-logo):not(.nav-cta) { text-underline-offset: .2em; }
+.web-byline a, .web-scope-grid a, .faq-list a, .contact-panel p a { color: var(--accent-deep); }
+.web-brief { padding: 32px; background: var(--surface-soft); border: 1px solid var(--page-rule); border-radius: 16px; }
+.web-brief h2 { font-size: 1.6rem; line-height: 1.2; letter-spacing: -.04em; }
+.web-brief ol { padding: 0; margin: 24px 0; list-style: none; }
+.web-brief li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; padding-block: 18px; border-top: 1px solid var(--page-rule); }
+.web-brief li > span { font-size: 12px; color: var(--accent-deep); }
+.web-brief h3 { margin-bottom: 4px; font-size: 1rem; }
+.web-brief li p, .web-brief-note { margin: 0; font-size: .94rem; color: var(--ink-dim); }
+.web-brief-note { padding-top: 18px; border-top: 1px solid var(--page-rule); }
+.scope-note { max-width: 72ch; margin: 28px 0 0; padding-left: 18px; border-left: 2px solid var(--accent-deep); color: var(--ink-dim); }
+.web-scope-grid, .web-examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 42px; }
+.web-scope-grid article { border-top: 1px solid var(--page-rule); padding-top: 28px; }
+.web-scope-grid h3, .web-examples h3 { font-size: 1.35rem; letter-spacing: -.035em; }
+.web-scope-grid p, .web-scope-grid li, .web-examples p:not(.section-label) { color: var(--ink-dim); }
+.web-scope-grid ul { padding-left: 20px; }
+.web-scope-grid li { margin-bottom: 12px; }
+.web-scope-grid .small-note { font-size: .94rem; }
+.web-examples article { padding: 28px; border: 1px solid var(--page-rule); border-radius: 14px; background: var(--surface); }
+.web-examples img { display: block; margin-bottom: 24px; border-radius: 12px; }
+.web-examples .section-label { font-size: 10px; margin-bottom: 12px; }
+.web-examples a { display: inline-block; padding-block: 10px; color: var(--accent-deep); font-weight: 600; }
+.web-page .process-step h3 { margin-block: 24px 12px; }
+.contact-panel p.contact-fallback { margin: 24px auto 12px; font-size: .96rem; }
+.contact-panel p.contact-privacy { margin-bottom: 0; font-size: .88rem; }
+.web-page .btn { height: auto; min-height: 48px; padding-block: 12px; text-align: center; }
+@media (max-width: 1000px) {
+    .web-hero-grid { gap: 32px; }
+    .web-brief { padding: 24px; }
+}
+@media (max-width: 760px) {
+    .web-page .web-hero { padding-block: 64px; }
+    .web-hero-grid, .web-scope-grid, .web-examples { grid-template-columns: 1fr; }
+    .web-brief { margin-top: 16px; }
 }

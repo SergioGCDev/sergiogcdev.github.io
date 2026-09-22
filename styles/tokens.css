@@ -20,12 +20,13 @@
     color-scheme: light;
 
     /* Paleta — claro */
-    --bg: #FAFBFA;
+    --bg: #F1F0EA;
     --ink: #101312;
     --ink-dim: #48534F;
     --ink-faint: #68736F;
     --accent: #0A9B7F;
     --accent-deep: #077A63;
+    --button-on-accent: #FFFFFF;
 
     /* Superficies glass */
     --glass-fill: rgba(10, 155, 127, 0.06);
@@ -52,6 +53,9 @@
     --maxw: 1120px;
 }
 
+/* El control se conserva en el HTML para recuperar el modo oscuro después. */
+#themeToggle { display: none !important; }
+
 /* Jerarquía tipográfica compartida: lectura compacta, titulares firmes. */
 h1, h2, h3, h4, h5, h6,
 .nav-logo,
@@ -74,6 +78,7 @@ h1, h2, h3, h4, h5, h6,
     --ink-faint: #9BA6A1;
     --accent: #2DD4AB;
     --accent-deep: #1AB894;
+    --button-on-accent: #062A22;
 
     --glass-fill: rgba(45, 212, 171, 0.07);
     --glass-fill-hover: rgba(45, 212, 171, 0.12);
@@ -82,4 +87,22 @@ h1, h2, h3, h4, h5, h6,
 
     --shadow: 0 12px 32px rgba(0, 0, 0, 0.40);
     --shadow-hi: 0 16px 40px rgba(0, 0, 0, 0.50);
+}
+
+/* Debe ir después de los tokens oscuros: fuerza claro incluso con atributos previos. */
+:root, [data-theme="dark"] {
+    color-scheme: light;
+    --bg: #F1F0EA;
+    --ink: #101312;
+    --ink-dim: #48534F;
+    --ink-faint: #68736F;
+    --accent: #0A9B7F;
+    --accent-deep: #077A63;
+    --button-on-accent: #FFFFFF;
+    --glass-fill: rgba(10, 155, 127, 0.06);
+    --glass-fill-hover: rgba(10, 155, 127, 0.10);
+    --glass-border: rgba(10, 60, 50, 0.12);
+    --card-bg: #FFFFFF;
+    --shadow: 0 12px 32px rgba(10, 60, 50, 0.10);
+    --shadow-hi: 0 16px 40px rgba(10, 60, 50, 0.14);
 }
