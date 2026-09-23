@@ -1,19 +1,92 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Prototipo local no indexable de la nueva portada de sergiogc.dev.">
-  <title>> sergiogc.dev</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps para el ecosistema Apple · Sergio García | sergiogc.dev</title>
+  <meta name="description"
+    content="Desarrollo de apps nativas para el ecosistema Apple con Swift y SwiftUI. Desde Málaga, también creo páginas web para negocios, con alcance y entrega claros.">
+  <meta name="author" content="Sergio García">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sergiogc.dev/">
+  <meta name="theme-color" content="#F4FAF8">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="sergiogc.dev">
+  <meta property="og:title" content="Apps para el ecosistema Apple · Sergio García">
+  <meta property="og:description"
+    content="Aplicaciones nativas con Swift y SwiftUI. Apple como especialidad, desarrollo web como complemento. Desde Málaga.">
+  <meta property="og:url" content="https://sergiogc.dev/">
+  <meta property="og:image" content="https://sergiogc.dev/assets/images/ogbanner.jpg?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="sergiogc.dev — Apps iOS 100% nativas con Swift y SwiftUI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apps para el ecosistema Apple · Sergio García">
+  <meta name="twitter:description"
+    content="Aplicaciones nativas con Swift y SwiftUI. Apple como especialidad, desarrollo web como complemento. Desde Málaga.">
+  <meta name="twitter:image" content="https://sergiogc.dev/assets/images/ogbanner.jpg?v=2">
+
+  <!-- Verificación Google Search Console -->
+  <meta name="google-site-verification" content="Ur2AM4l7aNoT8bmEYOXbY0q9bqLskX7hzOEljUstreo">
+
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/buttons.css">
   <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/preview-cards.css">
-  <script src="/scripts/preview.js" defer></script>
+
+  <link rel="icon" href="/favicon.ico?v=3" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=3">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/buttons.css">
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <script src="/scripts/site.js?v=3" defer></script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://sergiogc.dev/#website",
+            "name": "sergiogc.dev",
+            "url": "https://sergiogc.dev/",
+            "inLanguage": "es",
+            "publisher": { "@id": "https://sergiogc.dev/#person" }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://sergiogc.dev/#person",
+            "name": "Sergio García",
+            "jobTitle": "Desarrollador de aplicaciones para el ecosistema Apple",
+            "url": "https://sergiogc.dev/",
+            "knowsAbout": ["Swift", "SwiftUI", "iOS", "Xcode", "App Store", "Desarrollo de aplicaciones digitales"],
+            "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Apple Coding Academy",
+                "url": "https://acoding.academy"
+            },
+            "areaServed": [{ "@type": "Country", "name": "España" }, { "@type": "Continent", "name": "Europa" }],
+            "availableLanguage": ["es", "en"],
+            "sameAs": [
+                "https://github.com/SergioGCDev",
+                "https://www.linkedin.com/in/sergiogarciacalero/"
+            ]
+        }
+    ]
+}
+    </script>
 </head>
+
 <body class="preview-page">
-  <a class="skip-link" href="#sergio"><span data-lang="es">Saltar al contenido</span><span data-lang="en">Skip to content</span></a>
+  <a class="skip-link" href="#sergio"><span data-lang="es">Saltar al contenido</span><span data-lang="en">Skip to
+      content</span></a>
   <header class="preview-nav">
     <a class="preview-brand" href="#sergio">sergiogc.dev</a>
     <nav aria-label="Navegación del prototipo">
@@ -30,76 +103,174 @@
 
   <main>
     <section class="stage-panel intro-panel" id="sergio">
-      <picture class="panel-photo" aria-hidden="true"><source media="(max-width: 760px)" srcset="generated-backgrounds/workspace-hero-mobile.webp"><img src="/generated-backgrounds/workspace-hero.webp" alt="" width="1600" height="900" fetchpriority="high"></picture>
+      <picture class="panel-photo" aria-hidden="true">
+        <source media="(max-width: 760px)" srcset="generated-backgrounds/workspace-hero-mobile.webp"><img
+          src="/generated-backgrounds/workspace-hero.webp" alt="" width="1600" height="900" fetchpriority="high">
+      </picture>
       <div class="panel-grid">
         <div class="panel-copy">
-          <p class="panel-kicker"><span data-lang="es">SERGIO GARCÍA · DESARROLLO INDEPENDIENTE</span><span data-lang="en">SERGIO GARCÍA · INDEPENDENT DEVELOPMENT</span></p>
-          <h1><span data-lang="es">Apps a medida.<br>Para tu negocio.</span><span data-lang="en">Custom apps.<br>For your business.</span></h1>
-          <p class="panel-lead"><span data-lang="es">Diseño y desarrollo aplicaciones Apple para negocios y equipos que necesitan una solución clara, mantenible y lista para publicar.</span><span data-lang="en">I design and build Apple applications for businesses and teams that need a clear, maintainable solution ready to ship.</span></p>
-          <p class="panel-note"><span data-lang="es">Trabajo de forma directa. Apple es mi especialidad; la web complementa el proyecto cuando aporta valor.</span><span data-lang="en">I work directly with you. Apple is my specialty; web work complements the project when it adds value.</span></p>
-          <a class="btn btn-primary" href="#apple"><span data-lang="es">Ver enfoque Apple</span><span data-lang="en">Explore Apple work</span></a>
+          <p class="panel-kicker"><span data-lang="es">SERGIO GARCÍA · DESARROLLO INDEPENDIENTE</span><span
+              data-lang="en">SERGIO GARCÍA · INDEPENDENT DEVELOPMENT</span></p>
+          <h1><span data-lang="es">Apps a medida.<br>Para tu negocio.</span><span data-lang="en">Custom apps.<br>For
+              your business.</span></h1>
+          <p class="panel-lead"><span data-lang="es">Diseño y desarrollo aplicaciones Apple para negocios y equipos que
+              necesitan una solución clara, mantenible y lista para publicar.</span><span data-lang="en">I design and
+              build Apple applications for businesses and teams that need a clear, maintainable solution ready to
+              ship.</span></p>
+          <p class="panel-note"><span data-lang="es">Trabajo de forma directa. Apple es mi especialidad; la web
+              complementa el proyecto cuando aporta valor.</span><span data-lang="en">I work directly with you. Apple is
+              my specialty; web work complements the project when it adds value.</span></p>
+          <a class="btn btn-primary" href="#apple"><span data-lang="es">Ver enfoque Apple</span><span
+              data-lang="en">Explore Apple work</span></a>
         </div>
       </div>
     </section>
 
     <section class="stage-panel apple-panel" id="apple">
-      <picture class="panel-photo" aria-hidden="true"><source media="(max-width: 760px)" data-srcset="generated-backgrounds/apple-ecosystem-mobile.webp"><img data-src="/generated-backgrounds/apple-ecosystem.webp" alt="" width="1600" height="900" decoding="async"></picture>
+      <picture class="panel-photo" aria-hidden="true">
+        <source media="(max-width: 760px)" data-srcset="generated-backgrounds/apple-ecosystem-mobile.webp"><img
+          data-src="/generated-backgrounds/apple-ecosystem.webp" alt="" width="1600" height="900" decoding="async">
+      </picture>
       <div class="panel-grid panel-grid-reverse">
         <div class="product-cluster" aria-hidden="true"></div>
         <div class="panel-copy">
-          <p class="panel-kicker"><span data-lang="es">ECOSISTEMA APPLE</span><span data-lang="en">APPLE ECOSYSTEM</span></p>
-          <h2><span data-lang="es">Una app nativa pensada para el uso real.</span><span data-lang="en">A native app designed for real use.</span></h2>
-          <p class="panel-lead"><span data-lang="es">iPhone, iPad y Mac se definen según el alcance. Aterrizamos la propuesta, construimos con tecnologías nativas y preparamos una entrega que puedas mantener.</span><span data-lang="en">iPhone, iPad and Mac are chosen around the scope. We shape the proposal, build with native technologies and prepare a delivery you can maintain.</span></p>
+          <p class="panel-kicker"><span data-lang="es">ECOSISTEMA APPLE</span><span data-lang="en">APPLE
+              ECOSYSTEM</span></p>
+          <h2><span data-lang="es">Una app nativa pensada para el uso real.</span><span data-lang="en">A native app
+              designed for real use.</span></h2>
+          <p class="panel-lead"><span data-lang="es">iPhone, iPad y Mac se definen según el alcance. Aterrizamos la
+              propuesta, construimos con tecnologías nativas y preparamos una entrega que puedas mantener.</span><span
+              data-lang="en">iPhone, iPad and Mac are chosen around the scope. We shape the proposal, build with native
+              technologies and prepare a delivery you can maintain.</span></p>
           <div class="inline-facts"><span>SwiftUI</span><span>SwiftData</span><span>App Store</span></div>
           <details class="service-details">
-            <summary><span data-lang="es">Cómo trabajaremos en tu app</span><span data-lang="en">How we'll build your app</span></summary>
-            <p><span data-lang="es">Definimos usuarios, pantallas y plataformas. Desarrollo en iteraciones visibles, con pruebas y una entrega documentada. También puedo modernizar una app existente.</span><span data-lang="en">We define users, screens and platforms. Development progresses in visible iterations, with testing and a documented handover. I can also modernise an existing app.</span></p>
-            <p><span data-lang="es">Cuentas, sincronización, pagos e integraciones se valoran según el proyecto. Publicación y soporte se acuerdan por separado; la aprobación de App Store corresponde a Apple.</span><span data-lang="en">Accounts, sync, payments and integrations are assessed for your project. Release and support are agreed separately; App Store approval is Apple's decision.</span></p>
+            <summary><span data-lang="es">Cómo trabajaremos en tu app</span><span data-lang="en">How we'll build your
+                app</span></summary>
+            <p><span data-lang="es">Definimos usuarios, pantallas y plataformas. Desarrollo en iteraciones visibles, con
+                pruebas y una entrega documentada. También puedo modernizar una app existente.</span><span
+                data-lang="en">We define users, screens and platforms. Development progresses in visible iterations,
+                with testing and a documented handover. I can also modernise an existing app.</span></p>
+            <p><span data-lang="es">Cuentas, sincronización, pagos e integraciones se valoran según el proyecto.
+                Publicación y soporte se acuerdan por separado; la aprobación de App Store corresponde a
+                Apple.</span><span data-lang="en">Accounts, sync, payments and integrations are assessed for your
+                project. Release and support are agreed separately; App Store approval is Apple's decision.</span></p>
           </details>
-          <a class="btn btn-secondary" href="#contacto"><span data-lang="es">Hablemos de tu app</span><span data-lang="en">Let's discuss your app</span></a>
+          <a class="btn btn-secondary" href="#contacto"><span data-lang="es">Hablemos de tu app</span><span
+              data-lang="en">Let's discuss your app</span></a>
         </div>
       </div>
     </section>
 
     <section class="stage-panel web-panel" id="web">
-      <picture class="panel-photo" aria-hidden="true"><source media="(max-width: 760px)" data-srcset="/generated-backgrounds/workspace-hero-mobile.webp"><img data-src="/generated-backgrounds/workspace-hero.webp" alt="" width="1600" height="900" decoding="async"></picture>
+      <picture class="panel-photo" aria-hidden="true">
+        <source media="(max-width: 760px)" data-srcset="/generated-backgrounds/workspace-hero-mobile.webp"><img
+          data-src="/generated-backgrounds/workspace-hero.webp" alt="" width="1600" height="900" decoding="async">
+      </picture>
       <div class="panel-grid">
         <div class="panel-copy">
           <p class="panel-kicker"><span data-lang="es">PRESENCIA WEB</span><span data-lang="en">WEB PRESENCE</span></p>
-          <h2><span data-lang="es">Una web que explica y una aplicación que opera no son lo mismo.</span><span data-lang="en">A website that explains and an application that operates are not the same.</span></h2>
-          <p class="panel-lead"><span data-lang="es">Creo páginas informativas para presentar bien un negocio y facilitar consultas. Una aplicación web con usuarios, datos o procesos propios se analiza como un alcance independiente.</span><span data-lang="en">I create informative websites that present a business well and make enquiries easier. A web app with users, data or custom processes is assessed as a separate scope.</span></p>
-          <details><summary><span data-lang="es">Qué puede incluir una web informativa</span><span data-lang="en">What an informational website can include</span></summary><p><span data-lang="es">Estructura, diseño responsive, contenido aportado por el negocio, SEO inicial y una vía de contacto. El alcance final se acuerda por escrito.</span><span data-lang="en">Structure, responsive design, business-supplied content, initial SEO and one contact route. The final scope is agreed in writing.</span></p></details>
-          <details class="service-details"><summary><span data-lang="es">Alcance, entrega y mantenimiento</span><span data-lang="en">Scope, handover and maintenance</span></summary><p><span data-lang="es">Una landing puede incluir hasta seis secciones, un idioma y dos rondas de revisión. Acordamos contenidos, plazos y presupuesto antes de empezar. Dominio, alojamiento y mantenimiento se detallan por separado.</span><span data-lang="en">A landing page can include up to six sections, one language and two review rounds. We agree content, timeline and budget before starting. Domain, hosting and maintenance are detailed separately.</span></p><p><span data-lang="es">Si necesitas usuarios, datos o procesos propios, definimos una aplicación web a medida. El alcance y el presupuesto se estudian de forma independiente.</span><span data-lang="en">If you need users, data or custom processes, we define a bespoke web application. Its scope and budget are assessed separately.</span></p></details>
-          <a class="btn btn-secondary" href="#contacto"><span data-lang="es">Hablemos de tu web</span><span data-lang="en">Let's discuss your website</span></a>
+          <h2><span data-lang="es">Una web que explica y una aplicación que opera no son lo mismo.</span><span
+              data-lang="en">A website that explains and an application that operates are not the same.</span></h2>
+          <p class="panel-lead"><span data-lang="es">Creo páginas informativas para presentar bien un negocio y
+              facilitar consultas. Una aplicación web con usuarios, datos o procesos propios se analiza como un alcance
+              independiente.</span><span data-lang="en">I create informative websites that present a business well and
+              make enquiries easier. A web app with users, data or custom processes is assessed as a separate
+              scope.</span></p>
+          <details>
+            <summary><span data-lang="es">Qué puede incluir una web informativa</span><span data-lang="en">What an
+                informational website can include</span></summary>
+            <p><span data-lang="es">Estructura, diseño responsive, contenido aportado por el negocio, SEO inicial y una
+                vía de contacto. El alcance final se acuerda por escrito.</span><span data-lang="en">Structure,
+                responsive design, business-supplied content, initial SEO and one contact route. The final scope is
+                agreed in writing.</span></p>
+          </details>
+          <details class="service-details">
+            <summary><span data-lang="es">Alcance, entrega y mantenimiento</span><span data-lang="en">Scope, handover
+                and maintenance</span></summary>
+            <p><span data-lang="es">Una landing puede incluir hasta seis secciones, un idioma y dos rondas de revisión.
+                Acordamos contenidos, plazos y presupuesto antes de empezar. Dominio, alojamiento y mantenimiento se
+                detallan por separado.</span><span data-lang="en">A landing page can include up to six sections, one
+                language and two review rounds. We agree content, timeline and budget before starting. Domain, hosting
+                and maintenance are detailed separately.</span></p>
+            <p><span data-lang="es">Si necesitas usuarios, datos o procesos propios, definimos una aplicación web a
+                medida. El alcance y el presupuesto se estudian de forma independiente.</span><span data-lang="en">If
+                you need users, data or custom processes, we define a bespoke web application. Its scope and budget are
+                assessed separately.</span></p>
+          </details>
+          <a class="btn btn-secondary" href="#contacto"><span data-lang="es">Hablemos de tu web</span><span
+              data-lang="en">Let's discuss your website</span></a>
         </div>
-        <div class="web-visual" aria-hidden="true"><div></div><div></div><div></div><span>01</span><span>02</span><span>03</span></div>
+        <div class="web-visual" aria-hidden="true">
+          <div></div>
+          <div></div>
+          <div></div><span>01</span><span>02</span><span>03</span>
+        </div>
       </div>
     </section>
 
     <section class="stage-panel portfolio-panel" id="proyectos">
       <div class="panel-copy panel-copy-wide">
-        <p class="panel-kicker"><span data-lang="es">PROYECTOS PROPIOS</span><span data-lang="en">OWN PROJECTS</span></p>
+        <p class="panel-kicker"><span data-lang="es">PROYECTOS PROPIOS</span><span data-lang="en">OWN PROJECTS</span>
+        </p>
         <h2><span data-lang="es">Trabajo real, en evolución.</span><span data-lang="en">Real work, evolving.</span></h2>
-        <p class="panel-lead"><span data-lang="es">Estos productos forman parte de mi propio recorrido. Cada uno tiene un estado y alcance distintos.</span><span data-lang="en">These products are part of my own journey. Each has a different status and scope.</span></p>
+        <p class="panel-lead"><span data-lang="es">Estos productos forman parte de mi propio recorrido. Cada uno tiene
+            un estado y alcance distintos.</span><span data-lang="en">These products are part of my own journey. Each
+            has a different status and scope.</span></p>
       </div>
       <div class="project-cards">
-        <article><img src="/generated-backgrounds/supplemate-icon.webp" width="144" height="144" loading="lazy" decoding="async" alt="Icono de SuppleMate"><div><h3>SuppleMate</h3><p><span data-lang="es">Seguimiento diario de suplementos. Disponible gratis en App Store.</span><span data-lang="en">Daily supplement tracking. Available free on the App Store.</span></p><a href="https://apps.apple.com/us/app/supplemate-daily-tracker/id6780215203" target="_blank" rel="noopener"><span data-lang="es">Ver en App Store</span><span data-lang="en">View on the App Store</span></a></div></article>
-        <article><img src="/generated-backgrounds/rumflow-icon.webp" width="144" height="144" loading="lazy" decoding="async" alt="Icono de RumFlow"><div><h3>RumFlow</h3><p><span data-lang="es">Producto de finanzas personales con web operativa.</span><span data-lang="en">A personal-finance product with a live web experience.</span></p><a href="https://rumflow.com" target="_blank" rel="noopener"><span data-lang="es">Visitar RumFlow</span><span data-lang="en">Visit RumFlow</span></a></div></article>
-        <article><img src="/generated-backgrounds/fitmate-icon.webp" width="144" height="144" loading="lazy" decoding="async" alt="Icono de FitMate"><div><h3>FitMate</h3><p><span data-lang="es">Proyecto propio para alimentación y entrenamiento. Estado en evolución.</span><span data-lang="en">An own project for nutrition and training. Status evolving.</span></p><a href="https://fitness.sergiogc.dev" target="_blank" rel="noopener"><span data-lang="es">Conocer FitMate</span><span data-lang="en">Explore FitMate</span></a></div></article>
+        <article><img src="/generated-backgrounds/supplemate-icon.webp" width="144" height="144" loading="lazy"
+            decoding="async" alt="Icono de SuppleMate">
+          <div>
+            <h3>SuppleMate</h3>
+            <p><span data-lang="es">Seguimiento diario de suplementos. Disponible gratis en App Store.</span><span
+                data-lang="en">Daily supplement tracking. Available free on the App Store.</span></p><a
+              href="https://apps.apple.com/us/app/supplemate-daily-tracker/id6780215203" target="_blank"
+              rel="noopener"><span data-lang="es">Ver en App Store</span><span data-lang="en">View on the App
+                Store</span></a>
+          </div>
+        </article>
+        <article><img src="/generated-backgrounds/rumflow-icon.webp" width="144" height="144" loading="lazy"
+            decoding="async" alt="Icono de RumFlow">
+          <div>
+            <h3>RumFlow</h3>
+            <p><span data-lang="es">Producto de finanzas personales con web operativa.</span><span data-lang="en">A
+                personal-finance product with a live web experience.</span></p><a href="https://rumflow.com"
+              target="_blank" rel="noopener"><span data-lang="es">Visitar RumFlow</span><span data-lang="en">Visit
+                RumFlow</span></a>
+          </div>
+        </article>
+        <article><img src="/generated-backgrounds/fitmate-icon.webp" width="144" height="144" loading="lazy"
+            decoding="async" alt="Icono de FitMate">
+          <div>
+            <h3>FitMate</h3>
+            <p><span data-lang="es">Proyecto propio para alimentación y entrenamiento. Estado en evolución.</span><span
+                data-lang="en">An own project for nutrition and training. Status evolving.</span></p><a
+              href="https://fitness.sergiogc.dev" target="_blank" rel="noopener"><span data-lang="es">Conocer
+                FitMate</span><span data-lang="en">Explore FitMate</span></a>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="stage-panel contact-panel-preview" id="contacto">
       <div class="contact-copy">
-        <p class="panel-kicker"><span data-lang="es">CONTACTO DIRECTO</span><span data-lang="en">DIRECT CONTACT</span></p>
-        <h2><span data-lang="es">Cuéntame qué quieres construir.</span><span data-lang="en">Tell me what you want to build.</span></h2>
-        <p class="panel-lead"><span data-lang="es">Una idea inicial, el problema que quieres resolver y cualquier referencia útil bastan para empezar una conversación.</span><span data-lang="en">An initial idea, the problem you want to solve and any useful reference are enough to start a conversation.</span></p>
-        <a class="btn btn-primary" href="mailto:hola@sergiogc.dev"><span data-lang="es">Escríbeme a hola@sergiogc.dev</span><span data-lang="en">Email hola@sergiogc.dev</span></a>
-        <p class="agenda-placeholder"><span data-lang="es">La agenda se definirá cuando exista un sistema de reserva y disponibilidad reales.</span><span data-lang="en">Scheduling will be added only when a real booking system and availability are defined.</span></p>
+        <p class="panel-kicker"><span data-lang="es">CONTACTO DIRECTO</span><span data-lang="en">DIRECT CONTACT</span>
+        </p>
+        <h2><span data-lang="es">Cuéntame qué quieres construir.</span><span data-lang="en">Tell me what you want to
+            build.</span></h2>
+        <p class="panel-lead"><span data-lang="es">Una idea inicial, el problema que quieres resolver y cualquier
+            referencia útil bastan para empezar una conversación.</span><span data-lang="en">An initial idea, the
+            problem you want to solve and any useful reference are enough to start a conversation.</span></p>
+        <a class="btn btn-primary" href="mailto:hola@sergiogc.dev"><span data-lang="es">Escríbeme a
+            hola@sergiogc.dev</span><span data-lang="en">Email hola@sergiogc.dev</span></a>
+        <p class="agenda-placeholder"><span data-lang="es">La agenda se definirá cuando exista un sistema de reserva y
+            disponibilidad reales.</span><span data-lang="en">Scheduling will be added only when a real booking system
+            and availability are defined.</span></p>
       </div>
     </section>
   </main>
   <footer data-site-footer data-local-preview></footer>
   <script src="/scripts/footer.js"></script>
 </body>
+
 </html>
