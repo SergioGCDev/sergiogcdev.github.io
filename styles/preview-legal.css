@@ -1,0 +1,24 @@
+/* Local legal preview: natural-height cards keep lengthy policies readable.
+   Loaded after the legal base so all bilingual legal copy remains intact. */
+body.preview-legal { background: #F1F0EA; }
+.preview-legal .ambient { display: none; }
+.preview-legal header { padding: 120px 24px 42px; border: 0; }
+.preview-legal header .wrap { padding: 0; max-width: 960px; }
+.preview-legal header h1 { font-weight: 400; line-height: 1.18; letter-spacing: -.04em; }
+.preview-legal section { position: relative; margin: 20px auto; padding: clamp(24px, 5vw, 54px); width: min(960px, calc(100% - 40px)); border: 1px solid rgba(16,19,18,.12); border-radius: 28px; background: #fff; }
+.preview-legal section .wrap { padding: 0; max-width: none; }
+.preview-legal h2, .preview-legal h3 { font-weight: 400; line-height: 1.25; }
+.preview-legal .sec-title { letter-spacing: -.03em; }
+.preview-legal .app-policy { border-radius: 18px; background: #F1F0EA; }
+.preview-legal .reveal { opacity: 1; transform: none; }
+.preview-legal .btn { height: auto; min-height: 48px; font-weight: 500; padding: 12px 18px; box-shadow: 2px 2px 0 var(--ink); border-width: 1px; }
+.preview-legal .contact-box { padding: 0; border: 0; background: transparent; box-shadow: none; }
+.preview-legal footer { margin-top: 48px; background: #F1F0EA; }
+.preview-legal a { overflow-wrap: anywhere; }
+@media (max-width: 620px) {
+    .preview-legal header { padding-top: 96px; }
+    .preview-legal section { width: calc(100% - 24px); border-radius: 20px; padding: 24px 18px; }
+    .preview-legal .sec-head { flex-wrap: wrap; }
+    .preview-legal .sec-line { display: none; }
+    .preview-legal .app-policy { padding: 20px 16px; }
+}

@@ -43,12 +43,22 @@
     const ariaNodes = [...document.querySelectorAll('[data-i18n-aria-en]')];
     const metaNodes = [...document.querySelectorAll('[data-i18n-content-en]')];
     const hrefNodes = [...document.querySelectorAll('[data-i18n-href-en]')];
-    const originals = new WeakMap();
+    /*
+     * Cada tipo de dato conserva su propio valor original. Un mismo enlace
+     * puede traducir a la vez etiqueta y destino: compartir un WeakMap haría
+     * que el href sustituyera al texto al volver al español.
+     */
+    const originalText = new WeakMap();
+    const originalHtml = new WeakMap();
+    const originalAria = new WeakMap();
+    const originalMeta = new WeakMap();
+    const originalHref = new WeakMap();
 
-    [...textNodes, ...htmlNodes].forEach(node => originals.set(node, node.innerHTML));
-    ariaNodes.forEach(node => originals.set(node, node.getAttribute('aria-label') || ''));
-    metaNodes.forEach(node => originals.set(node, node.getAttribute('content') || ''));
-    hrefNodes.forEach(node => originals.set(node, node.getAttribute('href') || ''));
+    textNodes.forEach(node => originalText.set(node, node.textContent || ''));
+    htmlNodes.forEach(node => originalHtml.set(node, node.innerHTML));
+    ariaNodes.forEach(node => originalAria.set(node, node.getAttribute('aria-label') || ''));
+    metaNodes.forEach(node => originalMeta.set(node, node.getAttribute('content') || ''));
+    hrefNodes.forEach(node => originalHref.set(node, node.getAttribute('href') || ''));
     const originalTitle = document.title;
 
     const serviceLinks = () => document.querySelectorAll('[data-language-route]');
@@ -59,19 +69,19 @@
         document.body.classList.toggle('lang-en', english);
 
         textNodes.forEach(node => {
-            node.textContent = english ? node.dataset.i18nEn : originals.get(node);
+            node.textContent = english ? node.dataset.i18nEn : originalText.get(node);
         });
         htmlNodes.forEach(node => {
-            node.innerHTML = english ? node.dataset.i18nHtmlEn : originals.get(node);
+            node.innerHTML = english ? node.dataset.i18nHtmlEn : originalHtml.get(node);
         });
         ariaNodes.forEach(node => {
-            node.setAttribute('aria-label', english ? node.dataset.i18nAriaEn : originals.get(node));
+            node.setAttribute('aria-label', english ? node.dataset.i18nAriaEn : originalAria.get(node));
         });
         metaNodes.forEach(node => {
-            node.setAttribute('content', english ? node.dataset.i18nContentEn : originals.get(node));
+            node.setAttribute('content', english ? node.dataset.i18nContentEn : originalMeta.get(node));
         });
         hrefNodes.forEach(node => {
-            node.setAttribute('href', english ? node.dataset.i18nHrefEn : originals.get(node));
+            node.setAttribute('href', english ? node.dataset.i18nHrefEn : originalHref.get(node));
         });
         document.title = english ? languageToggle.dataset.titleEn : originalTitle;
 

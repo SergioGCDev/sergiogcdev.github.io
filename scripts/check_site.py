@@ -4,6 +4,7 @@ Checks source HTML, local references, metadata, sitemap and JavaScript syntax.
 This is not a replacement for browser, accessibility or indexation testing.
 """
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -15,6 +16,7 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ["index.html", "desarrollo-apps-ios/index.html", "diseno-web-malaga/index.html",
          "privacy/index.html", "terms/index.html", "cv/index.html"]
+PREVIEWS = ["preview/index.html", "preview/privacy/index.html", "preview/terms/index.html"]
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
 ERRORS = []
 
@@ -79,7 +81,7 @@ class Page(HTMLParser):
             self.title += data
 
 
-pages = {ROOT / name: Page(ROOT / name) for name in PAGES}
+pages = {ROOT / name: Page(ROOT / name) for name in PAGES + PREVIEWS if (ROOT / name).is_file()}
 node = shutil.which("node")
 if not node:
     ERRORS.append("Node.js is required for JavaScript syntax checks.")
@@ -88,8 +90,11 @@ for path, page in pages.items():
     route = "/" + str(path.relative_to(ROOT)).removesuffix("index.html")
     if page.h1 != 1 or not page.title or not page.meta.get("description"):
         page.error("Expected one h1, a title and a description.")
-    if page.canonical != "https://sergiogc.dev" + route:
+    is_preview = path.relative_to(ROOT).as_posix() in PREVIEWS
+    if not is_preview and page.canonical != "https://sergiogc.dev" + route:
         page.error("Incorrect canonical: " + page.canonical)
+    if is_preview and page.meta.get("robots", "").lower() != "noindex, nofollow":
+        page.error("Preview must declare noindex, nofollow.")
     for ref in page.refs:
         url = urlsplit(ref)
         if url.scheme or url.netloc:
@@ -114,6 +119,13 @@ for path, page in pages.items():
             if check.returncode:
                 page.error("Invalid inline JavaScript: " + check.stderr)
 
+    # A CTA must expose a human label, never a mailto URI or an encoded query.
+    source = path.read_text(encoding="utf-8")
+    for anchor in re.finditer(r"<a\\b[^>]*>(.*?)</a>", source, re.IGNORECASE | re.DOTALL):
+        visible = re.sub(r"<[^>]+>", "", anchor.group(1)).strip()
+        if visible.lower().startswith("mailto:") or "%20" in visible or "?subject=" in visible.lower():
+            page.error("Mailto/encoded URI used as visible CTA text.")
+
 for script in (ROOT / "scripts").glob("*.js"):
     if node:
         check = subprocess.run([node, "--check", str(script)], capture_output=True, text=True)
@@ -123,6 +135,7 @@ for script in (ROOT / "scripts").glob("*.js"):
 urls = ElementTree.parse(ROOT / "sitemap.xml").findall(".//{*}loc")
 locations = [url.text for url in urls]
 expected = [page.canonical for page in pages.values()]
+expected = [pages[ROOT / name].canonical for name in PAGES]
 if len(locations) != len(set(locations)) or set(locations) != set(expected):
     ERRORS.append("Sitemap does not match the canonical URLs of the six pages.")
 if "Sitemap: https://sergiogc.dev/sitemap.xml" not in (ROOT / "robots.txt").read_text():

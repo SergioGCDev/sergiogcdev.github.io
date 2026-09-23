@@ -500,21 +500,33 @@
 
 <script>
 const langToggle = document.getElementById('langToggle');
-langToggle.addEventListener('click', (e) => {
-    const btn = e.target.closest('.toggle-btn');
-    if (!btn) return;
+const setHomeLanguage = (english, { updateUrl = false } = {}) => {
+    const selected = english ? 'en' : 'es';
     langToggle.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const english = btn.dataset.value === 'en';
+    const activeButton = langToggle.querySelector(`[data-value="${selected}"]`);
+    activeButton.classList.add('active');
     document.body.classList.toggle('lang-en', english);
     document.documentElement.lang = english ? 'en' : 'es';
-    langToggle.querySelectorAll('.toggle-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    langToggle.querySelectorAll('.toggle-btn').forEach(b => b.setAttribute('aria-pressed', String(b === activeButton)));
     document.querySelector('.skip-link').textContent = english ? 'Skip to content' : 'Saltar al contenido';
     document.getElementById('themeToggle').setAttribute('aria-label', english ? 'Change theme' : 'Cambiar tema');
     document.querySelectorAll('[data-service-path]').forEach(link => {
         link.href = english ? `${link.dataset.servicePath}?lang=en` : link.dataset.servicePath;
     });
+    if (updateUrl) {
+        const url = new URL(window.location.href);
+        if (english) url.searchParams.set('lang', 'en');
+        else url.searchParams.delete('lang');
+        window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+    }
     window.dispatchEvent(new Event('site-language-change'));
+};
+
+setHomeLanguage(new URLSearchParams(window.location.search).get('lang') === 'en');
+langToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('.toggle-btn');
+    if (!btn) return;
+    setHomeLanguage(btn.dataset.value === 'en', { updateUrl: true });
 });
 
 </script>
