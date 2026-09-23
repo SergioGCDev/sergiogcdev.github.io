@@ -27,7 +27,7 @@
         ].join("");
         if (footer.hasAttribute('data-local-preview')) {
             footer.querySelectorAll('a').forEach(link => {
-                link.href = '/preview' + link.getAttribute('href') + (english ? '?lang=en' : '');
+                link.href = link.getAttribute('href') + (english ? '?lang=en' : '');
             });
         }
     };

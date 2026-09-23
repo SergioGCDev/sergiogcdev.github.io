@@ -47,9 +47,11 @@
         "about": { "@id": "https://sergiogc.dev/#person" }
     }
     </script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/styles/preview-legal.css">
 </head>
 
-<body>
+<body class="preview-legal">
 
     <!-- ── Sprite de iconos compartido: un único origen por icono, referenciado
          con <use> en toda la página. ── -->
@@ -75,7 +77,7 @@
                     <button type="button" class="toggle-btn" data-lang-btn="en">EN</button>
                 </div>
                 <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">☀</button>
-                <!-- <a href="/" class="nav-cta" data-i18n="nav-back">← Inicio</a> -->
+                <!-- <a href="/preview/" class="nav-cta" data-i18n="nav-back">← Inicio</a> -->
             </div>
         </div>
     </nav>
@@ -479,7 +481,7 @@
                         <svg aria-hidden="true"><use href="#icon-mail"/></svg>
                         hola@sergiogc.dev
                     </a>
-                    <!-- <a class="btn btn-ghost" href="/">
+                    <!-- <a class="btn btn-ghost" href="/preview/">
                         <span data-i18n="back-home">← Volver al inicio</span>
                     </a> -->
                 </div>
@@ -487,7 +489,7 @@
         </div>
     </section>
 
-    <footer data-site-footer></footer>
+    <footer data-site-footer data-local-preview></footer>
     <script src="/scripts/footer.js"></script>
 
     <script>
@@ -534,7 +536,17 @@
             document.querySelector('[data-nav-link="principles"]').href = lang === 'en' ? '#principios-en' : '#principios';
             document.querySelector('[data-nav-link="apps"]').href = lang === 'en' ? '#apps-en' : '#apps';
             document.documentElement.lang = lang;
-            localStorage.setItem('sergiogc-lang', lang);
+            const url = new URL(location.href);
+            if (lang === 'en') url.searchParams.set('lang', 'en');
+            else url.searchParams.delete('lang');
+            history.replaceState(null, '', url.pathname + url.search + url.hash);
+            document.querySelectorAll('[data-lang-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.langBtn === lang)));
+            document.querySelectorAll('a[href^="/preview/"]').forEach(a => {
+                const destination = new URL(a.href);
+                if (lang === 'en') destination.searchParams.set('lang', 'en');
+                else destination.searchParams.delete('lang');
+                a.href = destination.pathname + destination.search + destination.hash;
+            });
             window.dispatchEvent(new Event('site-language-change'));
             // El bloque del idioma oculto nunca dispara el IntersectionObserver;
             // al cambiar de idioma se revela de golpe para que no quede invisible.
@@ -543,8 +555,7 @@
 
         btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.langBtn)));
 
-        const saved = localStorage.getItem('sergiogc-lang');
-        if (saved === 'en') setLang('en');
+        setLang(new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es');
 
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
@@ -554,50 +565,5 @@
             themeToggle.textContent = isDark ? '☀' : '☾';
         });
     </script>
-<div class="page-overlay" id="pageOverlay">
-    <span class="page-overlay-name">Sergio García</span>
-    <div class="page-overlay-track">
-        <div class="page-overlay-fill" id="pageOverlayFill"></div>
-    </div>
-</div>
-<script>
-(function () {
-    const overlay = document.getElementById('pageOverlay');
-    const fill = document.getElementById('pageOverlayFill');
-    let navigating = false;
-    function showOverlay(href) {
-        if (navigating) return;
-        navigating = true;
-        fill.style.transition = 'none';
-        fill.style.width = '0%';
-        overlay.classList.add('active');
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-            fill.style.transition = 'width 0.7s cubic-bezier(.4,0,.2,1)';
-            fill.style.width = '100%';
-        }));
-        setTimeout(() => { window.location.href = href; }, 750);
-    }
-    document.addEventListener('click', function (e) {
-        const a = e.target.closest('a');
-        if (!a) return;
-        const href = a.getAttribute('href');
-        if (!href ||
-            href.startsWith('mailto:') ||
-            href.startsWith('tel:') ||
-            href.startsWith('#') ||
-            href.startsWith('javascript:') ||
-            a.target === '_blank') return;
-        e.preventDefault();
-        showOverlay(href);
-    });
-    window.addEventListener('pageshow', function (e) {
-        if (e.persisted) {
-            overlay.classList.remove('active');
-            navigating = false;
-        }
-    });
-})();
-</script>
 </body>
-
 </html>
