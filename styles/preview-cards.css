@@ -52,6 +52,11 @@
 .intro-panel .panel-kicker { color: #077A63; }
 .intro-panel .panel-lead, .intro-panel .panel-note { color: #48534F; }
 .intro-panel .panel-copy { container-type: inline-size; }
+/* Retrato independiente, centrado junto al cuadro de presentación. */
+.intro-portrait { display: block; width: min(100%, 380px); height: auto; aspect-ratio: 1; justify-self: center; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.85); box-shadow: 0 12px 36px rgba(16,19,18,.16); }
+@media (max-width: 760px) {
+    .intro-portrait { width: 200px; }
+}
 /* Dos líneas explícitas; el tamaño responde al ancho real de la tarjeta.
    El interlineado deja espacio para ascendentes y descendentes. */
 .preview-page .intro-panel h1 { font-size: clamp(1.5rem, 10cqi, 3.6rem); line-height: 1.18; letter-spacing: -.025em; text-wrap: initial; }
@@ -67,7 +72,8 @@
 .stage-panel:focus-within { z-index: 10; }
 .preview-page .btn { height: auto; min-height: 48px; padding: 12px 18px; border-width: 1px; box-shadow: 2px 2px 0 var(--ink); }
 .stage-panel { top: var(--panel-top, 0px); }
-@media (max-width: 900px) { .stage-panel { position: relative; } }
+/* El offset de apilado solo corresponde a sticky, nunca al flujo móvil. */
+@media (max-width: 900px) { .stage-panel { position: relative; top: auto; } }
 @media (max-width: 760px) {
     .stage-panel.intro-panel { border-radius: 0; margin-top: 0; }
     .intro-panel, .apple-panel, .web-panel { padding-top: 280px; }
@@ -89,4 +95,4 @@
 .service-details p { color: var(--ink-dim); line-height: 1.6; margin-bottom: 18px; }
 .preview-page footer[data-site-footer] { position: relative; z-index: 20; background: #F1F0EA; }
 @media (max-width: 760px) { .stage-panel { scroll-margin-top: 105px; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.stage-panel { position: relative; }.btn { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.stage-panel { position: relative; top: auto; }.btn { transition: none; } }
