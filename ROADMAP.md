@@ -85,6 +85,28 @@ alta. Las imágenes secundarias se activan con IntersectionObserver, sin preload
 - [ ] Revisión de Sergio en local antes de considerar una sustitución de la portada. No publicar, redirigir ni borrar rutas existentes sin una nueva autorización.
 - [ ] Decidir calendario real: proveedor, disponibilidad, videollamada, datos tratados y condiciones. No hay agenda simulada ni conexión externa en el preview.
 
+## Revisión visual — 2026-09-24
+
+- Sergio confirma que la portada de tarjetas ya está publicada; la restricción
+  anterior de preview local no describe el estado actual de la home.
+- Comparativa Instrument Sans/Manrope descartada: se mantiene Avenir Next.
+- Conservado el ajuste local de títulos: interlineado 1.1 y tamaño
+  `clamp(2.45rem, 3.15vw, 4.5rem)`. La portada mantiene su regla específica 1.18.
+- Bloque Web a ancho útil completo, sin segunda columna decorativa vacía;
+  título en dos líneas en escritorio, sin cortes forzados en móvil.
+- Proyectos deja de heredar el máximo de 680 px: título en una línea en escritorio.
+- Desplegables Web comparten un único separador, abiertos o cerrados.
+- Revisados ES/EN a 320, 390, 768, 1024, 1440 y 1920 px: sin desbordamiento
+  horizontal ni recortes en paneles. En tablet se utiliza una columna y en
+  móvil se moderan los tamaños de los títulos. Inspección visual Web/Proyectos.
+- Publicación autorizada por Sergio tras revisión local. Se excluyen
+  `styles/home.css` y `preview/`, con cambios locales ajenos a este ajuste.
+- Reanudación de publicación autorizada el 2026-09-25 tras desbloquear
+  1Password; comprobar el despliegue y los estilos servidos antes de darla por hecha.
+- Detectado fallo previo en `scripts/check_site.py`: espera las rutas de
+  servicios eliminadas, que aún aparecen en sitemap.xml. Pendiente revisión SEO
+  separada; no se afirma que esa comprobación global pase.
+
 ## Pendiente, fuera de este bloque
 
 - Formulario propio: decidir receptor, protección contra abuso, tratamiento de datos y política antes de conectarlo. Ahora se ofrece un correo con guía y dirección alternativa visible; no se simula un envío.
